@@ -23,7 +23,6 @@ public class TowerSocketManager : MonoBehaviour
         else
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
     }
 

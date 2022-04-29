@@ -10,7 +10,7 @@ public abstract class TowerDataSO : ScriptableObject
     public int faction;
     [SerializeField] protected float fireRate;
     [SerializeField] protected float fireRateMultiplier = 1;
-    public Transform prefab;
+    public GameObject prefab;
 
     protected OffensiveTowerDataSO OffensiveTowerData;
     protected SupportTowerDataSO SupportTowerData;

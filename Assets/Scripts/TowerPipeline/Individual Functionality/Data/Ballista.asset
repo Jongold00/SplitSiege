@@ -9,14 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b514248eb03706f4ea6656de76788e07, type: 3}
+  m_Script: {fileID: 11500000, guid: 431581062ac661d4da226ee3ce1a75ea, type: 3}
   m_Name: Ballista
   m_EditorClassIdentifier: 
-  name: Ballista Stats
-  damage: 10
-  range: 50
-  fireRate: 0.5
-  cost: 150
+  name: Ballista
+  range: 5
+  cost: 5
   faction: 0
-  supportTower: 0
-  prefab: {fileID: 6991130857455471837, guid: c9d89185cfd5b0744926920fe7ccda28, type: 3}
+  fireRate: 1
+  fireRateMultiplier: 1
+  prefab: {fileID: 9057664153112915303, guid: 1e2dd1450578a9140b8807700e432609, type: 3}
+  projectilePrefab: {fileID: 0}
+  speedOfProjectile: 0

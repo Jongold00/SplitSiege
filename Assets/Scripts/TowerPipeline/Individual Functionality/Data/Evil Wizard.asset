@@ -9,14 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b514248eb03706f4ea6656de76788e07, type: 3}
+  m_Script: {fileID: 11500000, guid: 431581062ac661d4da226ee3ce1a75ea, type: 3}
   m_Name: Evil Wizard
   m_EditorClassIdentifier: 
   name: Evil Wizard
-  damage: 20
-  range: 65
-  fireRate: 2
-  cost: 150
+  range: 1
+  cost: 1
   faction: 1
-  supportTower: 0
-  prefab: {fileID: 0}
+  fireRate: 1
+  fireRateMultiplier: 1
+  prefab: {fileID: 1187417336092707799, guid: a3ad4ed99890a66439f825f43b56e124, type: 3}
+  projectilePrefab: {fileID: 0}
+  speedOfProjectile: 1

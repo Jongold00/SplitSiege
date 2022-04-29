@@ -22,7 +22,6 @@ public class ResourceManager : MonoBehaviour
         else
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
     }
 
@@ -77,8 +76,7 @@ public class ResourceManager : MonoBehaviour
             default:
                 break;
         }
-        print("new gold: " + gold);
-        print("new pop: " + population);
+
         UpdateUI();
     }
         public bool CheckLegalTranscation(int cost, int resource) 

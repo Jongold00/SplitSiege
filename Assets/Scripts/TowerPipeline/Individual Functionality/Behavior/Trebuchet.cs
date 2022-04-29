@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RockThrower : OffensiveTower
+public class Trebuchet : OffensiveTower
 {
     [SerializeField] private float splashRange = 10f;
     [SerializeField] private float fullDamageRange = 5f;

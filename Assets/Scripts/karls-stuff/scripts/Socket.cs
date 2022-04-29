@@ -22,13 +22,13 @@ public class Socket : MonoBehaviour
             return;
         }
 
-        Transform objTransform = Instantiate(objToSpawn.prefab, transform.position, objToSpawn.prefab.transform.rotation);
-        Vector3 newPos = objTransform.position;
+        GameObject obj = Instantiate(objToSpawn.prefab, transform.position, objToSpawn.prefab.transform.rotation);
+        Vector3 newPos = obj.transform.position;
 
         // Offset should be specific to tower
         // newPos.y += 4.5f;
 
-        objTransform.position = newPos;
+        obj.transform.position = newPos;
 
         CurrentlyPlacedTower = objToSpawn;
 
