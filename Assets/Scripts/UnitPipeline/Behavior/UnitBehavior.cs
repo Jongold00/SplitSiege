@@ -14,7 +14,7 @@ public class UnitBehavior : MonoBehaviour
 
     NavNode[] nodePath;
     int currentNode = 0;
-    float epsilon = 6f;
+    float epsilon = 1f;
 
     Slider healthbar;
 
@@ -37,12 +37,13 @@ public class UnitBehavior : MonoBehaviour
         goal = nodePath[currentNode].transform.position;
         nav.destination = goal;
         healthbar = GetComponentInChildren<Slider>();
+        nav.speed = moveSpeed;
+
     }
 
     // Update is called once per frame
     public void Update()
     {
-        print(health);
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Dead"))
         {
             ResourceManager.instance.UpdateResources(unitData.goldValue, 0);

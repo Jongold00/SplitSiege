@@ -13,6 +13,9 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        transform.LookAt(target.transform);
+
         if (target == null)
         {
             Destroy(this.gameObject);

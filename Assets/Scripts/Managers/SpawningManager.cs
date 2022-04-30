@@ -75,6 +75,7 @@ public class SpawningManager : MonoBehaviour
     public void Start()
     {
         units.Add(basicGiant);
+        StartRound(0);
     }
 
     void TestSpawn()
