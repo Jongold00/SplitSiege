@@ -13,9 +13,20 @@ public abstract class OffensiveTower : TowerBehavior
     Transform rotatableTransform;
 
     [SerializeField]
-    Transform projectileInstantiatePoint;
+    protected Transform projectileInstantiatePoint;
     // attackCD is assigned manually below using data pulled from the towers themselves
     protected float attackCD;
+
+
+    #region Rotation Stuff
+
+    protected  bool rotating;
+    private float lerpRatio;
+
+    Vector3 endLerp = Vector3.zero;
+    Vector3 currentLerp;
+
+    #endregion
     public void AcquireTarget()
     {
         float lowestDistance = 999999;
@@ -39,19 +50,45 @@ public abstract class OffensiveTower : TowerBehavior
     public override void Update()
     {
         AcquireTarget();
-
-        Vector3 positionDiff = currentTarget.transform.position - transform.position;
-        float zRotation = Mathf.Atan2(positionDiff.y, positionDiff.x) * Mathf.Rad2Deg;
-        rotatableTransform.localRotation = Quaternion.Euler(0, 0, zRotation + 180f);
         attackCD -= Time.deltaTime;
         Debug.Log("Getting target");
-        if (attackCD <= 0 && currentTarget)
-        {
-            Debug.Log("Firing");
-            attackCD = offensiveTowerData.GetFireRate();
-            Fire();
 
+        if (currentTarget)
+        {
+            print(rotating);
+            if (attackCD <= 1 && !rotating)
+            {
+                //print("attack CD" + attackCD);
+
+                rotating = true;
+
+                attackCD = 0.25f;
+
+                Vector3 positionDiff = currentTarget.transform.position - transform.position;
+                float zRotation = Mathf.Atan2(positionDiff.y, positionDiff.x) * Mathf.Rad2Deg;
+                endLerp = new Vector3(0, 0, zRotation);
+
+                lerpRatio = (endLerp.z - rotatableTransform.localRotation.z) / (attackCD / Time.deltaTime);
+
+               
+            }
+            if (rotating)
+            {
+
+                currentLerp = Vector3.Lerp(currentLerp, endLerp, lerpRatio);
+                rotatableTransform.localRotation = Quaternion.Euler(0, 0, currentLerp.z);
+            }
+            
+           
+            if (attackCD <= 0)
+            {
+                Debug.Log("Firing");
+                attackCD = offensiveTowerData.GetFireRate();
+                Fire();
+
+            }
         }
+
         if (!active)
         {
             ResourceManager.instance.UpdateResources(offensiveTowerData.cost * -1, offensiveTowerData.faction);
@@ -63,10 +100,12 @@ public abstract class OffensiveTower : TowerBehavior
     public virtual void Fire()
     {
         GameObject projectile = Instantiate(offensiveTowerData.ProjectilePrefab.gameObject, projectileInstantiatePoint.position, Quaternion.identity);
-        projectile.GetComponent<Projectile>().SetTarget(currentTarget, offensiveTowerData.SpeedOfProjectile);
+        projectile.GetComponent<BallistaProjectile>().SetTarget(currentTarget, offensiveTowerData.SpeedOfProjectile);
+
         // need to implement a callback from the projectile when it hits target, maybe by subscribing the TakeDamage
         // method below directly to the Action on the projectile script
         // currentTarget.TakeDamage(offensiveTowerData.GetDamage());
+        rotating = false;
     }
 
 

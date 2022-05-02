@@ -10,7 +10,7 @@ public class UnitBehavior : MonoBehaviour
     public Vector3 goal;
     private SpawningManager.UnitData unitData;
     private Animator anim;
-    private NavMeshAgent nav;
+    public NavMeshAgent nav;
 
     NavNode[] nodePath;
     int currentNode = 0;

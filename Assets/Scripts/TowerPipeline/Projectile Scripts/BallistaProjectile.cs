@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Projectile : MonoBehaviour
+public class BallistaProjectile : MonoBehaviour
 {
     private UnitBehavior target;
     private float movementSpeed;
