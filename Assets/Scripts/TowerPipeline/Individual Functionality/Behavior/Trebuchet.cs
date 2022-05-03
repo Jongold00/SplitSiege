@@ -12,8 +12,7 @@ public class Trebuchet : OffensiveTower
     public override void Fire()
     {
         GameObject projectile = Instantiate(offensiveTowerData.ProjectilePrefab.gameObject, projectileInstantiatePoint.position, Quaternion.identity);
-        projectile.GetComponent<TrebuchetProjectile>().SetTarget(currentTarget, offensiveTowerData.SpeedOfProjectile, upforce);
-        base.rotating = false;
+        projectile.GetComponent<TrebuchetProjectile>().SetTarget(currentTarget, offensiveTowerData.SpeedOfProjectile);
 
         /*
                 Collider[] hitColliders = Physics.OverlapSphere(currentTarget.transform.position, splashRange);

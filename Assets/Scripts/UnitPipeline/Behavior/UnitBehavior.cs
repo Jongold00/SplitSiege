@@ -94,8 +94,7 @@ public class UnitBehavior : MonoBehaviour
     {
         health -= delta;
         healthbar.value = health / unitData.unitHealth;
-        Debug.Log("health value: " + health);
-        Debug.Log("unithealth value: " + unitData.unitHealth);
+        //Debug.Log("unithealth value: " + unitData.unitHealth);
         isDead();
       
     }

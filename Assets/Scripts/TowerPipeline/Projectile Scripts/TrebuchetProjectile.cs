@@ -4,10 +4,8 @@ using UnityEngine;
 using System;
 
 
-public class TrebuchetProjectile : MonoBehaviour
+public class TrebuchetProjectile : Projectile
 {
-    private UnitBehavior target;
-    public event Action OnTargetHit;
     private float movementSpeed;
     Rigidbody rb;
 
@@ -22,6 +20,10 @@ public class TrebuchetProjectile : MonoBehaviour
     Vector3 currentTargetAcceleration = Vector3.zero;
 
 
+    protected override void Update()
+    {
+
+    }
 
     void Start()
     {
@@ -76,7 +78,7 @@ public class TrebuchetProjectile : MonoBehaviour
 
     }
 
-    public void SetTarget(UnitBehavior newTarget, float movementSpeed, float upforce)
+    public override void SetTarget(UnitBehavior newTarget, float movementSpeed)
     {
         rb = GetComponent<Rigidbody>();
         target = newTarget;
@@ -103,4 +105,6 @@ public class TrebuchetProjectile : MonoBehaviour
     {
         return (-2 * rb.velocity.y) / Physics.gravity.y;
     }
+
+
 }

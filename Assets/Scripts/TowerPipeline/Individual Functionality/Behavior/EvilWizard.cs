@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class EvilWizard : MonoBehaviour
+public class EvilWizard : OffensiveTower
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    Projectile[] spells;
+
+    public override void Fire()
     {
-        
+        int spellChoice = Random.Range(0, spells.Length - 1);
+        base.Fire();
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
