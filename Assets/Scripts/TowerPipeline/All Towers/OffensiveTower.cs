@@ -79,7 +79,7 @@ public abstract class OffensiveTower : TowerBehavior
         Quaternion targetRotation = Quaternion.LookRotation(currentTarget.transform.position - rotatableTransform.position, Vector3.forward);
         targetRotation.eulerAngles = new Vector3(rotatableTransform.localRotation.x, rotatableTransform.localRotation.y, targetRotation.eulerAngles.z);
 
-        print(targetRotation.eulerAngles);
+
         //float zAngleBetweenPlayerAndTarget = targetRotation.eulerAngles.z - rotatableTransform.eulerAngles.z;
 
         rotatableTransform.localRotation = Quaternion.RotateTowards(rotatableTransform.localRotation, targetRotation, Time.deltaTime * rotationSpeed);

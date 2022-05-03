@@ -6,7 +6,7 @@ using FMODUnity;
 public class FMOD_PlayOneShot : MonoBehaviour
 {
     public EventReference Event;
-    public void PlayOneShot()
+    public void Play()
     {
         FMODUnity.RuntimeManager.PlayOneShot(Event);
     }

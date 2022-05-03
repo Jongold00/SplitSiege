@@ -13,7 +13,7 @@ public class Trebuchet : OffensiveTower
     {
         GameObject projectile = Instantiate(offensiveTowerData.ProjectilePrefab.gameObject, projectileInstantiatePoint.position, Quaternion.identity);
         projectile.GetComponent<TrebuchetProjectile>().SetTarget(currentTarget, offensiveTowerData.SpeedOfProjectile);
-
+        GetComponent<FMOD_PlayOneShot>().Play();
         /*
                 Collider[] hitColliders = Physics.OverlapSphere(currentTarget.transform.position, splashRange);
                 foreach (Collider curr in hitColliders)
