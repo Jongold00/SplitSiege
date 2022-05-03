@@ -192,15 +192,15 @@ MonoBehaviour:
     HasValue: 0
   displaySortOrder: 0
   childIdentifiers:
+  - 2fea114e74ecf3c4f920e1d5cc1c4c40
+  - 46fbfdf3fc43db0458918377fd40293e
+  - 0f8eb3f400726694eb47beb1a9f94ce8
   - c88d16e5272a4e241b0ef0ac2e53b73d
-  - fd7c55dab0fce234b8c25f6ffca523c1
-  - 2c5177b11d81d824dbb064f9ac8527da
-  - e7a046c753c3c3d4aacc91f6597f310d
   - 52eb9df5db46521439908db3a29a1bbb
   - b7716510a1f36934c87976f3a81dbf3d
-  - 0f8eb3f400726694eb47beb1a9f94ce8
-  - 46fbfdf3fc43db0458918377fd40293e
-  - 2fea114e74ecf3c4f920e1d5cc1c4c40
+  - e7a046c753c3c3d4aacc91f6597f310d
+  - fd7c55dab0fce234b8c25f6ffca523c1
+  - 2c5177b11d81d824dbb064f9ac8527da
 --- !u!114 &-5110397771156160762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,8 +536,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: 
-  sourceBankPath: 
+  sourceProjectPath: ../SplitSiege_FMOD/SplitSiege_FMOD.fspro
+  sourceBankPath: ../SplitSiege_FMOD/Build
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -559,7 +559,8 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
+  MasterBanks:
+  - Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
@@ -575,17 +576,17 @@ MonoBehaviour:
   HideSetupWizard: 1
   LastEventReferenceScanVersion: 0
   Platforms:
-  - {fileID: -783509763405927892}
+  - {fileID: -5627291609900582426}
+  - {fileID: -5498674446278697816}
   - {fileID: -5408504011015840158}
+  - {fileID: -5110397771156160762}
   - {fileID: -4850905161758358976}
+  - {fileID: -3313599991236476249}
+  - {fileID: -783509763405927892}
+  - {fileID: -608873389898276769}
+  - {fileID: 262856357559519214}
   - {fileID: 1277552177091830363}
   - {fileID: 1851368126115785421}
-  - {fileID: 262856357559519214}
-  - {fileID: -3313599991236476249}
-  - {fileID: -608873389898276769}
-  - {fileID: -5110397771156160762}
-  - {fileID: -5498674446278697816}
-  - {fileID: -5627291609900582426}
   MigratedPlatforms: 0c000000150000000b0000000a00000009000000120000000800000005000000060000000200000001000000
 --- !u!114 &262856357559519214
 MonoBehaviour:
