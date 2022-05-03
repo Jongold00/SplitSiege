@@ -421,6 +421,8 @@ GameObject:
   - component: {fileID: 8466472175708416042}
   - component: {fileID: 5952075216833535200}
   - component: {fileID: 6725048178610700759}
+  - component: {fileID: 4909101019949714721}
+  - component: {fileID: 6706627307315918231}
   m_Layer: 0
   m_Name: Trebuchet Tower
   m_TagString: Untagged
@@ -510,6 +512,56 @@ MonoBehaviour:
   projectileInstantiatePoint: {fileID: 2168170595813709112}
   splashRange: 10
   fullDamageRange: 5
+  upforce: 5
+--- !u!114 &4909101019949714721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5303824945869716789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7f37a99f23a6c4093b181768c23e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+--- !u!114 &6706627307315918231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5303824945869716789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1385019083
+      Data2: 1133097432
+      Data3: 1391915441
+      Data4: -1120539796
+    Path: event:/Trebuchet Fire
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &5608507071271070714
 GameObject:
   m_ObjectHideFlags: 0
