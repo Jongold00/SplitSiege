@@ -5614,7 +5614,7 @@ Transform:
   m_GameObject: {fileID: 5202576179525619550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12.34, y: 0.183, z: 11.42}
-  m_LocalScale: {x: 25, y: 25, z: 25}
+  m_LocalScale: {x: 60, y: 60, z: 60}
   m_Children:
   - {fileID: 7981332708446152348}
   - {fileID: 7906348083623687989}
@@ -5635,8 +5635,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {x: 0, y: 0, z: 0}
+  nav: {fileID: 0}
   health: 100
-  moveSpeed: 5
+  moveSpeed: 1
   damage: 1
 --- !u!195 &7819011789181561651
 NavMeshAgent:

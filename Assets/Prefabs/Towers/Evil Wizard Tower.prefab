@@ -161,6 +161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1959450023792087405}
   - component: {fileID: 191962511924201342}
+  - component: {fileID: 4406250714033189942}
   m_Layer: 0
   m_Name: Evil Wizard Tower
   m_TagString: Untagged
@@ -195,6 +196,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70a0ac32ce1f98a4885eefc24573eb55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offensiveTowerData: {fileID: 0}
+  rotatableTransform: {fileID: 0}
+  projectileInstantiatePoint: {fileID: 0}
+  spells: []
+--- !u!114 &4406250714033189942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187417336092707799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
 --- !u!1 &1272066147321284873
 GameObject:
   m_ObjectHideFlags: 0

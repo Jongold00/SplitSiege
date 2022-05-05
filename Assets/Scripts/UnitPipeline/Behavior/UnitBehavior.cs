@@ -16,10 +16,10 @@ public class UnitBehavior : MonoBehaviour
     int currentNode = 0;
     float epsilon = 1f;
 
-    Slider healthbar;
+    Healthbar healthbar;
 
-
-    public float health;
+    float maxHealth = 100;
+    public float health = 100;
     public float moveSpeed;
     public int damage;
     // Start is called before the first frame update
@@ -36,7 +36,7 @@ public class UnitBehavior : MonoBehaviour
 
         goal = nodePath[currentNode].transform.position;
         nav.destination = goal;
-        healthbar = GetComponentInChildren<Slider>();
+        healthbar = GetComponentInChildren<Healthbar>();
         nav.speed = moveSpeed;
 
     }
@@ -44,6 +44,7 @@ public class UnitBehavior : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        print(health);
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Dead"))
         {
             ResourceManager.instance.UpdateResources(unitData.goldValue, 0);
@@ -57,7 +58,6 @@ public class UnitBehavior : MonoBehaviour
             currentNode++;
             GetNewGoal();
         }
-        healthbar.transform.LookAt(healthbar.transform.position + Camera.main.transform.rotation * Vector3.back, Camera.main.transform.rotation * Vector3.up);
     }
 
     void GetNewGoal()
@@ -73,7 +73,7 @@ public class UnitBehavior : MonoBehaviour
     public void LoadData(SpawningManager.UnitData data) 
     {
         unitData = data;
-        health = data.unitHealth;
+        //health = data.unitHealth;
         nav = GetComponent<NavMeshAgent>();
         moveSpeed = data.unitSpeed;
         nav.speed = moveSpeed;
@@ -93,15 +93,15 @@ public class UnitBehavior : MonoBehaviour
     public void TakeDamage(float delta)
     {
         health -= delta;
-        healthbar.value = health / unitData.unitHealth;
+        healthbar.value = health / maxHealth;
         //Debug.Log("unithealth value: " + unitData.unitHealth);
         isDead();
       
     }
     public void GainHealth(int delta)
     {
-        health = Mathf.Max(health + delta, unitData.unitHealth);
-        float healthpercent = ((float)health / (float)unitData.unitHealth);
+        health = Mathf.Max(health + delta, maxHealth);
+        float healthpercent = ((float)health / maxHealth);
         healthbar.value = healthpercent;
 
     }
@@ -121,8 +121,9 @@ public class UnitBehavior : MonoBehaviour
     {
         if (health <= 0)
         {
-            nav.speed = 0;
-            anim.SetBool("isDead", true);
+            Destroy(gameObject);
+            //nav.speed = 0;
+            //anim.SetBool("isDead", true);
             return true;
         }
         return false;
