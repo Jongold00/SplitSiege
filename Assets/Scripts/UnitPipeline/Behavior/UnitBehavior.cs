@@ -7,8 +7,7 @@ using UnityEngine.UI;
 
 public class UnitBehavior : MonoBehaviour
 {
-    public Vector3 goal;
-    private SpawningManager.UnitData unitData;
+    Vector3 goal;
     private Animator anim;
     public NavMeshAgent nav;
 
@@ -19,15 +18,14 @@ public class UnitBehavior : MonoBehaviour
     Healthbar healthbar;
 
     float maxHealth = 100;
-    public float health = 100;
-    public float moveSpeed;
-    public int damage;
+    float health = 100;
+    public float moveSpeed = 1.0f;
+   
     // Start is called before the first frame update
     void Start()
     {
         // setting below as placeholder until it's clear if unitData or the variables inside this class
         // will be used for things like the units health
-        unitData.unitHealth = 100;
 
         anim = GetComponentInChildren<Animator>();
 
@@ -44,12 +42,6 @@ public class UnitBehavior : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        print(health);
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Dead"))
-        {
-            ResourceManager.instance.UpdateResources(unitData.goldValue, 0);
-            Destroy(gameObject);
-        }
         if (Vector3.Distance(transform.position, goal) > epsilon)
         {
         }
@@ -70,21 +62,6 @@ public class UnitBehavior : MonoBehaviour
     }
 
 
-    public void LoadData(SpawningManager.UnitData data) 
-    {
-        unitData = data;
-        //health = data.unitHealth;
-        nav = GetComponent<NavMeshAgent>();
-        moveSpeed = data.unitSpeed;
-        nav.speed = moveSpeed;
-        damage = data.damage;
-    }
-
-    void SetupNav()
-    {
-
-    }
-
     public float GetDistanceFromEnd()
     {
         return Vector3.Distance(transform.position, goal);
@@ -94,7 +71,6 @@ public class UnitBehavior : MonoBehaviour
     {
         health -= delta;
         healthbar.value = health / maxHealth;
-        //Debug.Log("unithealth value: " + unitData.unitHealth);
         isDead();
       
     }
@@ -103,7 +79,6 @@ public class UnitBehavior : MonoBehaviour
         health = Mathf.Max(health + delta, maxHealth);
         float healthpercent = ((float)health / maxHealth);
         healthbar.value = healthpercent;
-
     }
 
     public void Stunned(float duration)

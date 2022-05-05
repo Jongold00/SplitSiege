@@ -6,29 +6,6 @@ using System;
 public class SpawningManager : MonoBehaviour
 {
 
-    public struct UnitData
-    {
-        public string unitName;
-        public int unitHealth;
-        public float unitSpeed;
-        public int goldValue;
-        public int damage;
-    }
-
-
-    [SerializeField]
-    (int index, int delay)[][] levelData = new (int, int)[6][]
-    {
-        new (int,int)[] { (0, 2), (0, 3), (0, 3), (0, 3)},
-        new (int,int)[] { (0, 2), (0, 3) },
-        new (int,int)[] { (0, 2), (0, 3) },
-        new (int,int)[] { (0, 2), (0, 3) },
-        new (int,int)[] { (0, 2), (0, 3) },
-        new (int,int)[] { (0, 2), (0, 3) },
-    };
-
-
-
     #region Singleton
 
     public static SpawningManager instance;
@@ -48,65 +25,102 @@ public class SpawningManager : MonoBehaviour
 
     #endregion Singleton
 
-    #region UnitData
-    public GameObject[] unitPrefabs;
-    public List<UnitData> units = new List<UnitData>();
-
-    UnitData basicGiant = new UnitData { goldValue = 100, unitHealth = 100, unitName = "Basic Giant", unitSpeed = 12 };
+    [SerializeField]
+    int credits;
 
 
-    public Transform instantiatePoint;
+    [SerializeField]
+    List<SpawningEvent> spawns;
+
+    List<float> cooldowns = new List<float>();
+
+    [SerializeField]
+    float globalCD = 10.0f;
+
+    [SerializeField]
+    Transform spawnLocation;
 
 
-
-
-
-    #endregion UnitData
-
-    #region RoundData
-
-
-
-
-
-    #endregion RoundData
-
-
-    public void Start()
+    private void Start()
     {
-        units.Add(basicGiant);
-        StartRound(0);
-    }
-
-    void TestSpawn()
-    {
-
-    }
-    public IEnumerator SpawnUnit(int i, float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        GameObject unitGO = Instantiate(unitPrefabs[i], instantiatePoint);
-        unitGO.GetComponentInChildren<UnitBehavior>().LoadData(units[i]);
-
-
-    }
-
-
-    public void StartRound(int roundNumber)
-    {
-        float accumulatedDelay = 0;
-        for (int i = 0; i < levelData[roundNumber].Length; i++)
+        for (int i = 0; i < spawns.Count; i++)
         {
-            accumulatedDelay += levelData[roundNumber][i].delay;
-
-            StartCoroutine(SpawnUnit(levelData[roundNumber][i].index, accumulatedDelay));
-
+            cooldowns.Add(0.0f);
         }
     }
 
-    public void StopSpawning()
-    {
 
+    private void Update()
+    {
+        HandleCooldowns();
+        AttemptEvents();
     }
+
+
+    void AttemptEvents()
+    {
+        for (int i = 0; i < spawns.Count; i++)
+        {
+            if (OffCooldown(i) && credits > spawns[i].GetCost())
+            {
+                InvokeEventCooldown(i);
+                if (spawns[i].Success())
+                {
+                    credits -= spawns[i].GetCost();
+                    StartCoroutine(SpawnEvent(spawns[i]));
+                    InvokeGlobalCooldown();
+                    return;
+                }
+            }
+        }
+    }
+
+
+    IEnumerator SpawnEvent(SpawningEvent spawningEvent)
+    {
+        foreach (GameObject unit in spawningEvent.GetSpawns())
+        {
+            print("spawning a " + unit.name);
+            Instantiate(unit, spawnLocation.position, Quaternion.identity, null);
+
+            float randomWait = UnityEngine.Random.Range(0.5f, 2.0f);
+            yield return new WaitForSeconds(randomWait);
+        }
+    }
+
+
+    void HandleCooldowns()
+    {
+        for (int i = 0; i < spawns.Count; i++)
+        {
+            if (cooldowns[i] > 0)
+            {
+                cooldowns[i] -= Time.deltaTime;
+            }
+        }
+    }
+
+    void InvokeGlobalCooldown()
+    {
+        for (int i = 0; i < spawns.Count; i++)
+        {
+            cooldowns[i] += globalCD;
+        }
+    }
+
+    void InvokeEventCooldown(int index)
+    {
+        cooldowns[index] += spawns[index].GetCooldown();
+    }
+
+    bool OffCooldown(int index)
+    {
+        return cooldowns[index] <= 0;
+    }
+
+
+
+
+
 
 }

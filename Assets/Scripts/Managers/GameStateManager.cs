@@ -53,7 +53,7 @@ public class GameStateManager : MonoBehaviour
     public void StartRound()
     {
         currentRound++;
-        SpawningManager.instance.StartRound(currentRound-1);
+        //SpawningManager.instance.StartRound(currentRound-1);
         SetState(GameState.Fighting);
     }
 
