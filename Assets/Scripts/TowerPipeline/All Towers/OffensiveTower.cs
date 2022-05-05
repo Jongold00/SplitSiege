@@ -11,6 +11,8 @@ public abstract class OffensiveTower : TowerBehavior
 
     [SerializeField]
     Transform rotatableTransform;
+    [SerializeField]
+    float zOffsetForRotatableTransform;
 
     [SerializeField]
     protected Transform projectileInstantiatePoint;
@@ -74,17 +76,9 @@ public abstract class OffensiveTower : TowerBehavior
 
     void RotateTowardsTarget()
     {
-
-
-        Quaternion targetRotation = Quaternion.LookRotation(currentTarget.transform.position - rotatableTransform.position, Vector3.forward);
-        targetRotation.eulerAngles = new Vector3(rotatableTransform.localRotation.x, rotatableTransform.localRotation.y, targetRotation.eulerAngles.z);
-
-
-        //float zAngleBetweenPlayerAndTarget = targetRotation.eulerAngles.z - rotatableTransform.eulerAngles.z;
-
-        rotatableTransform.localRotation = Quaternion.RotateTowards(rotatableTransform.localRotation, targetRotation, Time.deltaTime * rotationSpeed);
-
- 
+        Quaternion targetRotation = Quaternion.LookRotation(currentTarget.transform.position - rotatableTransform.position);
+        targetRotation.eulerAngles = new Vector3(rotatableTransform.rotation.eulerAngles.x, targetRotation.eulerAngles.y, zOffsetForRotatableTransform);
+        rotatableTransform.rotation = Quaternion.RotateTowards(rotatableTransform.rotation, targetRotation, Time.deltaTime * 100f);
     }
 
     public virtual void Fire()

@@ -508,6 +508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offensiveTowerData: {fileID: 11400000, guid: 70f039668c968804eb9a9bf4c9a5056e, type: 2}
   rotatableTransform: {fileID: 4005119282539519947}
+  zOffsetForRotatableTransform: -90
   projectileInstantiatePoint: {fileID: 2168170595813709112}
   splashRange: 10
   fullDamageRange: 5
