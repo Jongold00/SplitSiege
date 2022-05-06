@@ -473,8 +473,8 @@ MonoBehaviour:
   sliderRight: {fileID: 5830092856637520941}
   fillImageLeft: {fileID: 645070328805946805}
   fillImageRight: {fileID: 8429636685202548753}
-  fullHP: {r: 0, g: 0.7830189, b: 0.1146388, a: 0}
-  noHP: {r: 0.6320754, g: 0, b: 0, a: 0}
+  fullHP: {r: 0, g: 0.7830189, b: 0.1146388, a: 1}
+  noHP: {r: 0.6320754, g: 0, b: 0, a: 1}
 --- !u!1 &8729665084808968061
 GameObject:
   m_ObjectHideFlags: 0

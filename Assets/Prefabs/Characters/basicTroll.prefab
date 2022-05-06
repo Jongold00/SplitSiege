@@ -1050,11 +1050,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4083bb4f9beb49b4ea3bfde8323eddf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goal: {x: 0, y: 0, z: 0}
   nav: {fileID: 8766150378681580798}
-  health: 100
   moveSpeed: 1
-  damage: 0
 --- !u!65 &4016412470905567441
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3510,6 +3507,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6476610786789797485, guid: aec4a5204c5db4144878037a4640616d, type: 3}
       propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593575288766592130, guid: aec4a5204c5db4144878037a4640616d, type: 3}
+      propertyPath: noHP.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593575288766592130, guid: aec4a5204c5db4144878037a4640616d, type: 3}
+      propertyPath: fullHP.a
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7918178004362412380, guid: aec4a5204c5db4144878037a4640616d, type: 3}

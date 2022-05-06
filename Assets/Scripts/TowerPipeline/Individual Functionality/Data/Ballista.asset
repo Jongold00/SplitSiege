@@ -18,6 +18,7 @@ MonoBehaviour:
   faction: 0
   fireRate: 1
   fireRateMultiplier: 1
-  prefab: {fileID: 9057664153112915303, guid: 1e2dd1450578a9140b8807700e432609, type: 3}
+  prefab: {fileID: 3200577829482880708, guid: 484b7428aa3ae734c81dbd2881d4fcba, type: 3}
   projectilePrefab: {fileID: 7066393166104553515, guid: 585180bfcd6c6c8488ff4e99ffdc3f43, type: 3}
   speedOfProjectile: 22
+  projectileSpawnOffset: 0.5

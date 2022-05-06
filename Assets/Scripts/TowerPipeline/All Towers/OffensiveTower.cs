@@ -20,12 +20,24 @@ public abstract class OffensiveTower : TowerBehavior
     protected float attackCD;
 
 
+    Animator anim;
+
     #region Rotation Stuff
 
     float rotationSpeed = 100;
 
 
     #endregion
+
+    private void Awake()
+    {
+        if (anim == null)
+        {
+            anim = GetComponent<Animator>();
+            
+
+        }
+    }
     public void AcquireTarget()
     {
         float lowestDistance = 999999;
@@ -55,7 +67,9 @@ public abstract class OffensiveTower : TowerBehavior
         if (currentTarget)
         {
             RotateTowardsTarget();
-           
+
+
+
             if (attackCD <= 0)
             {
                 Debug.Log("Firing");
@@ -63,6 +77,11 @@ public abstract class OffensiveTower : TowerBehavior
                 Fire();
 
             }
+        }
+        else
+        {
+            //anim.SetBool("Firing", false);
+
         }
 
         if (!active)
@@ -83,12 +102,27 @@ public abstract class OffensiveTower : TowerBehavior
 
     public virtual void Fire()
     {
-        GameObject projectile = Instantiate(offensiveTowerData.ProjectilePrefab.gameObject, projectileInstantiatePoint.position, Quaternion.identity);
-        projectile.GetComponent<Projectile>().SetTarget(currentTarget, offensiveTowerData.SpeedOfProjectile);
+
+
+
+
+        anim.SetFloat("Speed", 1 / offensiveTowerData.GetFireRate());
+        anim.SetTrigger("Firing");
+
+        StartCoroutine(SpawnProjectile());
 
         // need to implement a callback from the projectile when it hits target, maybe by subscribing the TakeDamage
         // method below directly to the Action on the projectile script
         // currentTarget.TakeDamage(offensiveTowerData.GetDamage());
+    }
+
+
+    IEnumerator SpawnProjectile()
+    {
+        print("animation length: " + anim.GetCurrentAnimatorStateInfo(0).length); //
+        yield return new WaitForSeconds(offensiveTowerData.projectileSpawnOffset * offensiveTowerData.GetFireRate());
+        GameObject projectile = Instantiate(offensiveTowerData.ProjectilePrefab.gameObject, projectileInstantiatePoint.position, Quaternion.identity);
+        projectile.GetComponent<Projectile>().SetTarget(currentTarget, offensiveTowerData.SpeedOfProjectile);
     }
 
 

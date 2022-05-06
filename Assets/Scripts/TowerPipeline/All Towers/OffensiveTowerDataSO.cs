@@ -14,6 +14,8 @@ public class OffensiveTowerDataSO : TowerDataSO
     public float SpeedOfProjectile { get => speedOfProjectile; set => speedOfProjectile = value; }
 
 
+    public float projectileSpawnOffset = 1.0f;
+
     private void Awake()
     {
         OffensiveTowerData = this;
