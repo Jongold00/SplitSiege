@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 1959450023792087405}
   - component: {fileID: 191962511924201342}
   - component: {fileID: 4406250714033189942}
+  - component: {fileID: 5189450646861166699}
   m_Layer: 0
   m_Name: Evil Wizard Tower
   m_TagString: Untagged
@@ -196,10 +197,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70a0ac32ce1f98a4885eefc24573eb55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offensiveTowerData: {fileID: 0}
-  rotatableTransform: {fileID: 0}
-  projectileInstantiatePoint: {fileID: 0}
-  spells: []
+  offensiveTowerData: {fileID: 11400000, guid: 2ace7fd68285a934ab51bd279ed947a0, type: 2}
+  rotatableTransform: {fileID: 4469210000747250521}
+  zOffsetForRotatableTransform: 0
+  projectileInstantiatePoint: {fileID: 7974011893698891987}
+  spells:
+  - {fileID: 6146613989090943027, guid: fa31ab7ef664f1b44be268964c1bbc8d, type: 3}
+  - {fileID: 6146613989090943027, guid: fa31ab7ef664f1b44be268964c1bbc8d, type: 3}
 --- !u!114 &4406250714033189942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,6 +234,25 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: -1
   OverrideMaxDistance: -1
+--- !u!95 &5189450646861166699
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187417336092707799}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f5d0673a11daba74b8f0305939ba125b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1272066147321284873
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,6 +625,7 @@ Transform:
   m_Children:
   - {fileID: 2492388337581966116}
   - {fileID: 983490314961736655}
+  - {fileID: 7974011893698891987}
   m_Father: {fileID: 7625231334571299328}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -713,7 +737,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 10.0683365, z: -0.00000059604645}
   m_LocalScale: {x: 5, y: 6.666666, z: 5}
   m_Children:
-  - {fileID: 7974011893698891987}
   - {fileID: 7625231334571299328}
   - {fileID: 3315282536694204157}
   m_Father: {fileID: 1959450023792087405}
@@ -1061,7 +1084,7 @@ Transform:
   m_Children:
   - {fileID: 4469210000747250521}
   m_Father: {fileID: 4674425428924603045}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6844152823750907250
 MeshFilter:
@@ -2038,12 +2061,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6423193252620593161}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 1.4062595, z: 0}
-  m_LocalScale: {x: 13.865473, y: 13.865471, z: 10.399105}
+  m_LocalRotation: {x: -0, y: -0, z: 0.38268346, w: 0.9238795}
+  m_LocalPosition: {x: 0, y: 0.0010029353, z: 0.03804261}
+  m_LocalScale: {x: 0.48107663, y: 0.48107648, z: 0.52168417}
   m_Children: []
-  m_Father: {fileID: 4674425428924603045}
-  m_RootOrder: 0
+  m_Father: {fileID: 4469210000747250521}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &893915169300432642
 MeshFilter:
@@ -2425,7 +2448,7 @@ Transform:
   m_LocalScale: {x: 24.849588, y: 24.849586, z: 18.637182}
   m_Children: []
   m_Father: {fileID: 4674425428924603045}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &1872373952243533740
 SkinnedMeshRenderer:

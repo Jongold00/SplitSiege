@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public abstract class OffensiveTower : TowerBehavior
 {
@@ -29,16 +30,20 @@ public abstract class OffensiveTower : TowerBehavior
 
     #endregion
 
+    Action<GameObject> thingy;
+
     private void Awake()
     {
         if (anim == null)
         {
             anim = GetComponent<Animator>();
-            
-
+         
         }
     }
-    public void AcquireTarget()
+
+
+
+    public virtual void AcquireTarget()
     {
         float lowestDistance = 999999;
         UnitBehavior closest = null;
@@ -60,6 +65,7 @@ public abstract class OffensiveTower : TowerBehavior
 
     public override void Update()
     {
+
         AcquireTarget();
         attackCD -= Time.deltaTime;
         Debug.Log("Getting target");
@@ -80,7 +86,7 @@ public abstract class OffensiveTower : TowerBehavior
         }
         else
         {
-            //anim.SetBool("Firing", false);
+            anim.SetTrigger("Transition");
 
         }
 
@@ -97,7 +103,7 @@ public abstract class OffensiveTower : TowerBehavior
     {
         Quaternion targetRotation = Quaternion.LookRotation(currentTarget.transform.position - rotatableTransform.position);
         targetRotation.eulerAngles = new Vector3(rotatableTransform.rotation.eulerAngles.x, targetRotation.eulerAngles.y, zOffsetForRotatableTransform);
-        rotatableTransform.rotation = Quaternion.RotateTowards(rotatableTransform.rotation, targetRotation, Time.deltaTime * 100f);
+        rotatableTransform.rotation = Quaternion.RotateTowards(rotatableTransform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
     }
 
     public virtual void Fire()

@@ -80,7 +80,6 @@ public class SpawningManager : MonoBehaviour
     {
         foreach (GameObject unit in spawningEvent.GetSpawns())
         {
-            print("spawning a " + unit.name);
             Instantiate(unit, spawnLocation.position, Quaternion.identity, null);
 
             float randomWait = UnityEngine.Random.Range(0.5f, 2.0f);

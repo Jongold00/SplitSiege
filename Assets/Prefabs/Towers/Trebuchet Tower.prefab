@@ -422,6 +422,7 @@ GameObject:
   - component: {fileID: 5952075216833535200}
   - component: {fileID: 6725048178610700759}
   - component: {fileID: 4909101019949714721}
+  - component: {fileID: 1484856404078153352}
   m_Layer: 0
   m_Name: Trebuchet Tower
   m_TagString: Untagged
@@ -532,6 +533,25 @@ MonoBehaviour:
       Data3: 1391915441
       Data4: -1120539796
     Path: event:/Trebuchet Fire
+--- !u!95 &1484856404078153352
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5303824945869716789}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f5d0673a11daba74b8f0305939ba125b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5608507071271070714
 GameObject:
   m_ObjectHideFlags: 0

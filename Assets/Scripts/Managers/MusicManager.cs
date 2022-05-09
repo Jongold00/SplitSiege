@@ -31,6 +31,14 @@ public class MusicManager : MonoBehaviour
     FMOD.Studio.PARAMETER_ID intensityID;
     [Range(0, 5)]
     public float intensity;
+
+
+    // IMPORTANAT NOTE, BE SURE TO LERP INTENSITY VALUES, NOT SET
+
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
