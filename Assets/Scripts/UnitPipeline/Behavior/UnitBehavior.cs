@@ -122,6 +122,7 @@ public class UnitBehavior : MonoBehaviour
             }
         }
         activeEffects.Add(effect);
+        effect.OnApply(this);
     }
 
     public void StatusEffectExpired(StatusEffect effect)

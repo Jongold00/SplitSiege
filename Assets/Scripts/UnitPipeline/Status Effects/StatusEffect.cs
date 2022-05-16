@@ -27,4 +27,9 @@ public abstract class StatusEffect
         duration = maxDuration;
     }
 
+    public virtual void OnApply(UnitBehavior attached)
+    {
+
+    }
+
 }

@@ -96,7 +96,6 @@ public class TrebuchetProjectile : Projectile
 
         currentTimeToImpact = CalculateInitialFlightTime();
         
-        
 
     }
 
