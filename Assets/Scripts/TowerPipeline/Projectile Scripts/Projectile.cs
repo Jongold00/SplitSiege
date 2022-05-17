@@ -5,13 +5,14 @@ using System;
 
 public abstract class Projectile : MonoBehaviour
 {
-    [SerializeField]
-    protected float speed;
-
+    float speed;
     protected UnitBehavior target;
     public event Action OnTargetHit;
 
     private float rotationSpeed = 100f;
+
+    [SerializeField]
+    protected StatusEffect statusEffect;
 
     void Start()
     {
@@ -36,6 +37,8 @@ public abstract class Projectile : MonoBehaviour
         {
             // placeholder
             target.TakeDamage(5);
+
+            if (statusEffect != null) target.AttachStatusEffect(statusEffect);
 
             OnTargetHit?.Invoke();
             Destroy(this.gameObject);

@@ -34,12 +34,19 @@ public class TrebuchetProjectile : Projectile
     // Update is called once per frame
     void FixedUpdate()
     {
-        currentTargetPosition = target.transform.position;
-        currentTargetVelocity = target.nav.velocity;
+        if (target != null)
+        {
+            currentTargetPosition = target.transform.position;
+            currentTargetVelocity = target.nav.velocity;
+        }
+
+
         if (currentTimeToImpact > 0)
         {
             currentTimeToImpact -= Time.fixedDeltaTime;
         }
+
+
         //print(currentTimeToImpact);
         if (lastTargetVelocity == Vector3.zero)
         {
@@ -92,7 +99,6 @@ public class TrebuchetProjectile : Projectile
 
 
         currentTimeToImpact = CalculateInitialFlightTime();
-        
         
 
     }
