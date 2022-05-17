@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UI;
 
 
 public class UnitBehavior : MonoBehaviour
@@ -33,6 +32,10 @@ public class UnitBehavior : MonoBehaviour
         allEnemies.Remove(this);
     }
 
+    [SerializeField]
+    List<StatusEffect> activeEffects = new List<StatusEffect>();
+   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +57,8 @@ public class UnitBehavior : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        TickStatusEffects(Time.deltaTime);
+
         if (Vector3.Distance(transform.position, goal) > epsilon)
         {
         }
@@ -72,7 +77,6 @@ public class UnitBehavior : MonoBehaviour
             nav.destination = goal;
         }
     }
-
 
     public float GetDistanceFromEnd()
     {
@@ -115,4 +119,44 @@ public class UnitBehavior : MonoBehaviour
         }
         return false;
     }
+
+
+
+    #region StatusEffectMethods
+
+    public void AttachStatusEffect(StatusEffect effect)
+    {
+        foreach (StatusEffect curr in activeEffects)
+        {
+            if (curr.compareID(effect.id))
+            {
+                curr.ReApply();
+                return;
+            }
+        }
+        activeEffects.Add(effect);
+        effect.OnApply(this);
+    }
+
+    public void StatusEffectExpired(StatusEffect effect)
+    {
+        activeEffects.Remove(effect);
+    }
+
+    void TickStatusEffects(float deltaT)
+    {
+        if (activeEffects == null)
+        {
+            return;
+        }
+
+        for (int i = 0; i < activeEffects.Count; i++)
+        {
+            activeEffects[i].Tick(this, deltaT);
+        }
+    }
+
+    
+
+    #endregion
 }

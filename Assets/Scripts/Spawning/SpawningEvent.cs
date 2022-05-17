@@ -35,7 +35,7 @@ public class SpawningEvent : ScriptableObject
     {
         float roll = Random.Range(0f, 1f);
         bool outcome = roll < weight;
-        Debug.Log("rolling event " + name + ",  roll is " + roll + "... outcome is " + outcome);
+        //Debug.Log("rolling event " + name + ",  roll is " + roll + "... outcome is " + outcome);
         return outcome;
     }
 
