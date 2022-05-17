@@ -20,7 +20,19 @@ public class UnitBehavior : MonoBehaviour
     float maxHealth = 100;
     float health = 100;
     public float moveSpeed = 1.0f;
-   
+
+    public static List<UnitBehavior> allEnemies = new List<UnitBehavior>();
+
+    private void OnEnable()
+    {
+        allEnemies.Add(this);
+    }
+
+    private void OnDisable()
+    {
+        allEnemies.Remove(this);
+    }
+
     // Start is called before the first frame update
     void Start()
     {

@@ -69,6 +69,8 @@ public class TrebuchetProjectile : Projectile
             }
             else
             {
+                target.TakeDamage(25f);
+                HitNearbyTargets();
                 Destroy(gameObject);
             }
 

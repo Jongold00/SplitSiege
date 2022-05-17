@@ -34,9 +34,9 @@ public abstract class OffensiveTower : TowerBehavior
         if (anim == null)
         {
             anim = GetComponent<Animator>();
-            
-
         }
+
+        Debug.Log("radius in awake: " + offensiveTowerData.AoeRadius);
     }
     public void AcquireTarget()
     {
@@ -102,10 +102,6 @@ public abstract class OffensiveTower : TowerBehavior
 
     public virtual void Fire()
     {
-
-
-
-
         anim.SetFloat("Speed", 1 / offensiveTowerData.GetFireRate());
         anim.SetTrigger("Firing");
 
@@ -122,7 +118,15 @@ public abstract class OffensiveTower : TowerBehavior
         print("animation length: " + anim.GetCurrentAnimatorStateInfo(0).length); //
         yield return new WaitForSeconds(offensiveTowerData.projectileSpawnOffset * offensiveTowerData.GetFireRate());
         GameObject projectile = Instantiate(offensiveTowerData.ProjectilePrefab.gameObject, projectileInstantiatePoint.position, Quaternion.identity);
-        projectile.GetComponent<Projectile>().SetTarget(currentTarget, offensiveTowerData.SpeedOfProjectile);
+        Projectile projectileScript = projectile.GetComponent<Projectile>();
+
+        if (offensiveTowerData.Aoe)
+        {
+            projectileScript.Aoe = true;
+            projectileScript.AoeRadius = offensiveTowerData.AoeRadius;
+        }
+
+        projectileScript.SetTarget(currentTarget, offensiveTowerData.SpeedOfProjectile);
     }
 
 
