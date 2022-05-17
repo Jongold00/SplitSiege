@@ -19,6 +19,8 @@ public class TrebuchetProjectile : Projectile
 
     Vector3 currentTargetAcceleration = Vector3.zero;
 
+    [SerializeField] private float aoeRadius;
+
 
     protected override void Update()
     {
@@ -76,6 +78,8 @@ public class TrebuchetProjectile : Projectile
             }
             else
             {
+                target.TakeDamage(25f);
+                HitNearbyTargets();
                 Destroy(gameObject);
             }
 
@@ -112,5 +116,16 @@ public class TrebuchetProjectile : Projectile
         return (-2 * rb.velocity.y) / Physics.gravity.y;
     }
 
-
+    protected void HitNearbyTargets()
+    {
+        Debug.Log("radius: " + aoeRadius);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, aoeRadius);
+        Debug.Log(hitColliders.Length);
+        foreach (var hitCollider in hitColliders)
+        {
+            Debug.Log("Nearby unit found!");
+            UnitBehavior unit = hitCollider.GetComponent<UnitBehavior>();
+            unit?.TakeDamage(10);
+        }
+    }
 }
