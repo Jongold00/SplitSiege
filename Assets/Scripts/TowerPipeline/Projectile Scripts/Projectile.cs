@@ -12,13 +12,6 @@ public abstract class Projectile : MonoBehaviour
     public event Action OnTargetHit;
 
     private float rotationSpeed = 100f;
-    
-    private bool aoe;
-    public bool Aoe { get => aoe; set => aoe = value; }
-    private float aoeRadius;
-    public float AoeRadius { get => aoeRadius; set => aoeRadius = value; }
-
-
 
     void Start()
     {
@@ -59,19 +52,6 @@ public abstract class Projectile : MonoBehaviour
     {
         target = newTarget;
         this.speed = moveSpeed;
-    }
-
-    protected void HitNearbyTargets()
-    {
-        Debug.Log("radius: " + AoeRadius);
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, AoeRadius, 0, QueryTriggerInteraction.Collide);
-        Debug.Log(hitColliders.Length);
-        foreach (var hitCollider in hitColliders)
-        {
-            Debug.Log("Nearby unit found!");
-            UnitBehavior unit = hitCollider.GetComponent<UnitBehavior>();
-            unit?.TakeDamage(10);
-        }
     }
 }
 

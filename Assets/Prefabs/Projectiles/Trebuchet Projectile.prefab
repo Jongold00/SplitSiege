@@ -82,6 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  aoeRadius: 500
 --- !u!1 &6186689206996755274
 GameObject:
   m_ObjectHideFlags: 0
