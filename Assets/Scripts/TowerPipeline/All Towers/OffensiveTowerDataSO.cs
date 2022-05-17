@@ -14,11 +14,6 @@ public class OffensiveTowerDataSO : TowerDataSO
     public float SpeedOfProjectile { get => speedOfProjectile; set => speedOfProjectile = value; }
 
     public float projectileSpawnOffset = 1.0f;
-    [SerializeField] private bool aoe;
-    public bool Aoe { get => aoe; set => aoe = value; }
-    [SerializeField] private float aoeRadius;
-    public float AoeRadius { get => aoeRadius; set => aoeRadius = value; }
-
 
     private void Awake()
     {
