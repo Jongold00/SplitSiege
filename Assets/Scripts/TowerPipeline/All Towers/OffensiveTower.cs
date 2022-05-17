@@ -20,8 +20,9 @@ public abstract class OffensiveTower : TowerBehavior
     // attackCD is assigned manually below using data pulled from the towers themselves
     protected float attackCD;
 
+    protected bool switchedTarget = false;
 
-    Animator anim;
+    protected Animator anim;
 
     #region Rotation Stuff
 
@@ -45,7 +46,11 @@ public abstract class OffensiveTower : TowerBehavior
 
     public virtual void AcquireTarget()
     {
-        float lowestDistance = 999999;
+        // units pursuing the highest node are closest to the end
+        int highestNodeSoFar = 0;
+
+        // float distance between unit and their current goal node
+        float lowestDistanceSoFar = 999999;
         UnitBehavior closest = null;
 
 
@@ -53,11 +58,30 @@ public abstract class OffensiveTower : TowerBehavior
         foreach (Collider curr in hitColliders)
         {
             UnitBehavior currentUnit = curr.GetComponent<UnitBehavior>();
-            if (currentUnit)
+            if (currentUnit != null)
             {
-                lowestDistance = Mathf.Min(lowestDistance, currentUnit.GetDistanceFromEnd());
-                closest = currentUnit;
+                if (currentUnit.currentNode > highestNodeSoFar)
+                {
+                    highestNodeSoFar = currentUnit.currentNode;
+                    lowestDistanceSoFar = currentUnit.GetDistanceFromEnd();
+                    closest = currentUnit;
+
+                }
+                else if (currentUnit.currentNode == highestNodeSoFar && currentTarget.GetDistanceFromEnd() < lowestDistanceSoFar)
+                {
+                    lowestDistanceSoFar = currentUnit.GetDistanceFromEnd();
+                    closest = currentUnit;
+                }
             }
+        }
+
+        if (closest != currentTarget)
+        {
+            switchedTarget = true;
+        }
+        else
+        {
+            switchedTarget = false;
         }
 
         currentTarget = closest;
@@ -99,7 +123,7 @@ public abstract class OffensiveTower : TowerBehavior
     }
 
 
-    void RotateTowardsTarget()
+    protected void RotateTowardsTarget()
     {
         Quaternion targetRotation = Quaternion.LookRotation(currentTarget.transform.position - rotatableTransform.position);
         targetRotation.eulerAngles = new Vector3(rotatableTransform.rotation.eulerAngles.x, targetRotation.eulerAngles.y, zOffsetForRotatableTransform);
@@ -123,7 +147,7 @@ public abstract class OffensiveTower : TowerBehavior
     }
 
 
-    IEnumerator SpawnProjectile()
+    protected virtual IEnumerator SpawnProjectile()
     {
         print("animation length: " + anim.GetCurrentAnimatorStateInfo(0).length); //
         yield return new WaitForSeconds(offensiveTowerData.projectileSpawnOffset * offensiveTowerData.GetFireRate());

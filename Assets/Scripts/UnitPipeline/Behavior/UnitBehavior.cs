@@ -11,7 +11,7 @@ public class UnitBehavior : MonoBehaviour
     public NavMeshAgent nav;
 
     NavNode[] nodePath;
-    int currentNode = 0;
+    public int currentNode = 0;
     float epsilon = 1f;
 
     Healthbar healthbar;

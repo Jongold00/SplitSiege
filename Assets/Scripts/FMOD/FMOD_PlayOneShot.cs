@@ -6,6 +6,9 @@ using FMODUnity;
 public class FMOD_PlayOneShot : MonoBehaviour
 {
     public EventReference Event;
+
+    [SerializeField]
+    float volume;
     public void Play()
     {
         FMODUnity.RuntimeManager.PlayOneShot(Event);

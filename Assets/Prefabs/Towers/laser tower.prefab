@@ -28,7 +28,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0.5818903, w: 0.8132673}
   m_LocalPosition: {x: -0, y: 0.0000000011920929, z: 0.0671244}
   m_LocalScale: {x: 1.18175, y: 1.1817517, z: 1.1817516}
-  m_Children: []
+  m_Children:
+  - {fileID: 7386717492689736767}
   m_Father: {fileID: 6125204626916409358}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -84,6 +85,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &3085161010947991023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7386717492689736767}
+  m_Layer: 0
+  m_Name: ProjectileInstatiationPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7386717492689736767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3085161010947991023}
+  m_LocalRotation: {x: 0.008726558, y: 0, z: 0, w: 0.999962}
+  m_LocalPosition: {x: -0.0074, y: -0.0068, z: -0.0001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3308399978029591762}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 1, y: 0, z: 0}
 --- !u!1 &6794464588044622516
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,6 +127,7 @@ GameObject:
   - component: {fileID: 7110834933804928939}
   - component: {fileID: 4992862490790558561}
   - component: {fileID: 6419627869912433495}
+  - component: {fileID: 7105885547969157739}
   m_Layer: 0
   m_Name: laser tower
   m_TagString: Untagged
@@ -180,7 +212,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e978bd9521f0cef4ebfbc3a8be9736a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offensiveTowerData: {fileID: 11400000, guid: e466ec524beada44bad4cf65f00de893, type: 2}
+  offensiveTowerData: {fileID: 11400000, guid: 2c64dd2789cdf08428020063aeb9630d, type: 2}
   rotatableTransform: {fileID: 3308399978029591762}
-  zOffsetForRotatableTransform: 0
-  projectileInstantiatePoint: {fileID: 0}
+  zOffsetForRotatableTransform: 25
+  projectileInstantiatePoint: {fileID: 7386717492689736767}
+  maxMultiplier: 1
+--- !u!95 &7105885547969157739
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6794464588044622516}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 8a7adc733d777dd4196cc8ab9e00b391, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

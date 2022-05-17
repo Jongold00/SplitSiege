@@ -14,6 +14,8 @@ public abstract class Projectile : MonoBehaviour
     [SerializeField]
     protected StatusEffect statusEffect;
 
+    protected float damage = 5f;
+
     void Start()
     {
         
@@ -36,7 +38,7 @@ public abstract class Projectile : MonoBehaviour
         if (direction.magnitude < distanceToMove)
         {
             // placeholder
-            target.TakeDamage(5);
+            target.TakeDamage(damage);
 
             if (statusEffect != null) target.AttachStatusEffect(statusEffect);
 
