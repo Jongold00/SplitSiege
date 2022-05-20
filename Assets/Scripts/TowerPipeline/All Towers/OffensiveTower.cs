@@ -64,7 +64,7 @@ public abstract class OffensiveTower : TowerBehavior
                     closest = currentUnit;
 
                 }
-                else if (currentUnit.currentNode == highestNodeSoFar && currentTarget.GetDistanceFromEnd() < lowestDistanceSoFar)
+                else if (currentUnit.currentNode == highestNodeSoFar && currentTarget != null && currentTarget.GetDistanceFromEnd() < lowestDistanceSoFar)
                 {
                     lowestDistanceSoFar = currentUnit.GetDistanceFromEnd();
                     closest = currentUnit;
@@ -94,6 +94,7 @@ public abstract class OffensiveTower : TowerBehavior
         if (currentTarget)
         {
             RotateTowardsTarget();
+            anim.SetBool("Firing", true);
 
 
 
@@ -107,7 +108,7 @@ public abstract class OffensiveTower : TowerBehavior
         }
         else
         {
-            anim.SetTrigger("Transition");
+            anim.SetBool("Firing", false);
 
         }
 

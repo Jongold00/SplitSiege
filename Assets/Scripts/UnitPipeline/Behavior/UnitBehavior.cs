@@ -112,9 +112,8 @@ public class UnitBehavior : MonoBehaviour
     {
         if (health <= 0)
         {
-            Destroy(gameObject);
-            //nav.speed = 0;
-            //anim.SetBool("isDead", true);
+            anim.SetTrigger("Death");
+            nav.speed = 0;
             return true;
         }
         return false;

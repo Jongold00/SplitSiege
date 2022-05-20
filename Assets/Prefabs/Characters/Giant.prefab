@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nav: {fileID: 0}
+  currentNode: 0
   moveSpeed: 1
 --- !u!195 &4094681559538792864
 NavMeshAgent:
