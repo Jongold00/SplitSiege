@@ -4874,6 +4874,7 @@ GameObject:
   - component: {fileID: 6959571274234189248}
   - component: {fileID: 4426623941129707311}
   - component: {fileID: 7250400541551421401}
+  - component: {fileID: 6580472325841406658}
   m_Layer: 0
   m_Name: Trebuchet Projectile
   m_TagString: Untagged
@@ -4948,6 +4949,19 @@ MonoBehaviour:
   particleObj: {fileID: 1472142108}
   projectileObj: {fileID: 6186689206996755274}
   aoeRadius: 5
+--- !u!135 &6580472325841406658
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3645992929815031190}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.26836663
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6186689206996755274
 GameObject:
   m_ObjectHideFlags: 0

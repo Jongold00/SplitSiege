@@ -47,7 +47,7 @@ public class TrebuchetProjectile : Projectile
 
             currentTargetPosition = target.transform.position + (forwardDirection * 0.25f) - (upwardDirection * 10f);
             currentTargetVelocity = target.nav.velocity;
-            Debug.DrawLine(transform.position, currentTargetPosition, Color.blue);
+            // Debug.DrawLine(transform.position, currentTargetPosition, Color.blue);
         }
         else
         {
@@ -68,41 +68,37 @@ public class TrebuchetProjectile : Projectile
         }
         else
         {
-            // The y axis is used to determine when projectile is close to the ground and should "hit" the enemy
-            // and explode. 
-            if (transform.position.y > 0.5f)
-            {
-                currentTargetAcceleration = (target.nav.velocity - lastTargetVelocity) / Time.fixedDeltaTime;
+            currentTargetAcceleration = (target.nav.velocity - lastTargetVelocity) / Time.fixedDeltaTime;
 
-                Vector3 calculateVelocity = CalculateMomentaryVelocity(currentTimeToImpact);
-                calculateVelocity.y = rb.velocity.y;
+            Vector3 calculateVelocity = CalculateMomentaryVelocity(currentTimeToImpact);
+            calculateVelocity.y = rb.velocity.y;
 
 
-                float ClampFactor = 1 / Vector3.Distance(transform.position, currentTargetPosition);
-                ClampFactor = Mathf.Clamp(ClampFactor, .1f, 2f);
-                //print(ClampFactor);
-                
+            float ClampFactor = 1 / Vector3.Distance(transform.position, currentTargetPosition);
+            ClampFactor = Mathf.Clamp(ClampFactor, .1f, 2f);
+            //print(ClampFactor);
 
-                calculateVelocity.x = Mathf.Clamp(calculateVelocity.x, lastFramesVelocity.x - ClampFactor, lastFramesVelocity.x + ClampFactor);
-                calculateVelocity.z = Mathf.Clamp(calculateVelocity.z, lastFramesVelocity.z - ClampFactor, lastFramesVelocity.z + ClampFactor);
 
-                //print(Vector3.Magnitude(calculateVelocity));
+            calculateVelocity.x = Mathf.Clamp(calculateVelocity.x, lastFramesVelocity.x - ClampFactor, lastFramesVelocity.x + ClampFactor);
+            calculateVelocity.z = Mathf.Clamp(calculateVelocity.z, lastFramesVelocity.z - ClampFactor, lastFramesVelocity.z + ClampFactor);
 
-                rb.velocity = calculateVelocity;
-            }
-            else
-            {
-                HitTargetsInsideAoeRadius(damage);
-                DisableGameObjAndEnableParticle();
-                target = null;
-                Destroy(gameObject, 5f);
-                return;
-            }
+            //print(Vector3.Magnitude(calculateVelocity));
 
+            rb.velocity = calculateVelocity;
         }
         lastTargetVelocity = target.nav.velocity;
         lastFramesVelocity = rb.velocity;
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        // Need to add some logic here to confirm that it
+        // was the ground that was hit
+        HitTargetsInsideAoeRadius(damage);
+        DisableGameObjAndEnableParticle();
+        target = null;
+        Destroy(gameObject, 5f);
+        return;
     }
 
     public override void SetTarget(UnitBehavior newTarget, float movementSpeed)
@@ -112,7 +108,7 @@ public class TrebuchetProjectile : Projectile
         this.movementSpeed = movementSpeed;
         rb.velocity = new Vector3(0, 8f, 0);
 
-        currentTimeToImpact = CalculateInitialFlightTime();    
+        currentTimeToImpact = CalculateInitialFlightTime();
 
     }
 
