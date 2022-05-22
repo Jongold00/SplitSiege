@@ -38,9 +38,16 @@ public class TrebuchetProjectile : Projectile
     {
         if (target != null)
         {
-            currentTargetPosition = target.transform.position + target.transform.forward;
+            // This is used to place the target slightly ahead of the enemies current position
+            Vector3 forwardDirection = target.transform.forward;
+
+            // this is used to place the target underneath the map, below the targets current position
+            // due to the strange behaviour of the rigidbody physics when it gets too close to the target
+            Vector3 upwardDirection = target.transform.up;
+
+            currentTargetPosition = target.transform.position + (forwardDirection * 0.25f) - (upwardDirection * 10f);
             currentTargetVelocity = target.nav.velocity;
-            Debug.DrawLine(transform.position, currentTargetPosition + target.transform.forward, Color.blue);
+            Debug.DrawLine(transform.position, currentTargetPosition, Color.blue);
         }
         else
         {
@@ -61,6 +68,8 @@ public class TrebuchetProjectile : Projectile
         }
         else
         {
+            // The y axis is used to determine when projectile is close to the ground and should "hit" the enemy
+            // and explode. 
             if (transform.position.y > 0.5f)
             {
                 currentTargetAcceleration = (target.nav.velocity - lastTargetVelocity) / Time.fixedDeltaTime;
@@ -101,7 +110,7 @@ public class TrebuchetProjectile : Projectile
         rb = GetComponent<Rigidbody>();
         target = newTarget;
         this.movementSpeed = movementSpeed;
-        rb.velocity = new Vector3(0, 10f, 0);
+        rb.velocity = new Vector3(0, 8f, 0);
 
         currentTimeToImpact = CalculateInitialFlightTime();    
 
