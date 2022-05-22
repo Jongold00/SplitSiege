@@ -16,9 +16,12 @@ public abstract class Projectile : MonoBehaviour
 
     protected float damage = 5f;
 
+    [Header("Optional")]
+    [SerializeField] GameObject particleObj;
+    [SerializeField] GameObject projectileObj;
+
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -57,6 +60,17 @@ public abstract class Projectile : MonoBehaviour
     {
         target = newTarget;
         this.speed = moveSpeed;
+    }
+
+    protected void DisableGameObjAndEnableParticle()
+    {
+        if (particleObj != null && projectileObj != null)
+        {
+            Debug.Log("particles!");
+            projectileObj.SetActive(false);
+            particleObj.SetActive(true);
+        }
+
     }
 }
 

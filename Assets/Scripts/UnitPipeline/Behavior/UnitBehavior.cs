@@ -22,6 +22,11 @@ public class UnitBehavior : MonoBehaviour
 
     public static List<UnitBehavior> allEnemies = new List<UnitBehavior>();
 
+    // baseOfUnit is intended to be used for things like AoE which should appear to target
+    // the ground under a unit rather than the unit itself
+    [SerializeField] Transform baseOfUnit;
+    public Transform BaseOfUnit { get => baseOfUnit; set => baseOfUnit = value; }
+
     private void OnEnable()
     {
         allEnemies.Add(this);
@@ -34,7 +39,8 @@ public class UnitBehavior : MonoBehaviour
 
     [SerializeField]
     List<StatusEffect> activeEffects = new List<StatusEffect>();
-   
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -51,7 +57,6 @@ public class UnitBehavior : MonoBehaviour
         nav.destination = goal;
         healthbar = GetComponentInChildren<Healthbar>();
         nav.speed = moveSpeed;
-
     }
 
     // Update is called once per frame

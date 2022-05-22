@@ -21,7 +21,6 @@ public class TrebuchetProjectile : Projectile
 
     [SerializeField] private float aoeRadius;
 
-
     protected override void Update()
     {
 
@@ -29,6 +28,9 @@ public class TrebuchetProjectile : Projectile
 
     void Start()
     {
+        // To ensure no projectiles remain in the scene. Useful currently while working on
+        // the treb projectile which is sometimes missing the target
+        Destroy(this.gameObject, 5f);
     }
 
     // Update is called once per frame
@@ -36,8 +38,13 @@ public class TrebuchetProjectile : Projectile
     {
         if (target != null)
         {
-            currentTargetPosition = target.transform.position;
+            currentTargetPosition = target.transform.position + target.transform.forward;
             currentTargetVelocity = target.nav.velocity;
+            Debug.DrawLine(transform.position, currentTargetPosition + target.transform.forward, Color.blue);
+        }
+        else
+        {
+            return;
         }
 
 
@@ -54,7 +61,7 @@ public class TrebuchetProjectile : Projectile
         }
         else
         {
-            if (Vector3.Distance(transform.position, currentTargetPosition) > 2f)
+            if (transform.position.y > 0.5f)
             {
                 currentTargetAcceleration = (target.nav.velocity - lastTargetVelocity) / Time.fixedDeltaTime;
 
@@ -73,14 +80,14 @@ public class TrebuchetProjectile : Projectile
                 //print(Vector3.Magnitude(calculateVelocity));
 
                 rb.velocity = calculateVelocity;
-
-
             }
             else
             {
-                target.TakeDamage(25f);
-                HitNearbyTargets();
-                Destroy(gameObject);
+                HitTargetsInsideAoeRadius(damage);
+                DisableGameObjAndEnableParticle();
+                target = null;
+                Destroy(gameObject, 5f);
+                return;
             }
 
         }
@@ -96,10 +103,7 @@ public class TrebuchetProjectile : Projectile
         this.movementSpeed = movementSpeed;
         rb.velocity = new Vector3(0, 10f, 0);
 
-
-
-        currentTimeToImpact = CalculateInitialFlightTime();
-        
+        currentTimeToImpact = CalculateInitialFlightTime();    
 
     }
 
@@ -116,16 +120,16 @@ public class TrebuchetProjectile : Projectile
         return (-2 * rb.velocity.y) / Physics.gravity.y;
     }
 
-    protected void HitNearbyTargets()
+    protected void HitTargetsInsideAoeRadius(float dmg)
     {
-        Debug.Log("radius: " + aoeRadius);
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, aoeRadius);
-        Debug.Log(hitColliders.Length);
         foreach (var hitCollider in hitColliders)
         {
-            Debug.Log("Nearby unit found!");
             UnitBehavior unit = hitCollider.GetComponent<UnitBehavior>();
-            unit?.TakeDamage(10);
+            if (unit != null && unit)
+            {
+                unit.TakeDamage(dmg);
+            }
         }
     }
 }
