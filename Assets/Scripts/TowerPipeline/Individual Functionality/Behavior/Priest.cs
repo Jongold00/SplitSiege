@@ -2,17 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Priest : MonoBehaviour
+public class Priest : SupportTower
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void ApplyBuff(OffensiveTower tower)
     {
-        
+        tower.GetTowerData().ApplyDamageMultiplier(2);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

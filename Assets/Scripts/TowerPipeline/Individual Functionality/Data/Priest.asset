@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Priest
   m_EditorClassIdentifier: 
   name: Priest
-  range: 1
+  range: 10
   cost: 1
   faction: 0
   fireRate: 1

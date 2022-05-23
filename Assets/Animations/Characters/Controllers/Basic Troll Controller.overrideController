@@ -9,7 +9,7 @@ AnimatorOverrideController:
   m_Name: Basic Troll Controller
   m_Controller: {fileID: 9100000, guid: 3a23cb327591822418d3e8ae73e7b01e, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 6084994807228223196, guid: cf71fc95473d46f4eabce2594051e271, type: 3}
-    m_OverrideClip: {fileID: 7400000, guid: 8aeec6d8c6bc65f41a34fbaab01bb658, type: 2}
-  - m_OriginalClip: {fileID: 4348485665485846014, guid: ad3067834e581214ba56aade84cc2cd0, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 03e37f823b5029242a19def7d451cf26, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: ce58faede385a684ca7c4358556ed679, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 57b08cce0bfe8ed4e9f0aeaa9971f52d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8aeec6d8c6bc65f41a34fbaab01bb658, type: 2}
