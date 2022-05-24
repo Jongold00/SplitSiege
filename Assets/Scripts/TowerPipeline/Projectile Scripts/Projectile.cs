@@ -58,5 +58,10 @@ public abstract class Projectile : MonoBehaviour
         target = newTarget;
         this.speed = moveSpeed;
     }
+
+    public void SetDamage(float set)
+    {
+        damage = set;
+    }
 }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Graveyard : SupportTower
 {
-    public override void ApplyBuff(TowerBehavior tower)
+    public override void ApplyBuff(OffensiveTower tower)
     {
         // 20042022 - Need to look at the below methods and probably separate them and apply some deeper logic
         // Do we really want to always apply a damage boost and attack speed boost at the same time?
@@ -20,3 +20,4 @@ public class Graveyard : SupportTower
     }
 
 }
+    

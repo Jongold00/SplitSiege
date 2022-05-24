@@ -10,14 +10,13 @@ public abstract class SupportTower : TowerBehavior
 
     //RESPONSIBLE FOR RENDERING A TowerDataSO INTO A FUNCTIONAL TOWER   
 
-    List<TowerBehavior> affectedTowers;
+    List<OffensiveTower> affectedTowers = new List<OffensiveTower>();
     public override void Update()
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, supportTowerData.range);
         foreach (Collider curr in hitColliders)
         {
-            TowerBehavior currentTower = curr.GetComponent<TowerBehavior>();
-            if (currentTower && !affectedTowers.Contains(currentTower))
+            if (curr.TryGetComponent(out OffensiveTower currentTower) && !affectedTowers.Contains(currentTower))
             {
                 ApplyBuff(currentTower);
                 affectedTowers.Add(currentTower);
@@ -25,5 +24,5 @@ public abstract class SupportTower : TowerBehavior
         }
     }
 
-    public abstract void ApplyBuff(TowerBehavior tower);
+    public abstract void ApplyBuff(OffensiveTower tower);
 }

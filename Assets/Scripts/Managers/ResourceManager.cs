@@ -39,8 +39,8 @@ public class ResourceManager : MonoBehaviour
 
     void UpdateUI()
     {
-        goldText.text = gold.ToString();
-        popText.text = population.ToString();
+        //goldText.text = gold.ToString();
+        //popText.text = population.ToString();
     }
 
     #endregion
@@ -77,7 +77,7 @@ public class ResourceManager : MonoBehaviour
                 break;
         }
 
-        UpdateUI();
+        //UpdateUI();
     }
         public bool CheckLegalTranscation(int cost, int resource) 
     {
@@ -107,7 +107,7 @@ public class ResourceManager : MonoBehaviour
                 break;
         }
 
-        UpdateUI();
+        //UpdateUI();
     }
 
     

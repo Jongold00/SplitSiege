@@ -49,5 +49,28 @@ public class EventsManager : MonoBehaviour
     }
     #endregion
 
+    #region GameStateChange
+
+    private event Action<GameStateManager.GameState> onGameStateChange;
+
+    public void SubscribeGameStateChange(Action<GameStateManager.GameState> func)
+    {
+        onGameStateChange += func;
+    }
+
+    public void UnSubscribeGameStateChange(Action<GameStateManager.GameState> func)
+    {
+        onGameStateChange -= func;
+    }
+
+    public void GameStateChange(GameStateManager.GameState enemy)
+    {
+        if (onGameStateChange == null)
+        {
+            return;
+        }
+        onGameStateChange(enemy);
+    }
+    #endregion
 
 }

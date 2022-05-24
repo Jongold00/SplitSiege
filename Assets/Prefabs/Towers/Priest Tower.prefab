@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 7775812706871866515}
   - component: {fileID: 5480259782604488793}
   - component: {fileID: 5837976518694933248}
+  - component: {fileID: 1774023353729950274}
   m_Layer: 0
   m_Name: Priest Tower
   m_TagString: Untagged
@@ -132,6 +133,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da27cb6416df81e46a8a05dc131bab90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  supportTowerData: {fileID: 11400000, guid: 5afe7fce1d3ccf3418b9b2c7ca17a29e, type: 2}
+--- !u!65 &1774023353729950274
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6272730658333761932}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021767838, y: 0.021767834, z: 0.038839303}
+  m_Center: {x: 0, y: 0, z: 0.019272309}
 --- !u!1 &6898275343559987536
 GameObject:
   m_ObjectHideFlags: 0
