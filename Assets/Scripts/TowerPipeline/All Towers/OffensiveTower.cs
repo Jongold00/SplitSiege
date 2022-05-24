@@ -35,6 +35,8 @@ public abstract class OffensiveTower : TowerBehavior
 
     private void Awake()
     {
+        offensiveTowerData = Instantiate(offensiveTowerData);
+
         if (anim == null)
         {
             anim = GetComponent<Animator>();
@@ -135,7 +137,7 @@ public abstract class OffensiveTower : TowerBehavior
         anim.SetFloat("Speed", 1 / offensiveTowerData.GetFireRate());
         anim.SetTrigger("Firing");
 
-        print(offensiveTowerData.GetDamage());
+        print("damage: " + offensiveTowerData.GetDamage());
 
         StartCoroutine(SpawnProjectile());
 
@@ -153,6 +155,7 @@ public abstract class OffensiveTower : TowerBehavior
         Projectile projectileScript = projectile.GetComponent<Projectile>();
 
         projectileScript.SetTarget(currentTarget, offensiveTowerData.SpeedOfProjectile);
+        projectileScript.SetDamage(offensiveTowerData.GetDamage());
     }
 
 

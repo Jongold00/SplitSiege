@@ -7,7 +7,7 @@ public class OffensiveTowerDataSO : TowerDataSO
 {
     
     [SerializeField] protected float damage;
-    protected float damageMultiplier = 1;
+    [SerializeField] protected float damageMultiplier = 1;
 
     [SerializeField] protected float fireRate;
     [SerializeField] protected float fireRateMultiplier = 1;

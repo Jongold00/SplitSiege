@@ -18,6 +18,7 @@ MonoBehaviour:
   faction: 0
   prefab: {fileID: 3200577829482880708, guid: 484b7428aa3ae734c81dbd2881d4fcba, type: 3}
   damage: 2
+  damageMultiplier: 1
   fireRate: 1
   fireRateMultiplier: 1
   projectilePrefab: {fileID: 7066393166104553515, guid: 585180bfcd6c6c8488ff4e99ffdc3f43, type: 3}
