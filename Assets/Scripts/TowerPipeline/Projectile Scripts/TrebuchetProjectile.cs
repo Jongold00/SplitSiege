@@ -34,6 +34,7 @@ public class TrebuchetProjectile : Projectile
     // Update is called once per frame
     void FixedUpdate()
     {
+        /*
         if (target != null)
         {
             currentTargetPosition = target.transform.position;
@@ -87,6 +88,8 @@ public class TrebuchetProjectile : Projectile
         lastTargetVelocity = target.nav.velocity;
         lastFramesVelocity = rb.velocity;
 
+        */
+         
     }
 
     public override void SetTarget(UnitBehavior newTarget, float movementSpeed)
@@ -94,27 +97,41 @@ public class TrebuchetProjectile : Projectile
         rb = GetComponent<Rigidbody>();
         target = newTarget;
         this.movementSpeed = movementSpeed;
-        rb.velocity = new Vector3(0, 10f, 0);
 
 
 
         currentTimeToImpact = CalculateInitialFlightTime();
-        
+
+        Vector3 projectedImpactPosition = target.GetComponent<UnitNavigation>().GetPositionInSeconds(currentTimeToImpact);
+
+        Instantiate(GameObject.CreatePrimitive(PrimitiveType.Sphere), projectedImpactPosition, Quaternion.identity);
+
+        Vector3 initialVelocity = (projectedImpactPosition - transform.position) / currentTimeToImpact;
+
+        initialVelocity.y = 10;
+
+        rb.velocity = initialVelocity;
+
+
 
     }
 
-    private Vector3 CalculateMomentaryVelocity(float timeToImpact)
+    /*
+    private Vector3 CalculateMomentaryVelocity()
     {
 
-        Vector3 estimatedTargetPosition = currentTargetPosition + (currentTargetVelocity * timeToImpact) + (0.5f * currentTargetAcceleration * (timeToImpact * timeToImpact));
 
         return (estimatedTargetPosition - transform.position) / timeToImpact;
     }
 
+    */
+
     private float CalculateInitialFlightTime()
     {
-        return (-2 * rb.velocity.y) / Physics.gravity.y;
+        return (-2 * 10.0f) / Physics.gravity.y;
     }
+
+
 
     protected void HitNearbyTargets()
     {

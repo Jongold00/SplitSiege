@@ -11,23 +11,37 @@ public class EvilWizard : OffensiveTower
     public override void AcquireTarget()
     {
 
-        float lowestDistance = 999999;
+        float furthestSoFar = 0;
         UnitBehavior closest = null;
 
 
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, offensiveTowerData.range);
         foreach (Collider curr in hitColliders)
         {
-            UnitBehavior currentUnit = curr.GetComponent<UnitBehavior>();
-            if (currentUnit)
+            if (curr.TryGetComponent(out UnitBehavior currentUnit))
             {
+
                 inRange.Add(currentUnit);
-                lowestDistance = Mathf.Min(lowestDistance, currentUnit.GetDistanceFromEnd());
-                closest = currentUnit;
+
+                UnitNavigation unitNav = curr.GetComponent<UnitNavigation>();
+                if (unitNav.GetDistanceTravelled() > furthestSoFar)
+                {
+                    furthestSoFar = unitNav.GetDistanceTravelled();
+                    closest = currentUnit;
+                }
             }
         }
-        currentTarget = closest;
 
+        if (closest != currentTarget)
+        {
+            switchedTarget = true;
+        }
+        else
+        {
+            switchedTarget = false;
+        }
+
+        currentTarget = closest;
     }
 
     public override void Fire()

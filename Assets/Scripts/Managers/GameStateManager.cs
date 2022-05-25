@@ -67,7 +67,7 @@ public class GameStateManager : MonoBehaviour
         switch (currentGameState)
         {
             case GameState.Building:
-                StartCoroutine(StartBuildTimer(buildDuration));
+                //StartCoroutine(StartBuildTimer(buildDuration));
                 break;
         }
     }

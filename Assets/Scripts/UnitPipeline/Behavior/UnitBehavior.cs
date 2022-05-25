@@ -6,13 +6,10 @@ using UnityEngine.AI;
 
 public class UnitBehavior : MonoBehaviour
 {
-    Vector3 goal;
     private Animator anim;
-    public NavMeshAgent nav;
 
-    NavNode[] nodePath;
-    public int currentNode = 0;
-    float epsilon = 1f;
+    UnitNavigation nav;
+
 
     Healthbar healthbar;
 
@@ -44,13 +41,9 @@ public class UnitBehavior : MonoBehaviour
 
         anim = GetComponentInChildren<Animator>();
 
-        nodePath = FindObjectOfType<NavHolder>().navNodes;
-        nav = GetComponent<NavMeshAgent>();
 
-        goal = nodePath[currentNode].transform.position;
-        nav.destination = goal;
         healthbar = GetComponentInChildren<Healthbar>();
-        nav.speed = moveSpeed;
+
 
     }
 
@@ -59,29 +52,9 @@ public class UnitBehavior : MonoBehaviour
     {
         TickStatusEffects(Time.deltaTime);
 
-        if (Vector3.Distance(transform.position, goal) > epsilon)
-        {
-        }
-        else
-        {
-            currentNode++;
-            GetNewGoal();
-        }
     }
 
-    void GetNewGoal()
-    {
-        if (currentNode < nodePath.Length)
-        {
-            goal = nodePath[currentNode].transform.position;
-            nav.destination = goal;
-        }
-    }
 
-    public float GetDistanceFromEnd()
-    {
-        return Vector3.Distance(transform.position, goal);
-    }
 
     public void TakeDamage(float delta)
     {
