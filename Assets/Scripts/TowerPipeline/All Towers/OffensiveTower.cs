@@ -39,7 +39,7 @@ public abstract class OffensiveTower : TowerBehavior
 
         if (anim == null)
         {
-            anim = GetComponent<Animator>();
+            anim = GetComponentInChildren<Animator>();
         }
     }
 
@@ -50,6 +50,7 @@ public abstract class OffensiveTower : TowerBehavior
         UnitBehavior closest = null;
 
 
+        
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, offensiveTowerData.range);
         foreach (Collider curr in hitColliders)
         {
@@ -110,7 +111,7 @@ public abstract class OffensiveTower : TowerBehavior
 
     }
 
-    public OffensiveTowerDataSO GetTowerData()
+    public override TowerDataSO GetTowerData()
     {
         return offensiveTowerData;
     }
@@ -136,7 +137,7 @@ public abstract class OffensiveTower : TowerBehavior
         // currentTarget.TakeDamage(offensiveTowerData.GetDamage());
     }
 
-
+    
     protected virtual IEnumerator SpawnProjectile()
     {
 

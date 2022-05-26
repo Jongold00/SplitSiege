@@ -22,6 +22,7 @@ public class UnitBehavior : MonoBehaviour
     private void OnEnable()
     {
         allEnemies.Add(this);
+        nav = GetComponent<UnitNavigation>();
     }
 
     private void OnDisable()

@@ -970,6 +970,7 @@ GameObject:
   - component: {fileID: 8766150378681580798}
   - component: {fileID: 439812909649321962}
   - component: {fileID: 4016412470905567441}
+  - component: {fileID: -2600901649734666744}
   m_Layer: 0
   m_Name: basicTroll
   m_TagString: Untagged
@@ -1050,8 +1051,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4083bb4f9beb49b4ea3bfde8323eddf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nav: {fileID: 8766150378681580798}
-  currentNode: 0
   moveSpeed: 1
 --- !u!65 &4016412470905567441
 BoxCollider:
@@ -1066,6 +1065,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4129841, y: 3, z: 2.450043}
   m_Center: {x: 0.0077109337, y: 1.5, z: 0.10347116}
+--- !u!114 &-2600901649734666744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3353735786919235548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5451c4cf48cfd1045918a4d73bab69a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yOffset: 0
+  speed: 1
+  endOfPathInstruction: 0
+  unitData: {fileID: 11400000, guid: fd5b6914956e30148ae150f966ae9b34, type: 2}
 --- !u!1 &3394120250862669751
 GameObject:
   m_ObjectHideFlags: 0

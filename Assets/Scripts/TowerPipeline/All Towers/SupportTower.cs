@@ -22,7 +22,13 @@ public abstract class SupportTower : TowerBehavior
                 affectedTowers.Add(currentTower);
             }
         }
+
     }
 
     public abstract void ApplyBuff(OffensiveTower tower);
+
+    public override TowerDataSO GetTowerData()
+    {
+        return supportTowerData;
+    }
 }

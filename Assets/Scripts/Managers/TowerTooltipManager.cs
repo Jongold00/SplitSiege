@@ -11,6 +11,10 @@ public class TowerTooltipManager : MonoBehaviour
 
     public TextMeshProUGUI label;
 
+    public GameObject goodRangeIndicator;
+    public GameObject evilRangeIndicator;
+
+
     #region Singleton
 
     public static TowerTooltipManager instance;
@@ -31,6 +35,7 @@ public class TowerTooltipManager : MonoBehaviour
     private void OnEnable()
     {
         TowerBehavior.OnTowerSelected += HandleSelectedTower;
+        TowerBehavior.OnTowerSelected += ShowRangeIndicator;
     }
 
     private void OnDisable()
@@ -53,5 +58,38 @@ public class TowerTooltipManager : MonoBehaviour
         TowerStatsPopupMenu.instance.DisplayPopupMenuAtViewportOfObj(obj);
         SelectedTower = obj.GetComponent<TowerBehavior>();
         FormatPopup();
+    }
+
+    private void ShowRangeIndicator(GameObject obj)
+    {
+        Vector3 indicatorPos = new Vector3(0, 0.1f, 0);
+        TowerDataSO data = obj.GetComponent<TowerBehavior>().GetTowerData();
+        print("data.range: " + data.range);
+        Vector3 indicatorScale = new Vector3(data.range * 2, data.range * 2, 1f);
+
+        switch (data.faction)
+        {
+            case 0:
+                goodRangeIndicator.SetActive(true);
+                goodRangeIndicator.transform.SetParent(obj.transform);
+                goodRangeIndicator.transform.localPosition = indicatorPos;
+                goodRangeIndicator.transform.localScale = indicatorScale;
+
+
+                evilRangeIndicator.SetActive(false);
+                break;
+            case 1:
+                evilRangeIndicator.SetActive(true);
+                evilRangeIndicator.transform.SetParent(obj.transform);
+                evilRangeIndicator.transform.localPosition = indicatorPos;
+                evilRangeIndicator.transform.localScale = indicatorScale;
+
+
+                goodRangeIndicator.SetActive(false);
+                break;
+        }
+        
+
+
     }
 }

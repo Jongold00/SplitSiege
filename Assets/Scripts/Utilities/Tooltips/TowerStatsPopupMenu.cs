@@ -43,10 +43,11 @@ public class TowerStatsPopupMenu : MonoBehaviour
 
     public void DisplayPopupMenuAtViewportOfObj(GameObject obj)
     {
+        Vector2 offset = new Vector2(0, 80f);
         PopupMenuObj.SetActive(true);
 
         Vector2 viewportPoint = Camera.main.WorldToScreenPoint(obj.transform.position);
-        rectTransformOfPopupMenu.anchoredPosition = viewportPoint;
+        rectTransformOfPopupMenu.anchoredPosition = viewportPoint + offset;
     }
 
     public void HidePopupMenu(GameObject obj)

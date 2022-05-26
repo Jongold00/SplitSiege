@@ -6986,6 +6986,7 @@ GameObject:
   - component: {fileID: 6176436440824441645}
   - component: {fileID: 9135822714770702973}
   - component: {fileID: 6586261355965215323}
+  - component: {fileID: -5878363352156344430}
   m_Layer: 0
   m_Name: Giant
   m_TagString: Untagged
@@ -7048,8 +7049,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4083bb4f9beb49b4ea3bfde8323eddf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nav: {fileID: 0}
-  currentNode: 0
   moveSpeed: 1
 --- !u!195 &9135822714770702973
 NavMeshAgent:
@@ -7084,8 +7083,24 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.3152843, y: 6.866183, z: 2.6158116}
-  m_Center: {x: -0.38833633, y: 2.9330914, z: -0.77732766}
+  m_Size: {x: 2.3511744, y: 6.275588, z: 2.0866013}
+  m_Center: {x: -0.20030594, y: 2.6599803, z: -0.5127224}
+--- !u!114 &-5878363352156344430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4626374718507699016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5451c4cf48cfd1045918a4d73bab69a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yOffset: 0
+  speed: 1
+  endOfPathInstruction: 0
+  unitData: {fileID: 11400000, guid: 5294e787ff47ea149aa883e8415e402f, type: 2}
 --- !u!1 &4633806444344378692
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,8 @@ public class Priest : SupportTower
     public override void ApplyBuff(OffensiveTower tower)
     {
         print(name + " applied a buff to " + tower.name);
-        tower.GetTowerData().ApplyFireRateMultiplier(0.5f);
+        OffensiveTowerDataSO casted = (OffensiveTowerDataSO)tower.GetTowerData();
+        casted.ApplyFireRateMultiplier(0.5f);
     }
 
 }

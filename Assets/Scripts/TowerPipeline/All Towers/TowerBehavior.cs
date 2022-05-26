@@ -16,4 +16,6 @@ public abstract class TowerBehavior : MonoBehaviour
     {
         OnTowerSelected?.Invoke(gameObject);
     }
+
+    public abstract TowerDataSO GetTowerData();
 }
