@@ -548,6 +548,7 @@ GameObject:
   - component: {fileID: 2819653831646839934}
   - component: {fileID: 3200577829482880709}
   - component: {fileID: 8076658762609135598}
+  - component: {fileID: -2065924759322954621}
   m_Layer: 0
   m_Name: Ballista Tower
   m_TagString: Untagged
@@ -609,6 +610,21 @@ MonoBehaviour:
   rotatableTransform: {fileID: 7211901392406387256}
   zOffsetForRotatableTransform: 0
   projectileInstantiatePoint: {fileID: 122745588652717991}
+--- !u!114 &-2065924759322954621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3200577829482880708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb9aa53d8837a24f9bef4be0422d0d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildSpeed: 3.25
+  startYBuildOffset: -3
+  buildParticlePrefab: {fileID: 3395844601489511439, guid: 1ecd1ea83e8c2e545823d8000052f796, type: 3}
 --- !u!1 &3315863244904464840
 GameObject:
   m_ObjectHideFlags: 0

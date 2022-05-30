@@ -24,6 +24,9 @@ public abstract class OffensiveTower : TowerBehavior
 
     protected Animator anim;
 
+    public bool CanFire { get; set; }
+    Build build;
+
     #region Rotation Stuff
 
     float rotationSpeed = 100;
@@ -32,6 +35,17 @@ public abstract class OffensiveTower : TowerBehavior
     #endregion
 
     Action<GameObject> thingy;
+
+    private void OnEnable()
+    {
+        build = GetComponent<Build>();
+        build.OnBuildComplete += EnableFiring;
+    }
+
+    private void OnDisable()
+    {
+        build.OnBuildComplete -= EnableFiring;
+    }
 
     private void Awake()
     {
@@ -86,6 +100,7 @@ public abstract class OffensiveTower : TowerBehavior
 
     public override void Update()
     {
+        base.Update();
 
         AcquireTarget();
         attackCD -= Time.deltaTime;
@@ -97,7 +112,7 @@ public abstract class OffensiveTower : TowerBehavior
 
 
 
-            if (attackCD <= 0)
+            if (attackCD <= 0 && CanFire)
             {
                 Debug.Log("Firing");
                 attackCD = offensiveTowerData.GetFireRate();
@@ -148,6 +163,11 @@ public abstract class OffensiveTower : TowerBehavior
         Projectile projectileScript = projectile.GetComponent<Projectile>();
 
         projectileScript.SetTarget(currentTarget, offensiveTowerData.SpeedOfProjectile);
+    }
+
+    private void EnableFiring()
+    {
+        CanFire = true;
     }
 
 
