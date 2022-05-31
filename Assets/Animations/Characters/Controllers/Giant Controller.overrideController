@@ -9,5 +9,7 @@ AnimatorOverrideController:
   m_Name: Giant Controller
   m_Controller: {fileID: 9100000, guid: 3a23cb327591822418d3e8ae73e7b01e, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 6084994807228223196, guid: cf71fc95473d46f4eabce2594051e271, type: 3}
-    m_OverrideClip: {fileID: 7400000, guid: ec8d0bbb0580535499d2a2f9312c2aee, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 03e37f823b5029242a19def7d451cf26, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1aeb7dc434fcfd048b0c76d040c8e7c3, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 57b08cce0bfe8ed4e9f0aeaa9971f52d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8114a6d7f4f9d044da13d6d739556496, type: 2}

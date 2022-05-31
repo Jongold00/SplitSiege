@@ -15,4 +15,4 @@ MonoBehaviour:
   weight: 0.9
   cooldown: 5
   spawns:
-  - {fileID: 294377923233646498, guid: b29143f7bef888e41a789eb63a9c1ff5, type: 3}
+  - {fileID: 4626374718507699016, guid: b7ce5e8f254055942bba1317479ffd0f, type: 3}

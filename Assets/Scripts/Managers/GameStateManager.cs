@@ -26,25 +26,24 @@ public class GameStateManager : MonoBehaviour
 
     #endregion Singleton
 
-    #region UI
-
-    [SerializeField]
-    private GameObject startRoundButton;
-    [SerializeField]
-    private TextMeshProUGUI timerText;
-    #endregion UI
 
     public enum GameState{
         Building,
         Fighting
     }
 
-    public int currentRound = 0;
-    private GameState currentGameState;
+
 
     [SerializeField]
     private float buildDuration = 30;
-    private int timer;
+
+
+
+    public int currentRound = 0;
+
+
+    private GameState currentGameState;
+
     public GameState GetState()
     {
         return currentGameState;
@@ -53,7 +52,6 @@ public class GameStateManager : MonoBehaviour
     public void StartRound()
     {
         currentRound++;
-        //SpawningManager.instance.StartRound(currentRound-1);
         SetState(GameState.Fighting);
     }
 
@@ -62,29 +60,24 @@ public class GameStateManager : MonoBehaviour
         SetState(GameState.Building);
     }
 
-    void SetState(GameState set)
+    public void SetState(GameState set)
     {
         currentGameState = set;
+        EventsManager.instance.GameStateChange(set);
         switch (currentGameState)
         {
             case GameState.Building:
-                startRoundButton.SetActive(true);
                 StartCoroutine(StartBuildTimer(buildDuration));
                 break;
-            case GameState.Fighting:
-                startRoundButton.SetActive(false);
-                break;
         }
-        ChangeMusic();
     }
 
     private IEnumerator StartBuildTimer(float duration)
     {
-        timer = (int)duration;
+        int timer = (int)duration;
 
         while (timer > 0)
         {
-            timerText.text = Mathf.RoundToInt(timer).ToString();
             yield return new WaitForSeconds(1);
             timer--;
         }
@@ -109,7 +102,7 @@ public class GameStateManager : MonoBehaviour
 
 
     #region Music
-
+    /*
     [SerializeField]
     private AudioClip themeLayer1;
     [SerializeField]
@@ -192,7 +185,8 @@ public class GameStateManager : MonoBehaviour
 
     }
 
-
+    */
     #endregion
+
 
 }

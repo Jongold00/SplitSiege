@@ -71,6 +71,9 @@ public abstract class Projectile : MonoBehaviour
             particleObj.SetActive(true);
         }
 
+    public void SetDamage(float set)
+    {
+        damage = set;
     }
 }
 

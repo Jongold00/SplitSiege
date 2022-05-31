@@ -52,10 +52,34 @@ public class SpawningManager : MonoBehaviour
 
     private void Update()
     {
-        HandleCooldowns();
-        AttemptEvents();
+        if (GameStateManager.instance.GetState() == GameStateManager.GameState.Fighting)
+        {
+            HandleCooldowns();
+            AttemptEvents();
+
+            if (LevelIsDone())
+            {
+                GameStateManager.instance.SetState(GameStateManager.GameState.Building);
+                ClearCooldowns();
+            }
+        }
+        
     }
 
+    bool LevelIsDone()
+    {
+        return DoneSpawning() && FindObjectsOfType<UnitBehavior>().Length == 0;
+    }
+
+    public bool DoneSpawning()
+    {
+        int smallest = 10000;
+        foreach (SpawningEvent se in spawns)
+        {
+            if (se.GetCost() < smallest) smallest = se.GetCost();
+        }
+        return smallest > credits;
+    }
 
     void AttemptEvents()
     {
@@ -87,6 +111,16 @@ public class SpawningManager : MonoBehaviour
         }
     }
 
+    void ClearCooldowns()
+    {
+        for (int i = 0; i < spawns.Count; i++)
+        {
+            if (cooldowns[i] > 0)
+            {
+                cooldowns[i] = 0;
+            }
+        }
+    }
 
     void HandleCooldowns()
     {

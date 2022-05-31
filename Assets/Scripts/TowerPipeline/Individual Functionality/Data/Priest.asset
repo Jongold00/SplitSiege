@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: Priest
   m_EditorClassIdentifier: 
   name: Priest
-  range: 1
+  range: 5
   cost: 1
   faction: 0
-  fireRate: 1
-  fireRateMultiplier: 1
   prefab: {fileID: 6272730658333761932, guid: bb4a4b7fe424045408e1b7c4e78646f1, type: 3}
