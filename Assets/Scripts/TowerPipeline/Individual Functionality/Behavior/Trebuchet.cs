@@ -8,7 +8,7 @@ public class Trebuchet : OffensiveTower
     [SerializeField] private float fullDamageRange = 5f;
 
 
-    public override void Fire()
+    protected override void Fire()
     {
         GameObject projectile = Instantiate(offensiveTowerData.ProjectilePrefab.gameObject, projectileInstantiatePoint.position, Quaternion.identity);
         projectile.GetComponent<TrebuchetProjectile>().SetTarget(currentTarget, offensiveTowerData.SpeedOfProjectile);

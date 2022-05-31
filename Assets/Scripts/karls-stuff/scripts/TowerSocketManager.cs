@@ -7,6 +7,7 @@ public class TowerSocketManager : MonoBehaviour
 {
     private Socket selectedSocket;
     public Socket SelectedSocket { get => selectedSocket; set => selectedSocket = value; }
+    [SerializeField] GameObject buildParticlePrefab;
 
 
     #region Singleton
@@ -25,7 +26,7 @@ public class TowerSocketManager : MonoBehaviour
             instance = this;
         }
     }
-
+    #endregion Singleton
     private void OnEnable()
     {
         Socket.OnSocketSelected += HandleSocketSelected;
@@ -36,27 +37,30 @@ public class TowerSocketManager : MonoBehaviour
         Socket.OnSocketSelected -= HandleSocketSelected;
     }
 
-
-    #endregion Singleton
-
     public void BuildTower(TowerDataSO towerToBuild)
     {
         if (ResourceManager.instance.CheckLegalTranscation(towerToBuild.cost, towerToBuild.faction))
         {
-            SelectedSocket.AddTowerToSocket(towerToBuild);
-            BuildTowerPopupMenu.instance.HidePopupMenu(gameObject);
+            GameObject placedTowerObj = SelectedSocket.AddTowerToSocket(towerToBuild);
+            Build build = placedTowerObj.GetComponent<Build>();
+
+            GameObject particleObj = Instantiate(buildParticlePrefab, placedTowerObj.transform.position, buildParticlePrefab.transform.rotation);
+            BuildParticle buildParticle = particleObj.GetComponent<BuildParticle>();
+
+            buildParticle.Build = build;
+
+            BuildTowerPopupMenu.instance.HidePopupMenu();
         }
     }
 
     public void SellTower()
     {
         SelectedSocket.RemoveTowerFromSocket();
-        // Maybe use a % of cost for sell value?
         ResourceManager.instance.UpdateResources(selectedSocket.CurrentlyPlacedTower.cost / 2, selectedSocket.CurrentlyPlacedTower.faction);
     }
     private void HandleSocketSelected(GameObject obj)
     {
-        BuildTowerPopupMenu.instance.HidePopupMenu(obj);
+        BuildTowerPopupMenu.instance.HidePopupMenu();
         BuildTowerPopupMenu.instance.DisplayPopupMenuAtViewportOfObj(obj);
         SelectedSocket = obj.GetComponent<Socket>();
     }
