@@ -34,8 +34,6 @@ public abstract class OffensiveTower : TowerBehavior
 
     #endregion
 
-    Action<GameObject> thingy;
-
     private void OnEnable()
     {
         build = GetComponent<Build>();
@@ -78,7 +76,7 @@ public abstract class OffensiveTower : TowerBehavior
                     closest = currentUnit;
 
                 }
-                else if (currentUnit.currentNode == highestNodeSoFar && currentTarget.GetDistanceFromEnd() < lowestDistanceSoFar)
+                else if (currentUnit.currentNode == highestNodeSoFar && currentTarget != null && currentTarget.GetDistanceFromEnd() < lowestDistanceSoFar)
                 {
                     lowestDistanceSoFar = currentUnit.GetDistanceFromEnd();
                     closest = currentUnit;
@@ -110,8 +108,6 @@ public abstract class OffensiveTower : TowerBehavior
         {
             RotateTowardsTarget();
 
-
-
             if (attackCD <= 0 && CanFire)
             {
                 Debug.Log("Firing");
@@ -142,7 +138,7 @@ public abstract class OffensiveTower : TowerBehavior
         rotatableTransform.rotation = Quaternion.RotateTowards(rotatableTransform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
     }
 
-    public virtual void Fire()
+    protected virtual void Fire()
     {
         anim.SetFloat("Speed", 1 / offensiveTowerData.GetFireRate());
         anim.SetTrigger("Firing");

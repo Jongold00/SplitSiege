@@ -10,13 +10,11 @@ public class Build : MonoBehaviour
     [SerializeField] private float startYBuildOffset;
     private Vector3 targetPosWhileBuilding;
     public bool BuildingComplete { get; private set; }
-    [SerializeField] GameObject buildParticlePrefab;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        GameObject obj = Instantiate(buildParticlePrefab, transform.position, buildParticlePrefab.transform.rotation);
-        obj.GetComponent<BuildParticle>().SubscribeToOnBuildComplete(this);
         targetPosWhileBuilding = transform.position;
         ChangeYPosition(startYBuildOffset);
     }

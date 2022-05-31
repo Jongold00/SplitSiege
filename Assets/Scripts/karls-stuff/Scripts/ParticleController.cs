@@ -7,7 +7,7 @@ public abstract class ParticleController : MonoBehaviour
 {
     protected ParticleSystem[] allParticles;
     // Start is called before the first frame update
-    public void Start()
+    protected virtual void Start()
     {
         allParticles = GetComponentsInChildren<ParticleSystem>();
     }

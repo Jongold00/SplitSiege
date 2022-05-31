@@ -15,24 +15,16 @@ public class Socket : MonoBehaviour
         OnSocketSelected?.Invoke(gameObject);
     }
 
-    public void AddTowerToSocket(TowerDataSO objToSpawn)
+    public GameObject AddTowerToSocket(TowerDataSO objToSpawn)
     {
-        if (CurrentlyPlacedTower != null)
-        {
-            return;
-        }
-
         GameObject obj = Instantiate(objToSpawn.prefab, transform.position, objToSpawn.prefab.transform.rotation);
         Vector3 newPos = obj.transform.position;
-
-        // Offset should be specific to tower
-        // newPos.y += 4.5f;
-
         obj.transform.position = newPos;
 
         CurrentlyPlacedTower = objToSpawn;
 
-        gameObject.SetActive(false);
+        gameObject.SetActive(false);        
+        return obj;
     }
 
     public void RemoveTowerFromSocket()

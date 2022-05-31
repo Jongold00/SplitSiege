@@ -6,17 +6,27 @@ using System.Linq;
 public class BuildParticle : ParticleController
 {
     [SerializeField] ParticleSystem splash;
-    Build target;
+    private bool splashTriggered;
+    private Build build;
 
-    private void OnDisable()
+    public Build Build 
+    { get => build; set { build = value; } }
+
+    protected override void Start()
     {
-        target.OnBuildComplete -= TriggerSplash;
+        base.Start();
+        Build.OnBuildComplete += TriggerSplash;
+    }
+    private void OnDestroy()
+    {
+        Build.OnBuildComplete -= TriggerSplash;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!AnyActiveParticlesRemaining())
+        if (!AnyActiveParticlesRemaining() && splashTriggered)
         {
             Destroy(this.gameObject);
         }
@@ -36,11 +46,5 @@ public class BuildParticle : ParticleController
                 item.Stop();
             }
         }
-    }
-
-    public void SubscribeToOnBuildComplete(Build build)
-    {
-        target = build;
-        target.OnBuildComplete += TriggerSplash;
     }
 }
