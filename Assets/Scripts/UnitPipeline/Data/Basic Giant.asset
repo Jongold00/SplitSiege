@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Basic Giant
   unitHealth: 100
-  unitSpeed: 25
+  unitSpeed: 1
   unitPrefab: {fileID: 8102236594575478702, guid: 991ff4c86557c0140a91e91847223a05, type: 3}
   goldValue: 0

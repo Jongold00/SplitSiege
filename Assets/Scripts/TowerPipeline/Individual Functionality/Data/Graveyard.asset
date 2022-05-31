@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: Graveyard
   m_EditorClassIdentifier: 
   name: Graveyard
-  range: 1
+  range: 5
   cost: 1
   faction: 1
-  fireRate: 1
-  fireRateMultiplier: 1
   prefab: {fileID: 1087993359602902350, guid: 633a6cd6803d6d845b94595b240566b3, type: 3}

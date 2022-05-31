@@ -51,36 +51,27 @@ public abstract class OffensiveTower : TowerBehavior
 
         if (anim == null)
         {
-            anim = GetComponent<Animator>();
+            anim = GetComponentInChildren<Animator>();
         }
     }
 
     public virtual void AcquireTarget()
     {
-        // units pursuing the highest node are closest to the end
-        int highestNodeSoFar = 0;
 
-        // float distance between unit and their current goal node
-        float lowestDistanceSoFar = 999999;
+        float furthestSoFar = 0;
         UnitBehavior closest = null;
 
 
+        
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, offensiveTowerData.range);
         foreach (Collider curr in hitColliders)
         {
-            UnitBehavior currentUnit = curr.GetComponent<UnitBehavior>();
-            if (currentUnit != null)
+            if (curr.TryGetComponent(out UnitBehavior currentUnit))
             {
-                if (currentUnit.currentNode > highestNodeSoFar)
+                UnitNavigation unitNav = curr.GetComponent<UnitNavigation>();
+                if (unitNav.GetDistanceTravelled() > furthestSoFar)
                 {
-                    highestNodeSoFar = currentUnit.currentNode;
-                    lowestDistanceSoFar = currentUnit.GetDistanceFromEnd();
-                    closest = currentUnit;
-
-                }
-                else if (currentUnit.currentNode == highestNodeSoFar && currentTarget != null && currentTarget.GetDistanceFromEnd() < lowestDistanceSoFar)
-                {
-                    lowestDistanceSoFar = currentUnit.GetDistanceFromEnd();
+                    furthestSoFar = unitNav.GetDistanceTravelled();
                     closest = currentUnit;
                 }
             }
@@ -131,7 +122,7 @@ public abstract class OffensiveTower : TowerBehavior
 
     }
 
-    public OffensiveTowerDataSO GetTowerData()
+    public override TowerDataSO GetTowerData()
     {
         return offensiveTowerData;
     }
@@ -157,7 +148,7 @@ public abstract class OffensiveTower : TowerBehavior
         // currentTarget.TakeDamage(offensiveTowerData.GetDamage());
     }
 
-
+    
     protected virtual IEnumerator SpawnProjectile()
     {
 

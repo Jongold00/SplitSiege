@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: Evil Wizard
   m_EditorClassIdentifier: 
   name: Evil Wizard
-  range: 100
+  range: 6
   cost: 1
   faction: 1
+  prefab: {fileID: 1187417336092707799, guid: a3ad4ed99890a66439f825f43b56e124, type: 3}
+  damage: 0
+  damageMultiplier: 1
   fireRate: 1
   fireRateMultiplier: 1
-  prefab: {fileID: 1187417336092707799, guid: a3ad4ed99890a66439f825f43b56e124, type: 3}
   projectilePrefab: {fileID: 0}
   speedOfProjectile: 3
   projectileSpawnOffset: 1

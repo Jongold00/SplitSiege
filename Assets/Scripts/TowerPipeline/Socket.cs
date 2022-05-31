@@ -10,7 +10,8 @@ public class Socket : MonoBehaviour
     public TowerDataSO CurrentlyPlacedTower { get => currentlyPlacedTower; private set => currentlyPlacedTower = value; }
     public static event Action<GameObject> OnSocketSelected;
 
-    private void OnMouseDown()
+
+    public void OnMouseDown()
     {
         OnSocketSelected?.Invoke(gameObject);
     }

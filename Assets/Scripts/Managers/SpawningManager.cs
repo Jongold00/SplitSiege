@@ -68,7 +68,7 @@ public class SpawningManager : MonoBehaviour
 
     bool LevelIsDone()
     {
-        return DoneSpawning() && FindObjectsOfType<UnitBehavior>().Length == 0;
+        return DoneSpawning() && UnitBehavior.allEnemies.Count == 0;
     }
 
     public bool DoneSpawning()

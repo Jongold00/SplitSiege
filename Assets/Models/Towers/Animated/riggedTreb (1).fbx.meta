@@ -1,0 +1,318 @@
+fileFormatVersion: 2
+guid: b1af36caa6b54824c834138268f82746
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: -260441474465936599
+    second: stone|Empty.001Action
+  - first:
+      74: 5810956029630183368
+    second: stone|Empty.001Action.002
+  - first:
+      74: -6420751566989631388
+    second: stone|Empty.002Action
+  - first:
+      74: -3909314806936151311
+    second: stone|EmptyAction
+  - first:
+      74: -4586697123525329462
+    second: stone|rotating topAction
+  - first:
+      74: -7921053603240206086
+    second: stone|stoneAction
+  - first:
+      74: -7775731890836415729
+    second: stone|trebuchet armAction
+  - first:
+      74: -4325042982143707408
+    second: stone|trebuchet Puller ThingyAction
+  - first:
+      74: 7659786415887385140
+    second: stone|trebuchet stringAction
+  - first:
+      74: -8317528165183281509
+    second: trebuchet arm|Empty.001Action
+  - first:
+      74: 8975237482933705433
+    second: trebuchet arm|Empty.001Action.002
+  - first:
+      74: 4809582208506728695
+    second: trebuchet arm|Empty.002Action
+  - first:
+      74: -5780654468536055965
+    second: trebuchet arm|EmptyAction
+  - first:
+      74: 4363863547780049664
+    second: trebuchet arm|rotating topAction
+  - first:
+      74: -7516476080358175415
+    second: trebuchet arm|stoneAction
+  - first:
+      74: -2745955365768829020
+    second: trebuchet arm|trebuchet armAction
+  - first:
+      74: 3321915531077954498
+    second: trebuchet arm|trebuchet Puller ThingyAction
+  - first:
+      74: -1279361711515476394
+    second: trebuchet arm|trebuchet stringAction
+  - first:
+      74: -8220746935095398926
+    second: trebuchet Puller Thingy|Empty.001Action
+  - first:
+      74: -1764462894665882077
+    second: trebuchet Puller Thingy|Empty.001Action.002
+  - first:
+      74: 3926927097708531764
+    second: trebuchet Puller Thingy|Empty.002Action
+  - first:
+      74: -8307874546270015377
+    second: trebuchet Puller Thingy|EmptyAction
+  - first:
+      74: -6383804002897041205
+    second: trebuchet Puller Thingy|rotating topAction
+  - first:
+      74: -8978729180322940019
+    second: trebuchet Puller Thingy|stoneAction
+  - first:
+      74: -44330135588812390
+    second: trebuchet Puller Thingy|trebuchet armAction
+  - first:
+      74: 8650500632200660750
+    second: trebuchet Puller Thingy|trebuchet Puller ThingyAction
+  - first:
+      74: -1851246925139927423
+    second: trebuchet Puller Thingy|trebuchet stringAction
+  - first:
+      74: -8646198568044729625
+    second: trebuchet string|Empty.001Action
+  - first:
+      74: 5841318462589221291
+    second: trebuchet string|Empty.001Action.002
+  - first:
+      74: 7693005833543621207
+    second: trebuchet string|Empty.002Action
+  - first:
+      74: -8794469305223189673
+    second: trebuchet string|EmptyAction
+  - first:
+      74: 5863662262900742242
+    second: trebuchet string|rotating topAction
+  - first:
+      74: 7856785848535586260
+    second: trebuchet string|stoneAction
+  - first:
+      74: 7914033568725181319
+    second: trebuchet string|trebuchet armAction
+  - first:
+      74: -5023132693174074862
+    second: trebuchet string|trebuchet Puller ThingyAction
+  - first:
+      74: -6053132912953420450
+    second: trebuchet string|trebuchet stringAction
+  - first:
+      74: -3275784451773876451
+    second: rotating top|Empty.001Action
+  - first:
+      74: -1679906091086929530
+    second: rotating top|Empty.001Action.002
+  - first:
+      74: -8562333125811082726
+    second: rotating top|Empty.002Action
+  - first:
+      74: -8989196088761872626
+    second: rotating top|EmptyAction
+  - first:
+      74: -8483202644030048600
+    second: rotating top|rotating topAction
+  - first:
+      74: 2663829451295064331
+    second: rotating top|stoneAction
+  - first:
+      74: 1774986819687505281
+    second: rotating top|trebuchet armAction
+  - first:
+      74: 939604379833766927
+    second: rotating top|trebuchet Puller ThingyAction
+  - first:
+      74: 2008578656872442969
+    second: rotating top|trebuchet stringAction
+  - first:
+      74: -1779458952936665273
+    second: Empty|Empty.001Action
+  - first:
+      74: 1201201484885243428
+    second: Empty|Empty.001Action.002
+  - first:
+      74: -2662208865924906605
+    second: Empty|Empty.002Action
+  - first:
+      74: -5572541973309549404
+    second: Empty|EmptyAction
+  - first:
+      74: -4362767635021164272
+    second: Empty|rotating topAction
+  - first:
+      74: -2267921951225914812
+    second: Empty|stoneAction
+  - first:
+      74: -3571485462580285969
+    second: Empty|trebuchet armAction
+  - first:
+      74: 8248042630698496554
+    second: Empty|trebuchet Puller ThingyAction
+  - first:
+      74: -6484994181640682247
+    second: Empty|trebuchet stringAction
+  - first:
+      74: -6949670309919530470
+    second: Empty.001|Empty.001Action
+  - first:
+      74: 1585231075692635069
+    second: Empty.001|Empty.001Action.002
+  - first:
+      74: -3054066582643419362
+    second: Empty.001|Empty.002Action
+  - first:
+      74: 5829745925575038128
+    second: Empty.001|EmptyAction
+  - first:
+      74: 3960563128690939334
+    second: Empty.001|rotating topAction
+  - first:
+      74: 7195703407184897800
+    second: Empty.001|stoneAction
+  - first:
+      74: -7202201315238430797
+    second: Empty.001|trebuchet armAction
+  - first:
+      74: 395838612794212112
+    second: Empty.001|trebuchet Puller ThingyAction
+  - first:
+      74: -7410470045954141627
+    second: Empty.001|trebuchet stringAction
+  - first:
+      74: -2833936023074899380
+    second: Empty.003|Empty.001Action
+  - first:
+      74: -1390208021809879011
+    second: Empty.003|Empty.001Action.002
+  - first:
+      74: 3547846876546974981
+    second: Empty.003|Empty.002Action
+  - first:
+      74: 503278071113943726
+    second: Empty.003|EmptyAction
+  - first:
+      74: 7105986260795668701
+    second: Empty.003|rotating topAction
+  - first:
+      74: -2747562903196202017
+    second: Empty.003|stoneAction
+  - first:
+      74: 1873720113703442469
+    second: Empty.003|trebuchet armAction
+  - first:
+      74: 830154335882805622
+    second: Empty.003|trebuchet Puller ThingyAction
+  - first:
+      74: 5688409594664603253
+    second: Empty.003|trebuchet stringAction
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

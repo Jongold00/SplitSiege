@@ -7,14 +7,15 @@ public abstract class TowerBehavior : MonoBehaviour
 {
     protected bool active = false;
 
-    private void Start()
-    {
+    public static event Action<GameObject> OnTowerSelected;
 
+
+    public abstract void Update();
+
+    private void OnMouseDown()
+    {
+        OnTowerSelected?.Invoke(gameObject);
     }
 
-    public virtual void Update()
-    {
-    }
-
-
+    public abstract TowerDataSO GetTowerData();
 }

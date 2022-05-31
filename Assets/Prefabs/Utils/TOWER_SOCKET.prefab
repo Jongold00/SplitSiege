@@ -1670,7 +1670,7 @@ Transform:
   - {fileID: 3790010835862861837}
   - {fileID: 926924690597258925}
   - {fileID: 3896046410367744446}
-  m_Father: {fileID: 8373823931322534513}
+  m_Father: {fileID: 4356369464492977358}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1864837676988860053
@@ -5977,32 +5977,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8373823931322534513}
+  - component: {fileID: 4356369464492977358}
   - component: {fileID: 7175772657740255448}
   - component: {fileID: 2207661772518808293}
   - component: {fileID: 8856214278752186717}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TOWER_SOCKET
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8373823931322534513
-Transform:
+--- !u!224 &4356369464492977358
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9186811983999357131}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -3.17}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 5297989600136375730}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 2.37, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7175772657740255448
 MonoBehaviour:
   m_ObjectHideFlags: 0

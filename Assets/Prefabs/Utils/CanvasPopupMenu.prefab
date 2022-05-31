@@ -1003,7 +1003,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 32767
   m_TargetDisplay: 0
 --- !u!114 &5649859894113476065
 MonoBehaviour:
@@ -1041,7 +1041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
+  m_BlockingObjects: 3
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1295,8 +1295,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 103.07277, y: -103.98313}
-  m_SizeDelta: {x: 206.14554, y: 80.791084}
+  m_AnchoredPosition: {x: 80.4731, y: -88.93648}
+  m_SizeDelta: {x: 160.9462, y: 68.753075}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5649859894388533980
 CanvasRenderer:
