@@ -44,7 +44,7 @@ public class EvilWizard : OffensiveTower
         currentTarget = closest;
     }
 
-    public override void Fire()
+    protected override void Fire()
     {
         int spellChoice = Random.Range(0, spells.Length);
 

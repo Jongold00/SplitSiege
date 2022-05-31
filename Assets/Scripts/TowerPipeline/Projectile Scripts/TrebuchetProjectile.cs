@@ -109,11 +109,12 @@ public class TrebuchetProjectile : Projectile
 
 
 
+
     }
 
     private float CalculateInitialFlightTime(float initialY)
     {
-        print((-10.0f - Mathf.Sqrt((10.0f * 10.0f) - (2 * Physics.gravity.y * initialY))) / Physics.gravity.y);
+        
 
 
         return (-10.0f - Mathf.Sqrt((10.0f * 10.0f) - (2 * Physics.gravity.y * initialY))) / Physics.gravity.y;
@@ -121,16 +122,16 @@ public class TrebuchetProjectile : Projectile
 
 
 
-    protected void HitNearbyTargets()
+    protected void HitTargetsInsideAoeRadius(float dmg)
     {
-        Debug.Log("radius: " + aoeRadius);
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, aoeRadius);
-        Debug.Log(hitColliders.Length);
         foreach (var hitCollider in hitColliders)
         {
-            Debug.Log("Nearby unit found!");
             UnitBehavior unit = hitCollider.GetComponent<UnitBehavior>();
-            unit?.TakeDamage(10);
+            if (unit != null && unit)
+            {
+                unit.TakeDamage(dmg);
+            }
         }
     }
 }

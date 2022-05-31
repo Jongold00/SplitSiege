@@ -93,7 +93,7 @@ public class BuildTowerPopupMenu : MonoBehaviour
         rectTransformOfPopupMenu.anchoredPosition = viewportPoint;
     }
 
-    public void HidePopupMenu(GameObject obj)
+    public void HidePopupMenu()
     {
         PopupMenuObj.SetActive(false);
     }
