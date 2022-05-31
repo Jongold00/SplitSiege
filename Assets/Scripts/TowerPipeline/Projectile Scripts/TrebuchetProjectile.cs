@@ -11,13 +11,8 @@ public class TrebuchetProjectile : Projectile
 
     float currentTimeToImpact;
 
-    Vector3 currentTargetPosition;
-    Vector3 currentTargetVelocity;
 
-    Vector3 lastTargetVelocity = Vector3.zero;
-    Vector3 lastFramesVelocity = Vector3.zero;
-
-    Vector3 currentTargetAcceleration = Vector3.zero;
+    [SerializeField] float launchAngle = 65.0f;
 
     [SerializeField] private float aoeRadius;
 
@@ -100,7 +95,7 @@ public class TrebuchetProjectile : Projectile
 
 
 
-        currentTimeToImpact = CalculateInitialFlightTime();
+        currentTimeToImpact = CalculateInitialFlightTime(transform.position.y);
 
         Vector3 projectedImpactPosition = target.GetComponent<UnitNavigation>().GetPositionInSeconds(currentTimeToImpact);
 
@@ -116,19 +111,12 @@ public class TrebuchetProjectile : Projectile
 
     }
 
-    /*
-    private Vector3 CalculateMomentaryVelocity()
+    private float CalculateInitialFlightTime(float initialY)
     {
+        print((-10.0f - Mathf.Sqrt((10.0f * 10.0f) - (2 * Physics.gravity.y * initialY))) / Physics.gravity.y);
 
 
-        return (estimatedTargetPosition - transform.position) / timeToImpact;
-    }
-
-    */
-
-    private float CalculateInitialFlightTime()
-    {
-        return (-2 * 10.0f) / Physics.gravity.y;
+        return (-10.0f - Mathf.Sqrt((10.0f * 10.0f) - (2 * Physics.gravity.y * initialY))) / Physics.gravity.y;
     }
 
 
