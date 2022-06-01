@@ -91,8 +91,6 @@ public abstract class OffensiveTower : TowerBehavior
 
     public override void Update()
     {
-        base.Update();
-
         AcquireTarget();
         attackCD -= Time.deltaTime;
 
@@ -139,7 +137,6 @@ public abstract class OffensiveTower : TowerBehavior
         anim.SetFloat("Speed", 1 / offensiveTowerData.GetFireRate());
         anim.SetTrigger("Firing");
 
-        print("damage: " + offensiveTowerData.GetDamage());
 
         StartCoroutine(SpawnProjectile());
 

@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 6419627869912433495}
   - component: {fileID: 7105885547969157739}
   - component: {fileID: -1090311823617401611}
+  - component: {fileID: -3334187917591347135}
   m_Layer: 5
   m_Name: laser tower
   m_TagString: Untagged
@@ -281,3 +282,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.451176, y: 1.451176, z: 2.8}
   m_Center: {x: 0, y: 0, z: 1.4}
+--- !u!114 &-3334187917591347135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6794464588044622516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb9aa53d8837a24f9bef4be0422d0d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildSpeed: 3.25
+  startYBuildOffset: -3

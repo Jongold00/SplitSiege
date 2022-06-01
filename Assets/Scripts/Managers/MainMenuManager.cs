@@ -60,16 +60,18 @@ public class MainMenuManager : MonoBehaviour
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
         operation.allowSceneActivation = false;
 
-        loadingScreen.SetActive(true);
+        loadingScreen = GameObject.FindGameObjectWithTag("loading");
+        loadingScreen.GetComponent<ActivateAllChildren>().Activate();
         float progress;
         float timeElapsed = 0.0f;
 
+        float randomizedPad = Random.Range(1.5f, 2.25f);
 
-        while (!operation.isDone && timeElapsed < 2.0f)
+        while (!operation.isDone && timeElapsed < randomizedPad * 1.5f)
         {
             print(timeElapsed);
             timeElapsed += Time.deltaTime;
-            progress = Mathf.Min(operation.progress / 0.9f, timeElapsed / 1.5f);
+            progress = Mathf.Min(operation.progress / 0.9f, timeElapsed / randomizedPad);
 
             loadingSlider.value = progress;
             yield return null;
