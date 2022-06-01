@@ -70,10 +70,11 @@ public abstract class Projectile : MonoBehaviour
             projectileObj.SetActive(false);
             particleObj.SetActive(true);
         }
+    }
 
     public void SetDamage(float set)
     {
         damage = set;
     }
-}
 
+}

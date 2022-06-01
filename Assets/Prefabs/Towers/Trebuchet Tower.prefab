@@ -505,6 +505,7 @@ GameObject:
   - component: {fileID: 4909101019949714721}
   - component: {fileID: 1484856404078153352}
   - component: {fileID: 7468122738147900396}
+  - component: {fileID: -7200453397276524089}
   m_Layer: 5
   m_Name: Trebuchet Tower
   m_TagString: Untagged
@@ -597,6 +598,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.6491008, y: 1.6491008, z: 2.699658}
   m_Center: {x: 0, y: 0, z: 1.4}
+--- !u!114 &-7200453397276524089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5303824945869716789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb9aa53d8837a24f9bef4be0422d0d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildSpeed: 3.25
+  startYBuildOffset: -3
 --- !u!1 &5608507071271070714
 GameObject:
   m_ObjectHideFlags: 0

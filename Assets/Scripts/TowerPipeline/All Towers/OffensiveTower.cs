@@ -91,8 +91,6 @@ public abstract class OffensiveTower : TowerBehavior
 
     public override void Update()
     {
-        base.Update();
-
         AcquireTarget();
         attackCD -= Time.deltaTime;
 
