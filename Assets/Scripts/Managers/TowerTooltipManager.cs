@@ -64,7 +64,6 @@ public class TowerTooltipManager : MonoBehaviour
     {
         Vector3 indicatorPos = new Vector3(0, 0.1f, 0);
         TowerDataSO data = obj.GetComponent<TowerBehavior>().GetTowerData();
-        print("data.range: " + data.range);
         Vector3 indicatorScale = new Vector3(data.range * 2, data.range * 2, 1f);
 
         switch (data.faction)

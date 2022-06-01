@@ -73,4 +73,53 @@ public class EventsManager : MonoBehaviour
     }
     #endregion
 
+    #region MusicVolumeChange
+
+    private event Action<float> onMusicVolumeChange;
+
+    public void SubscribeMusicVolumeChange(Action<float> func)
+    {
+        onMusicVolumeChange += func;
+    }
+
+    public void UnSubscribeMusicVolumeChange(Action<float> func)
+    {
+        onMusicVolumeChange -= func;
+    }
+
+    public void MusicVolumeChange(float value)
+    {
+        if (onMusicVolumeChange == null)
+        {
+            return;
+        }
+        onMusicVolumeChange(value);
+    }
+    #endregion
+
+    #region SFXVolumeChange
+
+    private event Action<float> onSFXVolumeChange;
+
+    public void SubscribeSFXVolumeChange(Action<float> func)
+    {
+        onSFXVolumeChange += func;
+    }
+
+    public void UnSubscribeSFXVolumeChange(Action<float> func)
+    {
+        onSFXVolumeChange -= func;
+    }
+
+    public void SFXVolumeChange(float value)
+    {
+        if (onMusicVolumeChange == null)
+        {
+            return;
+        }
+        onSFXVolumeChange(value);
+    }
+    #endregion
+
+
 }
