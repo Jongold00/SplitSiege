@@ -28,21 +28,133 @@ public class SpawningManager : MonoBehaviour
     [SerializeField]
     int credits;
 
-
     [SerializeField]
     List<SpawningEvent> spawns;
+
+    [SerializeField]
+    List<SpawningRound> rounds;
+
+    [SerializeField]
+    Transform spawnLocation;
+
+    SpawningRound currentRound;
+
 
     List<float> cooldowns = new List<float>();
 
     [SerializeField]
     float globalCD = 10.0f;
 
-    [SerializeField]
-    Transform spawnLocation;
+    bool spawning = false;
 
+    Action<GameStateManager.GameState> listenGameStateChange;
+
+
+    void ListenGameStateChange(GameStateManager.GameState newState)
+    {
+        print("Spawning manager: gamestate is now " + newState);
+
+        switch(newState)
+        {
+            case GameStateManager.GameState.Building:
+                spawning = false;
+                break;
+
+            case GameStateManager.GameState.Fighting:
+                StartNewRound();
+                break;
+
+            case GameStateManager.GameState.Won:
+                spawning = false;
+                break;
+
+            case GameStateManager.GameState.Lost:
+                spawning = false;
+                break;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        EventsManager.instance.UnSubscribeGameStateChange(listenGameStateChange);
+
+    }
 
     private void Start()
     {
+        listenGameStateChange += ListenGameStateChange;
+        EventsManager.instance.SubscribeGameStateChange(listenGameStateChange);
+
+    }
+
+
+
+    private void Update()
+    {
+
+        if (spawning)
+        {
+
+            HandleCooldowns();
+            AttemptEvents();
+
+
+            if (RoundIsWon()) // can't spawn anything more on this round
+            {
+                if (LevelIsWon()) // can't spawn anything more on this round and theres no more rounds after this one
+                {
+                    EventsManager.instance.GameStateChange(GameStateManager.GameState.Won);
+                }
+
+                else
+                {
+                    EventsManager.instance.GameStateChange(GameStateManager.GameState.Building);
+                }
+
+            }
+        }
+        
+    }
+
+    bool LevelIsWon()
+    {
+        return rounds.IndexOf(currentRound) >= rounds.Count - 1;
+    }
+
+    bool RoundIsWon()
+    {
+        return !currentRound.CanSpawnMore(credits) && UnitBehavior.allEnemies.Count <= 0;
+    }
+
+    void StartNewRound()
+    {
+        if (currentRound == null)
+        {
+            currentRound = rounds[0];
+        }
+
+        else
+        {
+            currentRound = rounds[rounds.IndexOf(currentRound) + 1];
+        }
+
+        print("Spawning Manager: just started round number " + rounds.IndexOf(currentRound));
+
+
+        credits = currentRound.credits;
+        spawns = currentRound.spawns;
+        globalCD = currentRound.globalCD;
+
+
+        ClearCooldowns();
+
+        spawning = true;
+    }
+
+
+    void ClearCooldowns()
+    {
+        cooldowns = new List<float>();
         for (int i = 0; i < spawns.Count; i++)
         {
             cooldowns.Add(0.0f);
@@ -50,42 +162,15 @@ public class SpawningManager : MonoBehaviour
     }
 
 
-    private void Update()
-    {
-        if (GameStateManager.instance.GetState() == GameStateManager.GameState.Fighting)
-        {
-            HandleCooldowns();
-            AttemptEvents();
 
-            if (LevelIsDone())
-            {
-                GameStateManager.instance.SetState(GameStateManager.GameState.Building);
-                ClearCooldowns();
-            }
-        }
-        
-    }
 
-    bool LevelIsDone()
-    {
-        return DoneSpawning() && UnitBehavior.allEnemies.Count == 0;
-    }
 
-    public bool DoneSpawning()
-    {
-        int smallest = 10000;
-        foreach (SpawningEvent se in spawns)
-        {
-            if (se.GetCost() < smallest) smallest = se.GetCost();
-        }
-        return smallest > credits;
-    }
 
     void AttemptEvents()
     {
         for (int i = 0; i < spawns.Count; i++)
         {
-            if (OffCooldown(i) && credits > spawns[i].GetCost())
+            if (OffCooldown(i) && credits >= spawns[i].GetCost())
             {
                 InvokeEventCooldown(i);
                 if (spawns[i].Success())
@@ -111,16 +196,7 @@ public class SpawningManager : MonoBehaviour
         }
     }
 
-    void ClearCooldowns()
-    {
-        for (int i = 0; i < spawns.Count; i++)
-        {
-            if (cooldowns[i] > 0)
-            {
-                cooldowns[i] = 0;
-            }
-        }
-    }
+
 
     void HandleCooldowns()
     {
@@ -150,10 +226,5 @@ public class SpawningManager : MonoBehaviour
     {
         return cooldowns[index] <= 0;
     }
-
-
-
-
-
 
 }

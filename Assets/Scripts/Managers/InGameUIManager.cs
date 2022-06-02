@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System;
-
+using UnityEditor;
 public class InGameUIManager : MonoBehaviour
 {
     #region Singleton
@@ -26,14 +26,18 @@ public class InGameUIManager : MonoBehaviour
 
     #endregion
 
-    [SerializeField]
-    GameObject buildPhaseUI;
+
+    
+    
+    [SerializeField] GameObject[] tabs;
+
+
+
 
     [SerializeField]
     TextMeshProUGUI buildPhaseTimer;
 
-    [SerializeField]
-    GameObject fightPhaseUI;
+
 
     Action<GameStateManager.GameState> onGameStateChange;
 
@@ -43,20 +47,47 @@ public class InGameUIManager : MonoBehaviour
         EventsManager.instance.SubscribeGameStateChange(onGameStateChange);
     }
 
+    private void OnDestroy()
+    {
+        EventsManager.instance.UnSubscribeGameStateChange(onGameStateChange);
+
+    }
+
     void ActivateUI(GameStateManager.GameState state)
     {
         switch (state)
         {
             case GameStateManager.GameState.Building:
-                buildPhaseUI.SetActive(true);
-                fightPhaseUI.SetActive(false);
+                ToggleTab(0);
                 break;
             case GameStateManager.GameState.Fighting:
-                buildPhaseUI.SetActive(false);
-                fightPhaseUI.SetActive(true);
+                ToggleTab(1);
                 break;
+            case GameStateManager.GameState.Won:
+                ToggleTab(2);
+                break;
+            case GameStateManager.GameState.Lost:
+                ToggleTab(3);
+                break;
+
 
         }
 
     }
+
+    void ToggleTab(int turnOn)
+    {
+        for (int i = 0; i < tabs.Length; i++)
+        {
+            if (i == turnOn)
+            {
+                tabs[i].SetActive(true);
+            }
+            else
+            {
+                tabs[i].SetActive(false);
+            }
+        }
+    }
+
 }

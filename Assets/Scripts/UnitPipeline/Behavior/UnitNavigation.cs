@@ -42,6 +42,12 @@ public class UnitNavigation : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(desiredRotation);
 
+        if (distanceTravelled > nav.path.length)
+        {
+            EventsManager.instance.EnemyReachesEnd(unitData);
+            Destroy(gameObject);
+        }
+
 
     }
 

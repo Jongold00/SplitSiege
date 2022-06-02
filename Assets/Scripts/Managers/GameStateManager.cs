@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
+
 
 public class GameStateManager : MonoBehaviour
 {
@@ -29,17 +31,18 @@ public class GameStateManager : MonoBehaviour
 
     public enum GameState{
         Building,
-        Fighting
+        Fighting,
+        Won,
+        Lost
     }
 
+    Action<GameStateManager.GameState> listenGameStateChange;
 
 
     [SerializeField]
     private float buildDuration = 30;
 
 
-
-    public int currentRound = 0;
 
 
     private GameState currentGameState;
@@ -51,25 +54,26 @@ public class GameStateManager : MonoBehaviour
 
     public void StartRound()
     {
-        currentRound++;
-        SetState(GameState.Fighting);
+        EventsManager.instance.GameStateChange(GameState.Fighting);
     }
 
     public void EndRound()
     {
-        SetState(GameState.Building);
+        EventsManager.instance.GameStateChange(GameState.Building);
     }
 
-    public void SetState(GameState set)
+    public void GameStateChanged(GameState set)
     {
         currentGameState = set;
-        EventsManager.instance.GameStateChange(set);
+
         switch (currentGameState)
         {
             case GameState.Building:
                 //StartCoroutine(StartBuildTimer(buildDuration));
                 break;
         }
+
+
     }
 
     private IEnumerator StartBuildTimer(float duration)
@@ -88,15 +92,15 @@ public class GameStateManager : MonoBehaviour
 
     public void Start()
     {
-        SetState(GameState.Building);
+        listenGameStateChange += GameStateChanged;
+        EventsManager.instance.SubscribeGameStateChange(listenGameStateChange);
+
+        EventsManager.instance.GameStateChange(GameState.Building);
     }
 
-    private void Update()
+    private void OnDestroy()
     {
-     
-
-        
-
+        EventsManager.instance.UnSubscribeGameStateChange(listenGameStateChange);
     }
 
 
