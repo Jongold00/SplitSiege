@@ -105,7 +105,7 @@ public class GameStateManager : MonoBehaviour
         listenGameStateChange += GameStateChanged;
         EventsManager.instance.SubscribeGameStateChange(listenGameStateChange);
 
-        listenEnemyReachedEnd +=
+        listenEnemyReachedEnd += EnemyReachedEnd;
 
         EventsManager.instance.GameStateChange(GameState.Building);
     }
