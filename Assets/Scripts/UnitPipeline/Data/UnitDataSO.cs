@@ -12,9 +12,10 @@ public class UnitDataSO : ScriptableObject
     public GameObject unitPrefab;
     public int goldValue;
     public int creditCost;
+    public int damageToCastle;
 
 
-    public void Init(string n, int h, float s, GameObject pf, int v, int credits)
+    public void Init(string n, int h, float s, GameObject pf, int v, int credits, int castleDamage)
     {
         unitName = n;
         unitHealth = h;
@@ -22,6 +23,7 @@ public class UnitDataSO : ScriptableObject
         unitPrefab = pf;
         goldValue = v;
         creditCost = credits;
+        damageToCastle = castleDamage;
     }
 
 }
