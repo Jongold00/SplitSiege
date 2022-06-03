@@ -6,6 +6,8 @@ using UnityEngine.AI;
 
 public class UnitBehavior : MonoBehaviour
 {
+    public UnitDataSO data;
+
     private Animator anim;
 
     UnitNavigation nav;
@@ -13,9 +15,8 @@ public class UnitBehavior : MonoBehaviour
 
     Healthbar healthbar;
 
-    float maxHealth = 100;
-    float health = 100;
-    public float moveSpeed = 1.0f;
+    float maxHealth;
+    float health;
 
     public static List<UnitBehavior> allEnemies = new List<UnitBehavior>();
 
@@ -39,7 +40,6 @@ public class UnitBehavior : MonoBehaviour
     List<StatusEffect> activeEffects = new List<StatusEffect>();
 
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +48,9 @@ public class UnitBehavior : MonoBehaviour
 
         anim = GetComponentInChildren<Animator>();
 
+
+        maxHealth = data.unitHealth;
+        health = maxHealth;
 
         healthbar = GetComponentInChildren<Healthbar>();
 

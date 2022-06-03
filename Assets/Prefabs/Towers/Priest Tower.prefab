@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 6649256850176867126}
   - component: {fileID: 5837976518694933248}
   - component: {fileID: 1774023353729950274}
-  - component: {fileID: 8730725191466507837}
+  - component: {fileID: 2528790643538003812}
   m_Layer: 5
   m_Name: Priest Tower
   m_TagString: Untagged
@@ -310,7 +310,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.7414272, y: 1.7414272, z: 3.107144}
   m_Center: {x: 0, y: 0, z: 1.5}
---- !u!114 &8730725191466507837
+--- !u!114 &2528790643538003812
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

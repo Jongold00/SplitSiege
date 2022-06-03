@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 4406250714033189942}
   - component: {fileID: 5189450646861166699}
   - component: {fileID: 2432421980888666685}
-  - component: {fileID: -7837184800073375873}
+  - component: {fileID: -5938175416081028692}
   m_Layer: 5
   m_Name: Evil Wizard Tower
   m_TagString: Untagged
@@ -268,7 +268,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 3, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-7837184800073375873
+--- !u!114 &-5938175416081028692
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

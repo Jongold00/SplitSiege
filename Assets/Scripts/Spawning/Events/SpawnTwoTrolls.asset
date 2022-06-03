@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SpawnTwoTrolls
   m_EditorClassIdentifier: 
   weight: 0.3
-  cooldown: 2
+  cooldown: 4
   spawns:
   - {fileID: 3353735786919235548, guid: c8d16400944122146b4db76bd58a5e93, type: 3}
   - {fileID: 3353735786919235548, guid: c8d16400944122146b4db76bd58a5e93, type: 3}

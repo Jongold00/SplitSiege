@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 311457141329051636}
   - component: {fileID: 3767558242204428793}
   - component: {fileID: 7913865973578691712}
-  - component: {fileID: -6183883578763795766}
+  - component: {fileID: 1582921612498775238}
   m_Layer: 5
   m_Name: Graveyard Tower
   m_TagString: Untagged
@@ -60,7 +60,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.12797, y: 2.12797, z: 2.4897983}
   m_Center: {x: 0, y: 0, z: 1.3}
---- !u!114 &-6183883578763795766
+--- !u!114 &1582921612498775238
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

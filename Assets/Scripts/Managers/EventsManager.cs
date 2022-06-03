@@ -63,13 +63,85 @@ public class EventsManager : MonoBehaviour
         onGameStateChange -= func;
     }
 
-    public void GameStateChange(GameStateManager.GameState enemy)
+    public void GameStateChange(GameStateManager.GameState change)
     {
         if (onGameStateChange == null)
         {
             return;
         }
-        onGameStateChange(enemy);
+        onGameStateChange(change);
+    }
+    #endregion
+
+    #region MusicVolumeChange
+
+    private event Action<float> onMusicVolumeChange;
+
+    public void SubscribeMusicVolumeChange(Action<float> func)
+    {
+        onMusicVolumeChange += func;
+    }
+
+    public void UnSubscribeMusicVolumeChange(Action<float> func)
+    {
+        onMusicVolumeChange -= func;
+    }
+
+    public void MusicVolumeChange(float value)
+    {
+        if (onMusicVolumeChange == null)
+        {
+            return;
+        }
+        onMusicVolumeChange(value);
+    }
+    #endregion
+
+    #region SFXVolumeChange
+
+    private event Action<float> onSFXVolumeChange;
+
+    public void SubscribeSFXVolumeChange(Action<float> func)
+    {
+        onSFXVolumeChange += func;
+    }
+
+    public void UnSubscribeSFXVolumeChange(Action<float> func)
+    {
+        onSFXVolumeChange -= func;
+    }
+
+    public void SFXVolumeChange(float value)
+    {
+        if (onMusicVolumeChange == null)
+        {
+            return;
+        }
+        onSFXVolumeChange(value);
+    }
+    #endregion
+
+    #region EnemyReachedEnd
+
+    private event Action<UnitDataSO> onEnemyReachesEnd;
+
+    public void SubscribeEnemyReachesEnd(Action<UnitDataSO> func)
+    {
+        onEnemyReachesEnd += func;
+    }
+
+    public void UnsubscribeEnemyReachesEnd(Action<UnitDataSO> func)
+    {
+        onEnemyReachesEnd -= func;
+    }
+
+    public void EnemyReachesEnd(UnitDataSO data)
+    {
+        if (onEnemyReachesEnd == null)
+        {
+            return;
+        }
+        onEnemyReachesEnd(data);
     }
     #endregion
 

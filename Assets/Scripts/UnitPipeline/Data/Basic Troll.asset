@@ -17,3 +17,4 @@ MonoBehaviour:
   unitSpeed: 1
   unitPrefab: {fileID: 0}
   goldValue: 0
+  creditCost: 2
