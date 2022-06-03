@@ -25,7 +25,7 @@ public abstract class OffensiveTower : TowerBehavior
     protected Animator anim;
 
     public bool CanFire { get; set; }
-    Build build;
+    ITowerBuilder build;
 
     #region Rotation Stuff
 
@@ -36,7 +36,7 @@ public abstract class OffensiveTower : TowerBehavior
 
     private void OnEnable()
     {
-        build = GetComponent<Build>();
+        build = GetComponent<ITowerBuilder>();
         build.OnBuildComplete += EnableFiring;
     }
 

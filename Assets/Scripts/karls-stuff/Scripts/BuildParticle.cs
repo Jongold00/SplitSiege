@@ -3,23 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class BuildParticle : ParticleController
+public class BuildParticle : BuildParticleController
 {
     [SerializeField] ParticleSystem splash;
     private bool splashTriggered;
-    private Build build;
-
-    public Build Build 
-    { get => build; set { build = value; } }
 
     protected override void Start()
     {
         base.Start();
-        Build.OnBuildComplete += TriggerSplash;
+        Builder.OnBuildComplete += StopAllParticles;
     }
     private void OnDestroy()
     {
-        Build.OnBuildComplete -= TriggerSplash;
+        Builder.OnBuildComplete -= StopAllParticles;
 
     }
 
@@ -31,14 +27,9 @@ public class BuildParticle : ParticleController
             Destroy(this.gameObject);
         }
     }
-    public void TriggerSplash()
+    public override void StopAllParticles()
     {
         splash.Play();
-        StopAllParticlesExceptSplash();
-    }
-
-    private void StopAllParticlesExceptSplash()
-    {
         foreach (ParticleSystem item in allParticles)
         {
             if (item != splash)

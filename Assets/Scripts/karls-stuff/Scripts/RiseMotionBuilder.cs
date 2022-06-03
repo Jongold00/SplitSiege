@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Build : MonoBehaviour
+public class RiseMotionBuilder : MonoBehaviour, ITowerBuilder
 {
     public event Action OnBuildComplete;
     [SerializeField] private float buildSpeed;
