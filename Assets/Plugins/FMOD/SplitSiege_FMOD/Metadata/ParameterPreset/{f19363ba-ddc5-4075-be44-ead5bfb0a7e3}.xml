@@ -16,7 +16,15 @@
 			<value>100</value>
 		</property>
 		<property name="initialValue">
-			<value>0</value>
+			<value>50</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{a4077324-5b5f-4ceb-af15-970e96b1703b}</destination>
+		</relationship>
+	</object>
+	<object class="RandomizerModulator" id="{a4077324-5b5f-4ceb-af15-970e96b1703b}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>cursorPosition</value>
 		</property>
 	</object>
 </objects>
