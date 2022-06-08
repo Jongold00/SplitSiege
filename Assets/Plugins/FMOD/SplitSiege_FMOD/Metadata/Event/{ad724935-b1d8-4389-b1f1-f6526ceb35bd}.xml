@@ -8,7 +8,7 @@
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{ef1a52de-40db-45c1-895b-657bae3b05d4}</destination>
+			<destination>{beb61649-29cc-49fc-acf1-46b931a109ff}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{bcb69cbd-af8e-46be-b360-a7c19eacac4e}</destination>
@@ -60,7 +60,7 @@
 	<object class="MarkerTrack" id="{3e3ed5d1-6d8d-4907-b5ef-dbc3e4fa9c2a}" />
 	<object class="GroupTrack" id="{ba8b6c6f-5268-45db-b441-5198bb669f0b}">
 		<relationship name="modules">
-			<destination>{88b47ed8-349f-40e8-8dbd-984ac6d947f6}</destination>
+			<destination>{98647590-b64b-4d5d-9d09-3ec735438c3c}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{0b199ce8-5441-4b39-98c5-b1eeda689897}</destination>
@@ -68,7 +68,7 @@
 	</object>
 	<object class="Timeline" id="{46485a11-0cd6-4f75-94c4-c6ca1c53619d}">
 		<relationship name="modules">
-			<destination>{88b47ed8-349f-40e8-8dbd-984ac6d947f6}</destination>
+			<destination>{98647590-b64b-4d5d-9d09-3ec735438c3c}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{141a6f98-0c9d-4d8a-b0da-5f0e94faeb54}">
@@ -88,15 +88,21 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{2bfe5f35-a64c-49f4-9f84-4d950f8b777a}" />
-	<object class="SingleSound" id="{88b47ed8-349f-40e8-8dbd-984ac6d947f6}">
+	<object class="SingleSound" id="{98647590-b64b-4d5d-9d09-3ec735438c3c}">
 		<property name="length">
 			<value>1.3700000000000001</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{967c5261-3cb4-4292-8f15-c9692c672ec8}</destination>
+		</relationship>
 		<relationship name="audioFile">
-			<destination>{5f2a143f-1ed8-4467-9f3f-6050a2b37990}</destination>
+			<destination>{962d485f-771e-48c6-8940-489f47be4a56}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{0b199ce8-5441-4b39-98c5-b1eeda689897}">
+		<property name="volume">
+			<value>-14.5</value>
+		</property>
 		<property name="name">
 			<value>Trebuchet Fire Main</value>
 		</property>
@@ -117,6 +123,14 @@
 	</object>
 	<object class="MixerBusPanner" id="{b2b7751f-2403-4ddb-b33b-1c777b2635d0}" />
 	<object class="MixerBusFader" id="{e487ed02-4312-4f0c-8c47-13582cd357af}" />
+	<object class="RandomizerModulator" id="{967c5261-3cb4-4292-8f15-c9692c672ec8}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>5.5</value>
+		</property>
+	</object>
 	<object class="MixerBusEffectChain" id="{218554d3-7100-4b61-a7f2-e02f8d50a194}">
 		<relationship name="effects">
 			<destination>{443a4634-8b93-4310-b176-e57fe7ae76e0}</destination>

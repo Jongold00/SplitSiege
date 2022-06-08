@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{5f2a143f-1ed8-4467-9f3f-6050a2b37990}">
+	<object class="AudioFile" id="{b099e0f8-a8e5-49be-aecf-bf69c8389449}">
 		<property name="assetPath">
-			<value>Tower Defense - SFX- Trebuchet.wav</value>
+			<value>MX/Gameplay/8BitBand_Bass_SplitSiege_BuildPhaseTheme.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>96</value>
+			<value>44.0999985</value>
 		</property>
 		<property name="channelCount">
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>1.3700000000000001</value>
+			<value>48</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{57242b32-9511-4dfb-ad60-d2ea84eee8bf}</destination>

@@ -564,7 +564,7 @@ MonoBehaviour:
       Data2: 1133097432
       Data3: 1391915441
       Data4: -1120539796
-    Path: event:/Trebuchet Fire
+    Path: event:/SFX/Towers/Trebuchet/Trebuchet Fire
   volume: 0
 --- !u!95 &1484856404078153352
 Animator:

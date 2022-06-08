@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{0e80d640-38ad-4fe3-99c7-5d8069b3895a}">
+		<property name="name">
+			<value>Mob Progress</value>
+		</property>
+		<relationship name="folder">
+			<destination>{993ef5bf-8ab8-43d4-85c8-c0c3a4311237}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{fb4e5faf-53fc-430d-90dc-d482f920a248}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{fb4e5faf-53fc-430d-90dc-d482f920a248}">
+		<property name="maximum">
+			<value>100</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
