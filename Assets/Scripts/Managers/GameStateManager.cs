@@ -21,7 +21,6 @@ public class GameStateManager : MonoBehaviour
         else
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
     }
 
@@ -35,6 +34,8 @@ public class GameStateManager : MonoBehaviour
         Won,
         Lost
     }
+
+    public string currentLevelName = "level1";
 
     Action<GameStateManager.GameState> listenGameStateChange;
     Action<UnitDataSO> listenEnemyReachedEnd;
@@ -105,7 +106,7 @@ public class GameStateManager : MonoBehaviour
         listenGameStateChange += GameStateChanged;
         EventsManager.instance.SubscribeGameStateChange(listenGameStateChange);
 
-        listenEnemyReachedEnd +=
+        listenEnemyReachedEnd += EnemyReachedEnd;
 
         EventsManager.instance.GameStateChange(GameState.Building);
     }
@@ -113,6 +114,19 @@ public class GameStateManager : MonoBehaviour
     private void OnDestroy()
     {
         EventsManager.instance.UnSubscribeGameStateChange(listenGameStateChange);
+    }
+
+    public int GetNumStarsOnWin()
+    {
+        if (castleHealth <= 3)
+        {
+            return 1;
+        }
+        if (castleHealth <= 7)
+        {
+            return 2;
+        }
+        return 3;
     }
 
 

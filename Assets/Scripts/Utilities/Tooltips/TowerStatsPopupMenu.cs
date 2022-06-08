@@ -28,7 +28,6 @@ public class TowerStatsPopupMenu : MonoBehaviour
         else
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
     }
 
