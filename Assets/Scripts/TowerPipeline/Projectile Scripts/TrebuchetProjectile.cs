@@ -39,6 +39,11 @@ public class TrebuchetProjectile : Projectile
 
     public override void SetTarget(UnitBehavior newTarget, float movementSpeed)
     {
+        if (newTarget == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
         rb = GetComponent<Rigidbody>();
         target = newTarget;
         this.movementSpeed = movementSpeed;

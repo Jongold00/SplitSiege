@@ -135,7 +135,6 @@ public abstract class OffensiveTower : TowerBehavior
     protected virtual void Fire()
     {
         anim.SetFloat("Speed", 1 / offensiveTowerData.GetFireRate());
-        anim.SetTrigger("Firing");
 
 
         StartCoroutine(SpawnProjectile());
