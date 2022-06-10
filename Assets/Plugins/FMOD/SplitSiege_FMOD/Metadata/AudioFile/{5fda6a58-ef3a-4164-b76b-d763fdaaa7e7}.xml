@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{68be12a5-b7a8-4845-b587-ef5c52637025}">
+	<object class="AudioFile" id="{5fda6a58-ef3a-4164-b76b-d763fdaaa7e7}">
 		<property name="assetPath">
-			<value>SFX/Towers/Trebuchet/TowerDefense_SFX_Trebuchet.wav</value>
+			<value>SFX/Towers/Tower Builds/Tower_Debris_1.wav</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>96</value>
+			<value>48</value>
 		</property>
 		<property name="channelCount">
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>1.3700000000000001</value>
+			<value>2</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{57242b32-9511-4dfb-ad60-d2ea84eee8bf}</destination>
