@@ -2,7 +2,11 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{5f2a143f-1ed8-4467-9f3f-6050a2b37990}">
 		<property name="assetPath">
+<<<<<<< Updated upstream:Assets/Plugins/FMOD/SplitSiege_FMOD/Metadata/AudioFile/{5f2a143f-1ed8-4467-9f3f-6050a2b37990}.xml
 			<value>Tower Defense - SFX- Trebuchet.wav</value>
+=======
+			<value>SFX/Towers/Trebuchet/TowerDefense_SFX_Trebuchet.wav</value>
+>>>>>>> Stashed changes:Assets/Plugins/FMOD/SplitSiege_FMOD/Metadata/AudioFile/{962d485f-771e-48c6-8940-489f47be4a56}.xml
 		</property>
 		<property name="frequencyInKHz">
 			<value>96</value>
