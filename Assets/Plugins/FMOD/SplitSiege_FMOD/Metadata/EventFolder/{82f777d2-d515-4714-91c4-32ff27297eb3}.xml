@@ -5,7 +5,7 @@
 			<value>Ambiences</value>
 		</property>
 		<relationship name="folder">
-			<destination>{ccd31456-5fe5-46d6-8367-cd97a39341e4}</destination>
+			<destination>{049a762d-dcd3-4e6f-824d-f1b4390a362a}</destination>
 		</relationship>
 	</object>
 </objects>
