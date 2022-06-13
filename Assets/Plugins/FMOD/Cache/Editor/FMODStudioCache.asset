@@ -1,6 +1,30 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4461424044406461297
+--- !u!114 &-7542709286554273850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level1/Number of Mobs
+  m_EditorClassIdentifier: 
+  Name: Number of Mobs
+  StudioPath: 
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 1040260975
+    data2: 2390262638
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-2169860079566100409
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,23 +34,74 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Trebuchet Fire
+  m_Name: event:/SFX/Towers/Tower Builds/Mage Tower Build
   m_EditorClassIdentifier: 
-  Path: event:/Trebuchet Fire
+  Path: event:/SFX/Towers/Tower Builds/Mage Tower Build
   Guid:
-    Data1: -1385019083
-    Data2: 1133097432
-    Data3: 1391915441
-    Data4: -1120539796
+    Data1: 1547216259
+    Data2: 1304991244
+    Data3: 276737203
+    Data4: 1385149128
   Banks:
   - {fileID: 2334285748353637392}
-  IsStream: 0
-  Is3D: 0
+  IsStream: 1
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1370
+  Length: 2000
+--- !u!114 &-1040354642454253771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level1/Tower Balance
+  m_EditorClassIdentifier: 
+  Name: Tower Balance
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 50
+  ID:
+    data1: 4139921993
+    data2: 4139723623
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-715507411117598245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Ambiences/Level1Ambience
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Ambiences/Level1Ambience
+  Guid:
+    Data1: -1493522627
+    Data2: 1144680016
+    Data3: 967705011
+    Data4: -372534433
+  Banks:
+  - {fileID: 2334285748353637392}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 30000
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,14 +118,68 @@ MonoBehaviour:
   - {fileID: 4106841774062491989}
   - {fileID: 2334285748353637392}
   EditorEvents:
-  - {fileID: -4461424044406461297}
+  - {fileID: 4398258712205080549}
+  - {fileID: -715507411117598245}
+  - {fileID: -2169860079566100409}
+  - {fileID: 1037485710774273833}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2334285748353637392}
   StringsBanks:
   - {fileID: 4106841774062491989}
-  cacheTime: 637883759735976966
+  cacheTime: 637907139404837336
   cacheVersion: 10
+--- !u!114 &1037485710774273833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Towers/Tower Builds/Good Tower Build
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Towers/Tower Builds/Good Tower Build
+  Guid:
+    Data1: 457438135
+    Data2: 1327555526
+    Data3: 170819737
+    Data4: 1666634336
+  Banks:
+  - {fileID: 2334285748353637392}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &1959045910579079860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level1/Gameplay Status
+  m_EditorClassIdentifier: 
+  Name: Gameplay Status
+  StudioPath: 
+  Min: 0
+  Max: 4
+  Default: 0
+  ID:
+    data1: 1899419181
+    data2: 1038418801
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &2334285748353637392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,10 +195,10 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/SplitSiege_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637883759735971727
+  lastModified: 637907139404733462
   FileSizes:
   - Name: Desktop
-    Value: 20640
+    Value: 5903552
   Exists: 1
 --- !u!114 &4106841774062491989
 MonoBehaviour:
@@ -86,8 +215,63 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/SplitSiege_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637883759735976966
+  lastModified: 637907139404837336
   FileSizes:
   - Name: Desktop
-    Value: 764
+    Value: 1178
+  Exists: 1
+--- !u!114 &4398258712205080549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MX/Gameplay/Level1
+  m_EditorClassIdentifier: 
+  Path: event:/MX/Gameplay/Level1
+  Guid:
+    Data1: -1364181704
+    Data2: 1296925899
+    Data3: -2119895920
+    Data4: 1995795515
+  Banks:
+  - {fileID: 2334285748353637392}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -7542709286554273850}
+  - {fileID: 1959045910579079860}
+  - {fileID: -1040354642454253771}
+  - {fileID: 6723274463242269618}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 115054
+--- !u!114 &6723274463242269618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level1/Mob Progress
+  m_EditorClassIdentifier: 
+  Name: Mob Progress
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 1918463050
+    data2: 2808017438
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1

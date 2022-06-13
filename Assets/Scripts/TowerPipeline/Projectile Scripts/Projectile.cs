@@ -76,5 +76,5 @@ public abstract class Projectile : MonoBehaviour
     {
         damage = set;
     }
-}
 
+}

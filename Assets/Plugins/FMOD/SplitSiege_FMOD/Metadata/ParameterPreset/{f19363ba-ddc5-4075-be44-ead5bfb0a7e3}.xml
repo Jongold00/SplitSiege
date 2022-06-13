@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{f19363ba-ddc5-4075-be44-ead5bfb0a7e3}">
+		<property name="name">
+			<value>Tower Balance</value>
+		</property>
+		<relationship name="folder">
+			<destination>{993ef5bf-8ab8-43d4-85c8-c0c3a4311237}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{8befc4b3-46bd-4e85-99b2-db413ddf2713}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{8befc4b3-46bd-4e85-99b2-db413ddf2713}">
+		<property name="maximum">
+			<value>100</value>
+		</property>
+		<property name="initialValue">
+			<value>50</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{a4077324-5b5f-4ceb-af15-970e96b1703b}</destination>
+		</relationship>
+	</object>
+	<object class="RandomizerModulator" id="{a4077324-5b5f-4ceb-af15-970e96b1703b}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>cursorPosition</value>
+		</property>
+	</object>
+</objects>
