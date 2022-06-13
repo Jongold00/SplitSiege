@@ -13,7 +13,6 @@ public class LaserProjectile : Projectile
 
     public void SetDamage(float damage)
     {
-        print("herer with " + damage);
         base.damage = damage;
         transform.localScale = new Vector3(damage / 5, damage / 5, damage / 5);
     }

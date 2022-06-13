@@ -63,13 +63,13 @@ public class EventsManager : MonoBehaviour
         onGameStateChange -= func;
     }
 
-    public void GameStateChange(GameStateManager.GameState enemy)
+    public void GameStateChange(GameStateManager.GameState change)
     {
         if (onGameStateChange == null)
         {
             return;
         }
-        onGameStateChange(enemy);
+        onGameStateChange(change);
     }
     #endregion
 
@@ -121,5 +121,28 @@ public class EventsManager : MonoBehaviour
     }
     #endregion
 
+    #region EnemyReachedEnd
+
+    private event Action<UnitDataSO> onEnemyReachesEnd;
+
+    public void SubscribeEnemyReachesEnd(Action<UnitDataSO> func)
+    {
+        onEnemyReachesEnd += func;
+    }
+
+    public void UnsubscribeEnemyReachesEnd(Action<UnitDataSO> func)
+    {
+        onEnemyReachesEnd -= func;
+    }
+
+    public void EnemyReachesEnd(UnitDataSO data)
+    {
+        if (onEnemyReachesEnd == null)
+        {
+            return;
+        }
+        onEnemyReachesEnd(data);
+    }
+    #endregion
 
 }

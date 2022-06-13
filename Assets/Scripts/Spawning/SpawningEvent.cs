@@ -18,7 +18,12 @@ public class SpawningEvent : ScriptableObject
 
     public int GetCost()
     {
-        return 4;
+        int sum = 0;
+        foreach(GameObject curr in spawns)
+        {
+            sum += curr.GetComponent<UnitBehavior>().data.creditCost;
+        }
+        return sum;
     }
 
     public float GetCooldown()

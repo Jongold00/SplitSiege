@@ -42,12 +42,12 @@ public class TowerSocketManager : MonoBehaviour
         if (ResourceManager.instance.CheckLegalTranscation(towerToBuild.cost, towerToBuild.faction))
         {
             GameObject placedTowerObj = SelectedSocket.AddTowerToSocket(towerToBuild);
-            Build build = placedTowerObj.GetComponent<Build>();
+            ITowerBuilder build = placedTowerObj.GetComponent<ITowerBuilder>();
 
             GameObject particleObj = Instantiate(buildParticlePrefab, placedTowerObj.transform.position, buildParticlePrefab.transform.rotation);
-            BuildParticle buildParticle = particleObj.GetComponent<BuildParticle>();
+            BuildParticleController buildParticle = particleObj.GetComponent<BuildParticleController>();
 
-            buildParticle.Build = build;
+            buildParticle.Builder = build;
 
             BuildTowerPopupMenu.instance.HidePopupMenu();
         }

@@ -51,6 +51,7 @@ MonoBehaviour:
       Data4: 0
     Path: 
   intensity: 0
+  volume: 0.5
 --- !u!1 &133075337876402687
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,12 +96,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   credits: 10
-  spawns:
-  - {fileID: 11400000, guid: c181704124b028f4ab6b697df9932fe6, type: 2}
-  - {fileID: 11400000, guid: 8d5bcc0b09b71fe4eb2a6835a2905a25, type: 2}
-  - {fileID: 11400000, guid: 6fb71c94d4eb38e4988c18a61586554d, type: 2}
-  globalCD: 10
+  spawns: []
+  rounds:
+  - {fileID: 11400000, guid: c539d666d56d29e4cb47cff9a664df6c, type: 2}
+  - {fileID: 11400000, guid: d8d165c2fe3c8c24fb53da332a4d7520, type: 2}
   spawnLocation: {fileID: 133075337876402686}
+  globalCD: 10
 --- !u!1 &133075338297003101
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +185,6 @@ Transform:
   - {fileID: 133075337875944669}
   - {fileID: 6120612887699510614}
   - {fileID: 2463037569334592885}
-  - {fileID: 7456826814543372563}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -232,52 +232,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildParticlePrefab: {fileID: 0}
---- !u!1 &5652847417077220807
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7456826814543372563}
-  - component: {fileID: 128946436855890074}
-  m_Layer: 0
-  m_Name: IN GAME UI MANAGER
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7456826814543372563
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5652847417077220807}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 133075338299074355}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &128946436855890074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5652847417077220807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 034de11418b943e4185b2af1b04f53a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buildPhaseUI: {fileID: 0}
-  buildPhaseTimer: {fileID: 0}
-  fightPhaseUI: {fileID: 0}
 --- !u!1 &7030426269415032845
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,7 +276,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildDuration: 30
-  currentRound: 0
 --- !u!1001 &1181667446726514484
 PrefabInstance:
   m_ObjectHideFlags: 0

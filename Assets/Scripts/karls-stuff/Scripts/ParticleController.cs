@@ -12,7 +12,7 @@ public abstract class ParticleController : MonoBehaviour
         allParticles = GetComponentsInChildren<ParticleSystem>();
     }
 
-    public void StopAllParticles()
+    public virtual void StopAllParticles()
     {
         foreach (ParticleSystem item in allParticles)
         {
@@ -20,12 +20,12 @@ public abstract class ParticleController : MonoBehaviour
         }
     }
 
-    public void StopAParticle(ParticleSystem particleToStop)
+    public virtual void StopAParticle(ParticleSystem particleToStop)
     {
         particleToStop.Stop();
     }
 
-    public bool AnyActiveParticlesRemaining()
+    public virtual bool AnyActiveParticlesRemaining()
     {
         return allParticles.Any((x) => x.isPlaying);
     }

@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc2b2253b75b8a648ae7a6d2df2b716e, type: 3}
-  m_Name: SpawnOneTroll
+  m_Script: {fileID: 11500000, guid: 5a58c453b541d26438843de26956bdcd, type: 3}
+  m_Name: 1-2
   m_EditorClassIdentifier: 
-  weight: 0.6
-  cooldown: 3
+  credits: 40
   spawns:
-  - {fileID: 3353735786919235548, guid: c8d16400944122146b4db76bd58a5e93, type: 3}
+  - {fileID: 11400000, guid: c181704124b028f4ab6b697df9932fe6, type: 2}
+  - {fileID: 11400000, guid: 8d5bcc0b09b71fe4eb2a6835a2905a25, type: 2}
+  globalCD: 4
