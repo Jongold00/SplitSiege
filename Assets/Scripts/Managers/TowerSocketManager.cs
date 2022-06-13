@@ -41,6 +41,7 @@ public class TowerSocketManager : MonoBehaviour
     {
         if (ResourceManager.instance.CheckLegalTranscation(towerToBuild.cost, towerToBuild.faction))
         {
+
             GameObject placedTowerObj = SelectedSocket.AddTowerToSocket(towerToBuild);
             ITowerBuilder build = placedTowerObj.GetComponent<ITowerBuilder>();
 

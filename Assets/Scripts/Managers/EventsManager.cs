@@ -147,4 +147,29 @@ public class EventsManager : MonoBehaviour
     }
     #endregion
 
+    #region TowerBuilt
+
+    private event Action<TowerDataSO> onTowerBuilt;
+
+    public void SubscribeTowerBuilt(Action<TowerDataSO> func)
+    {
+        onTowerBuilt += func;
+    }
+
+    public void UnsubscribeTowerBuilt(Action<TowerDataSO> func)
+    {
+        onTowerBuilt -= func;
+    }
+
+    public void TowerBuilt(TowerDataSO data)
+    {
+        if (onTowerBuilt == null)
+        {
+            return;
+        }
+        onTowerBuilt(data);
+    }
+    #endregion
+
+
 }

@@ -19,7 +19,7 @@ public class UnitBehavior : MonoBehaviour
     float health;
 
     public static List<UnitBehavior> allEnemies = new List<UnitBehavior>();
-
+    
     // baseOfUnit is intended to be used for things like AoE which should appear to target
     // the ground under a unit rather than the unit itself
     [SerializeField] Transform baseOfUnit;
