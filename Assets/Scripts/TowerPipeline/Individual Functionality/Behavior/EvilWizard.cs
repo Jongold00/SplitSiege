@@ -10,6 +10,8 @@ public class EvilWizard : OffensiveTower
 
     public override void AcquireTarget()
     {
+        inRange.Clear();
+
 
         float furthestSoFar = 0;
         UnitBehavior closest = null;
@@ -67,8 +69,6 @@ public class EvilWizard : OffensiveTower
 
         foreach (UnitBehavior curr in inRange)
         {
-            print("enemies in range: " + inRange.Count);
-
             GameObject projectile = Instantiate(spells[spellChoice].gameObject, projectileInstantiatePoint.position, Quaternion.identity);
 
             projectile.GetComponent<Projectile>().SetTarget(curr, offensiveTowerData.SpeedOfProjectile);

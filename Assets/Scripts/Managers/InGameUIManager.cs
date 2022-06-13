@@ -1,10 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System;
-using UnityEditor;
+using UnityEngine.SceneManagement;
 public class InGameUIManager : MonoBehaviour
 {
     #region Singleton
@@ -27,17 +26,16 @@ public class InGameUIManager : MonoBehaviour
     #endregion
 
 
-    
-    
-    [SerializeField] GameObject[] tabs;
 
 
-
+    [SerializeField]
+    GameObject[] tabs;
 
     [SerializeField]
     TextMeshProUGUI buildPhaseTimer;
 
-
+    [SerializeField]
+    Image[] stars;
 
     Action<GameStateManager.GameState> onGameStateChange;
 
@@ -52,7 +50,6 @@ public class InGameUIManager : MonoBehaviour
         EventsManager.instance.UnSubscribeGameStateChange(onGameStateChange);
 
     }
-
     void ActivateUI(GameStateManager.GameState state)
     {
         switch (state)
@@ -65,6 +62,7 @@ public class InGameUIManager : MonoBehaviour
                 break;
             case GameStateManager.GameState.Won:
                 ToggleTab(2);
+                ActivateStars();
                 break;
             case GameStateManager.GameState.Lost:
                 ToggleTab(3);
@@ -87,6 +85,14 @@ public class InGameUIManager : MonoBehaviour
             {
                 tabs[i].SetActive(false);
             }
+        }
+    }
+
+    void ActivateStars()
+    {
+        for (int i = 0; i < GameStateManager.instance.GetNumStarsOnWin(); i++)
+        {
+            stars[i].color = Color.white;
         }
     }
 

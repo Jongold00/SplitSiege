@@ -2,25 +2,54 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UserData : ScriptableObject
+
+[System.Serializable]
+public class UserData
 {
-    Dictionary<int, LevelCompletionData> levelData;
 
-
-    public void UpdateLevelData()
+    public UserData()
     {
+        levelData = new Dictionary<string, LevelCompletionData>();
+        levelData["level1"] = new LevelCompletionData();
+        Debug.Log("level1 has a best completion of " + levelData["level1"].bestPerformance);
+    }
+
+    Dictionary<string, LevelCompletionData> levelData;
+
+
+    public void UpdateLevelData(string toUpdate, int newBest)
+    {
+
+        Debug.Log("updating level " + toUpdate + ", new best is " + newBest);
+
+        levelData[toUpdate].UpdateBest(newBest);
+
+
         foreach (LevelCompletionData currData in levelData.Values)
         {
             currData.canSelect = currData.CheckSelectable();
         }
-    }   
+    }
+    
+    public int GetStarsForLevel(string levelName)
+    {
+        return levelData[levelName].bestPerformance;
+    }
 }
 
+[System.Serializable]
 public class LevelCompletionData
 {
-    int bestPerformance = 0;
-    public bool canSelect = false;
-    LevelCompletionData[] requirements;
+    public int bestPerformance;
+    public bool canSelect;
+    List<LevelCompletionData> requirements;
+
+    public LevelCompletionData()
+    {
+        canSelect = false;
+        bestPerformance = 0;
+        requirements = new List<LevelCompletionData>();
+    }
 
     public bool CheckSelectable()
     {
@@ -33,6 +62,11 @@ public class LevelCompletionData
         }
 
         return true;
+    }
+
+    public void UpdateBest(int newBest)
+    {
+        bestPerformance = Mathf.Max(newBest, bestPerformance, 3);
     }
 }
 

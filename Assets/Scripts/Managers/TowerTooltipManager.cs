@@ -41,6 +41,8 @@ public class TowerTooltipManager : MonoBehaviour
     private void OnDisable()
     {
         TowerBehavior.OnTowerSelected -= HandleSelectedTower;
+        TowerBehavior.OnTowerSelected -= ShowRangeIndicator;
+
     }
 
 
@@ -54,6 +56,7 @@ public class TowerTooltipManager : MonoBehaviour
 
     private void HandleSelectedTower(GameObject obj)
     {
+
         TowerStatsPopupMenu.instance.HidePopupMenu(obj);
         TowerStatsPopupMenu.instance.DisplayPopupMenuAtViewportOfObj(obj);
         SelectedTower = obj.GetComponent<TowerBehavior>();
@@ -64,6 +67,7 @@ public class TowerTooltipManager : MonoBehaviour
     {
         Vector3 indicatorPos = new Vector3(0, 0.1f, 0);
         TowerDataSO data = obj.GetComponent<TowerBehavior>().GetTowerData();
+
         Vector3 indicatorScale = new Vector3(data.range * 2, data.range * 2, 1f);
 
         switch (data.faction)

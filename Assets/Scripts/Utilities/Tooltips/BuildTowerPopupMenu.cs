@@ -28,7 +28,6 @@ public class BuildTowerPopupMenu : MonoBehaviour
         else
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
     }
 
