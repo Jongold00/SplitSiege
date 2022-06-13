@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18388404, g: 0.22888349, b: 0.30224657, a: 1}
+  m_IndirectSpecularColor: {r: 0.18388408, g: 0.22888388, b: 0.30224705, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1723,6 +1723,41 @@ Transform:
   m_Father: {fileID: 257174169}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1474822970 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1111125979714396562, guid: 48e3ab1bdac4cba4db28e748bfa536dc, type: 3}
+  m_PrefabInstance: {fileID: 653350989}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1474822975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474822970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1493522627
+      Data2: 1144680016
+      Data3: 967705011
+      Data4: -372534433
+    Path: event:/SFX/Ambiences/Level1Ambience
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1609693429
 GameObject:
   m_ObjectHideFlags: 0
