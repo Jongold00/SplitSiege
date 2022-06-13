@@ -107,6 +107,7 @@ public class GameStateManager : MonoBehaviour
         EventsManager.instance.SubscribeGameStateChange(listenGameStateChange);
 
         listenEnemyReachedEnd += EnemyReachedEnd;
+        EventsManager.instance.SubscribeEnemyReachesEnd(listenEnemyReachedEnd);
 
         EventsManager.instance.GameStateChange(GameState.Building);
     }
@@ -114,6 +115,8 @@ public class GameStateManager : MonoBehaviour
     private void OnDestroy()
     {
         EventsManager.instance.UnSubscribeGameStateChange(listenGameStateChange);
+        EventsManager.instance.UnsubscribeEnemyReachesEnd(listenEnemyReachedEnd);
+
     }
 
     public int GetNumStarsOnWin()
