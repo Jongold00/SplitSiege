@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 9a1df19fbe332394e9da174f1505a098
+guid: a4cf604907e6f7a4184d370d36d276e6
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
-      74: 1827226128182048838
-    second: Take 001
+      74: 7384398149434700744
+    second: TREBUCHET_ARMATURE|TREB_ANIM_FIRE
   externalObjects: {}
   materials:
     materialImportMode: 2

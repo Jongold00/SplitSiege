@@ -16,6 +16,8 @@ public class EventsManager : MonoBehaviour
         if (instance != null)
         {
             Destroy(gameObject);
+            DontDestroyOnLoad(gameObject);
+
         }
         else
         {

@@ -22,7 +22,7 @@ public class TrebuchetProjectile : Projectile
 
     protected override void Update()
     {
-        if (transform.position.y <= projectedImpactPosition.y && target != null)
+        if (transform.position.y <= projectedImpactPosition.y)
         {
             HitTargetsInsideAoeRadius(damage);
             DisableGameObjAndEnableParticle();
@@ -39,6 +39,11 @@ public class TrebuchetProjectile : Projectile
 
     public override void SetTarget(UnitBehavior newTarget, float movementSpeed)
     {
+        if (newTarget == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
         rb = GetComponent<Rigidbody>();
         target = newTarget;
         this.movementSpeed = movementSpeed;
@@ -48,8 +53,6 @@ public class TrebuchetProjectile : Projectile
         currentTimeToImpact = CalculateInitialFlightTime(transform.position.y);
 
         projectedImpactPosition = target.GetComponent<UnitNavigation>().GetPositionInSeconds(currentTimeToImpact);
-
-        Instantiate(GameObject.CreatePrimitive(PrimitiveType.Sphere), projectedImpactPosition, Quaternion.identity);
 
         Vector3 initialVelocity = (projectedImpactPosition - transform.position) / currentTimeToImpact;
 
