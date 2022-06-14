@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using FMODUnity;
 
 public class TowerSocketManager : MonoBehaviour
 {
     private Socket selectedSocket;
     public Socket SelectedSocket { get => selectedSocket; set => selectedSocket = value; }
     [SerializeField] GameObject buildParticlePrefab;
+
+
 
 
     #region Singleton
@@ -40,8 +43,7 @@ public class TowerSocketManager : MonoBehaviour
     public void BuildTower(TowerDataSO towerToBuild)
     {
         if (ResourceManager.instance.CheckLegalTranscation(towerToBuild.cost, towerToBuild.faction))
-        {
-
+        { 
             GameObject placedTowerObj = SelectedSocket.AddTowerToSocket(towerToBuild);
             ITowerBuilder build = placedTowerObj.GetComponent<ITowerBuilder>();
 
