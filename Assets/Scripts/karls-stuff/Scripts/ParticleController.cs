@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public abstract class ParticleController : MonoBehaviour
+public class ParticleController : MonoBehaviour
 {
     protected ParticleSystem[] allParticles;
     // Start is called before the first frame update
@@ -28,5 +28,11 @@ public abstract class ParticleController : MonoBehaviour
     public virtual bool AnyActiveParticlesRemaining()
     {
         return allParticles.Any((x) => x.isPlaying);
+    }
+
+    public void ChangePositionOfAllParticles(Vector3 newPosition, Quaternion newRotation)
+    {
+        transform.position = newPosition;
+        transform.rotation = newRotation;
     }
 }

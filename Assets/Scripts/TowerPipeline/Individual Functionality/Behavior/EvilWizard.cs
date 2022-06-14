@@ -32,7 +32,7 @@ public class EvilWizard : OffensiveTower
             }
         }
 
-        if (closest != currentTarget)
+        if (closest != CurrentTarget)
         {
             switchedTarget = true;
         }
@@ -41,7 +41,7 @@ public class EvilWizard : OffensiveTower
             switchedTarget = false;
         }
 
-        currentTarget = closest;
+        CurrentTarget = closest;
     }
 
     protected override void Fire()
@@ -80,7 +80,7 @@ public class EvilWizard : OffensiveTower
     {
         yield return new WaitForSeconds(offensiveTowerData.projectileSpawnOffset * offensiveTowerData.GetFireRate());
         GameObject projectile = Instantiate(spells[spellChoice].gameObject, projectileInstantiatePoint.position, Quaternion.identity);
-        projectile.GetComponent<Projectile>().SetTarget(currentTarget, offensiveTowerData.SpeedOfProjectile);
+        projectile.GetComponent<Projectile>().SetTarget(CurrentTarget, offensiveTowerData.SpeedOfProjectile);
     }
 
 }

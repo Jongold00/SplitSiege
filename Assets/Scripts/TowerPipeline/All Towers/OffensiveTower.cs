@@ -7,7 +7,8 @@ public abstract class OffensiveTower : TowerBehavior
 {
     [SerializeField]
     protected OffensiveTowerDataSO offensiveTowerData;
-    protected UnitBehavior currentTarget;
+    private UnitBehavior currentTarget;
+    public UnitBehavior CurrentTarget { get => currentTarget; protected set => currentTarget = value; }
 
 
     [SerializeField]
@@ -25,6 +26,7 @@ public abstract class OffensiveTower : TowerBehavior
     protected Animator anim;
 
     public bool CanFire { get; set; }
+
     ITowerBuilder build;
 
     #region Rotation Stuff
@@ -45,7 +47,7 @@ public abstract class OffensiveTower : TowerBehavior
         build.OnBuildComplete -= EnableFiring;
     }
 
-    private void Awake()
+    protected virtual void Awake()
     {
         offensiveTowerData = Instantiate(offensiveTowerData);
 
@@ -77,7 +79,7 @@ public abstract class OffensiveTower : TowerBehavior
             }
         }
 
-        if (closest != currentTarget)
+        if (closest != CurrentTarget)
         {
             switchedTarget = true;
         }
@@ -86,7 +88,7 @@ public abstract class OffensiveTower : TowerBehavior
             switchedTarget = false;
         }
 
-        currentTarget = closest;
+        CurrentTarget = closest;
     }
 
     public override void Update()
@@ -94,7 +96,7 @@ public abstract class OffensiveTower : TowerBehavior
         AcquireTarget();
         attackCD -= Time.deltaTime;
 
-        if (currentTarget)
+        if (CurrentTarget)
         {
             RotateTowardsTarget();
             anim.SetBool("Firing", true);
@@ -127,7 +129,7 @@ public abstract class OffensiveTower : TowerBehavior
 
     protected void RotateTowardsTarget()
     {
-        Quaternion targetRotation = Quaternion.LookRotation(currentTarget.transform.position - rotatableTransform.position);
+        Quaternion targetRotation = Quaternion.LookRotation(CurrentTarget.transform.position - rotatableTransform.position);
         targetRotation.eulerAngles = new Vector3(rotatableTransform.rotation.eulerAngles.x, targetRotation.eulerAngles.y, zOffsetForRotatableTransform);
         rotatableTransform.rotation = Quaternion.RotateTowards(rotatableTransform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
     }
@@ -153,7 +155,7 @@ public abstract class OffensiveTower : TowerBehavior
         GameObject projectile = Instantiate(offensiveTowerData.ProjectilePrefab.gameObject, projectileInstantiatePoint.position, Quaternion.identity);
         Projectile projectileScript = projectile.GetComponent<Projectile>();
 
-        projectileScript.SetTarget(currentTarget, offensiveTowerData.SpeedOfProjectile);
+        projectileScript.SetTarget(CurrentTarget, offensiveTowerData.SpeedOfProjectile);
         projectileScript.SetDamage(offensiveTowerData.GetDamage());
     }
 

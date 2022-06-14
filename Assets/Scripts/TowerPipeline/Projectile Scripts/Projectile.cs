@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public abstract class Projectile : MonoBehaviour
+public class Projectile : MonoBehaviour
 {
     float speed;
     protected UnitBehavior target;
@@ -27,7 +27,6 @@ public abstract class Projectile : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-
         if (target == null)
         {
             Destroy(this.gameObject);

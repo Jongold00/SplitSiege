@@ -11,7 +11,7 @@ public class Trebuchet : OffensiveTower
     protected override void Fire()
     {
         GameObject projectile = Instantiate(offensiveTowerData.ProjectilePrefab.gameObject, projectileInstantiatePoint.position, Quaternion.identity);
-        projectile.GetComponent<TrebuchetProjectile>().SetTarget(currentTarget, offensiveTowerData.SpeedOfProjectile);
+        projectile.GetComponent<TrebuchetProjectile>().SetTarget(CurrentTarget, offensiveTowerData.SpeedOfProjectile);
         GetComponent<FMOD_PlayOneShot>().Play();
     }
 }

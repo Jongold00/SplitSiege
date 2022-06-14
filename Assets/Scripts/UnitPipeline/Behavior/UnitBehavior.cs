@@ -12,7 +12,6 @@ public class UnitBehavior : MonoBehaviour
 
     UnitNavigation nav;
 
-
     Healthbar healthbar;
 
     float maxHealth;
@@ -25,6 +24,11 @@ public class UnitBehavior : MonoBehaviour
     [SerializeField] Transform baseOfUnit;
     public Transform BaseOfUnit { get => baseOfUnit; set => baseOfUnit = value; }
 
+    // mainHitPointOfUnit is intended to be used for things like lasers which should appear to target
+    // the unit at a mid-body position
+    [SerializeField] Transform mainHitPointOfUnit;
+    public Transform MainHitPointOfUnit { get => mainHitPointOfUnit; set => mainHitPointOfUnit = value; }
+     
     private void OnEnable()
     {
         allEnemies.Add(this);
@@ -91,7 +95,7 @@ public class UnitBehavior : MonoBehaviour
         anim.SetBool("isStunned", false);
     }
 
-    bool isDead()
+    public bool isDead()
     {
         if (health <= 0)
         {

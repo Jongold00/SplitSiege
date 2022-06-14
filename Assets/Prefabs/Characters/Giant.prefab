@@ -7049,7 +7049,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 5294e787ff47ea149aa883e8415e402f, type: 2}
-  baseOfUnit: {fileID: 0}
+  baseOfUnit: {fileID: 7217430793604477874}
+  mainHitPointOfUnit: {fileID: 5309606407548928072}
 --- !u!65 &6586261355965215323
 BoxCollider:
   m_ObjectHideFlags: 0
