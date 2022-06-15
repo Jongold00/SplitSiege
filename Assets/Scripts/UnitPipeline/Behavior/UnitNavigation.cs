@@ -11,7 +11,7 @@ public class UnitNavigation : MonoBehaviour
 
 
     public float yOffset;
-    public float speed = 1.0f;
+    float speed = 1.0f;
     public EndOfPathInstruction endOfPathInstruction;
 
     public UnitDataSO unitData;
@@ -28,7 +28,7 @@ public class UnitNavigation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distanceTravelled += speed * Time.deltaTime;
+        distanceTravelled += GetSpeed() * Time.deltaTime;
 
         Vector3 desiredPosition = nav.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
         desiredPosition.y += yOffset;
@@ -47,17 +47,26 @@ public class UnitNavigation : MonoBehaviour
             EventsManager.instance.EnemyReachesEnd(unitData);
             Destroy(gameObject);
         }
-
-
     }
 
     public Vector3 GetPositionInSeconds(float seconds)
     {
-        return nav.path.GetPointAtDistance(distanceTravelled + (speed * seconds), EndOfPathInstruction.Stop);
+        return nav.path.GetPointAtDistance(distanceTravelled + (GetSpeed() * seconds), EndOfPathInstruction.Stop);
     }
 
     public float GetDistanceTravelled()
     {
         return distanceTravelled;
     }
+
+    public float GetSpeed()
+    {
+        return speed * GetComponent<UnitBehavior>().GetTotalSpeedMultiplier();
+    }
+
+    public void SetSpeed(float set)
+    {
+        speed = set;
+    }
+
 }

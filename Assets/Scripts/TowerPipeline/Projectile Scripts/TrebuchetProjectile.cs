@@ -22,7 +22,7 @@ public class TrebuchetProjectile : Projectile
 
     protected override void Update()
     {
-        if (transform.position.y <= projectedImpactPosition.y)
+        if (transform.position.y <= projectedImpactPosition.y && target != null)
         {
             HitTargetsInsideAoeRadius(damage);
             DisableGameObjAndEnableParticle();
@@ -33,7 +33,7 @@ public class TrebuchetProjectile : Projectile
 
     void Start()
     {
-
+        
     }
 
 
@@ -48,7 +48,7 @@ public class TrebuchetProjectile : Projectile
         target = newTarget;
         this.movementSpeed = movementSpeed;
 
-
+        statusEffect = new Slow(75f, 3.0f);
 
         currentTimeToImpact = CalculateInitialFlightTime(transform.position.y);
 
@@ -80,6 +80,7 @@ public class TrebuchetProjectile : Projectile
             UnitBehavior unit = hitCollider.GetComponent<UnitBehavior>();
             if (unit != null && unit)
             {
+                unit.AttachStatusEffect(statusEffect);
                 unit.TakeDamage(dmg);
             }
         }
