@@ -4,22 +4,28 @@ using UnityEngine;
 
 public class Laser : OffensiveTower
 {
-    // Start is called before the first frame update
-
     public float maxMultiplier = 5;
     float currentMultiplier = 0;
+    LaserBeam laserBeam;
+    UnitBehavior unitBehavior;
 
-    void Start()
+    protected override void Awake()
     {
-        
+        base.Awake();
+        laserBeam = GetComponentInChildren<LaserBeam>();
     }
 
     public override void Update()
     {
         AcquireTarget();
+
+        if (CurrentTarget != null && laserBeam != null)
+        {
+            laserBeam.Target = CurrentTarget.MainHitPointOfUnit;
+        }
         attackCD -= Time.deltaTime;
 
-        if (currentTarget)
+        if (CurrentTarget)
         {
             RotateTowardsTarget();
 
@@ -57,11 +63,8 @@ public class Laser : OffensiveTower
     {
         yield return new WaitForSeconds(offensiveTowerData.projectileSpawnOffset * offensiveTowerData.GetFireRate());
         GameObject projectile = Instantiate(offensiveTowerData.ProjectilePrefab.gameObject, projectileInstantiatePoint.position, Quaternion.identity);
-        projectile.GetComponent<LaserProjectile>().SetTarget(currentTarget, offensiveTowerData.SpeedOfProjectile);
-        projectile.GetComponent<LaserProjectile>().SetDamage(currentMultiplier);
-
-
-
+        projectile.GetComponent<Projectile>().SetTarget(CurrentTarget, offensiveTowerData.SpeedOfProjectile);
+        projectile.GetComponent<Projectile>().SetDamage(currentMultiplier);
     }
 
 
