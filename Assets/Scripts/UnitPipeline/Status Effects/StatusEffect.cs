@@ -7,7 +7,22 @@ public abstract class StatusEffect
     protected float maxDuration = 0.0f;
     protected float duration = 0.0f;
     public int id = 0;
+    public StackType stackType;
 
+    public enum StackType
+    {
+        Refreshing,
+        Additive,
+        Multiplicative
+    }
+
+
+    public StatusEffect()
+    {
+        duration = 0.0f;
+        maxDuration = 0.0f;
+        stackType = StackType.Refreshing;
+    }
     public bool compareID(int compare)
     {
         return compare == id;
@@ -22,7 +37,7 @@ public abstract class StatusEffect
         }
     }
     
-    public virtual void ReApply()
+    public virtual void Refresh()
     {
         duration = maxDuration;
     }

@@ -65,6 +65,7 @@ public class UnitBehavior : MonoBehaviour
     public void Update()
     {
         TickStatusEffects(Time.deltaTime);
+        anim.SetFloat("MoveSpeed", nav.GetSpeed());
 
     }
 
@@ -100,7 +101,7 @@ public class UnitBehavior : MonoBehaviour
         if (health <= 0)
         {
             anim.SetTrigger("Death");
-            nav.speed = 0;
+            nav.SetSpeed(0);
             return true;
         }
         return false;
@@ -116,12 +117,29 @@ public class UnitBehavior : MonoBehaviour
         {
             if (curr.compareID(effect.id))
             {
-                curr.ReApply();
+
+                switch (curr.stackType)
+                {
+                    case StatusEffect.StackType.Refreshing:
+                        curr.Refresh();
+                        return;
+                    case StatusEffect.StackType.Additive:
+                        activeEffects.Add(effect);
+                        effect.OnApply(this);
+                        break;
+                    case StatusEffect.StackType.Multiplicative:
+                        activeEffects.Add(effect);
+                        effect.OnApply(this);
+                        break;
+
+                }
                 return;
             }
+
         }
         activeEffects.Add(effect);
         effect.OnApply(this);
+
     }
 
     public void StatusEffectExpired(StatusEffect effect)
@@ -142,7 +160,21 @@ public class UnitBehavior : MonoBehaviour
         }
     }
 
-    
+    public float GetTotalSpeedMultiplier()
+    {
+        float total = 1;
+        foreach (StatusEffect curr in activeEffects)
+        {
+            if (curr is Slow)
+            {
+                Slow asSlow = (Slow)curr;
+                total *= 1 - asSlow.GetSlowMultiplier();
+            }
+        }
+        return total;
+    }
+
+
 
     #endregion
 }
