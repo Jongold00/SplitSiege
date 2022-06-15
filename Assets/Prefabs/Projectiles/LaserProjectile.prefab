@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2910333936226122885}
   - component: {fileID: 2667317634962148872}
   - component: {fileID: 1612459400719092727}
-  - component: {fileID: 4209200656022191415}
+  - component: {fileID: 8216348408409201407}
   m_Layer: 0
   m_Name: LaserProjectile
   m_TagString: Untagged
@@ -27,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8570486035853791191}
-  m_LocalRotation: {x: 0.682122, y: -0.18630521, z: -0.18630522, w: 0.68212193}
+  m_LocalRotation: {x: 0.6821216, y: -0.18630667, z: -0.18630667, w: 0.6821216}
   m_LocalPosition: {x: 0.034, y: 0.015, z: 0.0393}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 59.447, y: -90, z: -90}
 --- !u!33 &2910333936226122885
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -49,7 +49,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8570486035853791191}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fea3977574b74524892bf3fd9b086dfa, type: 2}
+  - {fileID: 2100000, guid: 638d63aedea6b0144bd4210be4eef878, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,7 +96,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5000002
   m_Center: {x: 7.105117e-15, y: 0.00000010400006, z: 0.00000023841858}
---- !u!114 &4209200656022191415
+--- !u!114 &8216348408409201407
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,6 +105,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8570486035853791191}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efffa2e420fc7424288632405e2b8ded, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a13b48eb1a16b14bae1893410a20012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleObj: {fileID: 0}
+  projectileObj: {fileID: 0}

@@ -18,8 +18,6 @@ public class Trebuchet : OffensiveTower
     {
         yield return new WaitForSeconds(offensiveTowerData.projectileSpawnOffset * offensiveTowerData.GetFireRate());
         GameObject projectile = Instantiate(offensiveTowerData.ProjectilePrefab.gameObject, projectileInstantiatePoint.position, Quaternion.identity);
-
-        projectile.GetComponent<TrebuchetProjectile>().SetTarget(currentTarget, offensiveTowerData.SpeedOfProjectile);
-
+        projectile.GetComponent<TrebuchetProjectile>().SetTarget(CurrentTarget, offensiveTowerData.SpeedOfProjectile);
     }
 }
