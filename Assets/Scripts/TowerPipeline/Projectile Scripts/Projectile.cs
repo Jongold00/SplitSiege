@@ -66,6 +66,7 @@ public abstract class Projectile : MonoBehaviour
     {
         if (particleObj != null && projectileObj != null)
         {
+            Debug.Log("particles!");
             projectileObj.SetActive(false);
             particleObj.SetActive(true);
         }

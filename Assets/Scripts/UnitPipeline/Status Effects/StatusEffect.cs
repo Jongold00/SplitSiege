@@ -4,25 +4,9 @@ using UnityEngine;
 
 public abstract class StatusEffect
 {
-
-    public enum StackType
-    {
-        Refreshing,
-        Additive,
-        Multiplicative
-    }
-
     protected float maxDuration = 0.0f;
     protected float duration = 0.0f;
     public int id = 0;
-    public StackType stackType;
-
-    public StatusEffect()
-    {
-        duration = 0.0f;
-        maxDuration = 0.0f;
-        stackType = StackType.Refreshing;
-    }
 
     public bool compareID(int compare)
     {
@@ -38,10 +22,9 @@ public abstract class StatusEffect
         }
     }
     
-    public virtual void Refresh()
+    public virtual void ReApply()
     {
         duration = maxDuration;
-
     }
 
     public virtual void OnApply(UnitBehavior attached)
