@@ -11,21 +11,16 @@ public class SelectionScreen : MonoBehaviour
     [SerializeField]
     string sceneName;
 
-
     [SerializeField]
-    GameObject loadingScreen;
+    Image[] stars;
 
-    [SerializeField]
-    Slider loadingSlider;
-
-    
 
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
-        loadingScreen = GameObject.FindGameObjectWithTag("loading");
+
     }
 
     public void Back()
@@ -35,36 +30,17 @@ public class SelectionScreen : MonoBehaviour
 
     public void PlayLevel()
     {
-        StartCoroutine(AsyncSceneLoad(sceneName));
+        SceneLoadingManager.instance.LoadScene(sceneName);
     }
 
 
-
-    IEnumerator AsyncSceneLoad(string sceneName)
+    public void Activate()
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
-        operation.allowSceneActivation = false;
-
-        loadingScreen = GameObject.FindGameObjectWithTag("loading");
-        loadingScreen.GetComponent<ActivateAllChildren>().Activate();
-        loadingSlider = loadingScreen.GetComponentInChildren<Slider>();
-        float progress;
-        float timeElapsed = 0.0f;
-
-        float randomizedPad = Random.Range(1.5f, 2.25f);
-
-        while (!operation.isDone && timeElapsed < randomizedPad * 1.5f)
+        for (int i = 0; i < UserProfileManager.instance.activeProfile.GetStarsForLevel("level1"); i++)
         {
-            print(timeElapsed);
-            timeElapsed += Time.deltaTime;
-            progress = Mathf.Min(operation.progress / 0.9f, timeElapsed / randomizedPad);
-
-            loadingSlider.value = progress;
-            yield return null;
+            stars[i].color = Color.white;
         }
-        operation.allowSceneActivation = true;
-
-
     }
+
 
 }

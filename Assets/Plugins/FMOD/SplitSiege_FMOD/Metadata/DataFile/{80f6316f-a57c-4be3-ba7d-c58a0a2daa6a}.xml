@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DataFile" id="{80f6316f-a57c-4be3-ba7d-c58a0a2daa6a}">
+		<property name="assetPath">
+			<value>MX/Gameplay/8BitBand_SplitSiege_Win.wav.meta</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{57242b32-9511-4dfb-ad60-d2ea84eee8bf}</destination>
+		</relationship>
+	</object>
+</objects>

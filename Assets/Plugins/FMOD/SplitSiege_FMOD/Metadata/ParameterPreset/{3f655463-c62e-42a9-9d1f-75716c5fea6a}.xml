@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{3f655463-c62e-42a9-9d1f-75716c5fea6a}">
+		<property name="name">
+			<value>Number of Mobs</value>
+		</property>
+		<relationship name="folder">
+			<destination>{993ef5bf-8ab8-43d4-85c8-c0c3a4311237}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{eb1a3b2f-acbd-43d3-a74b-84ff7e6c8b1d}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{eb1a3b2f-acbd-43d3-a74b-84ff7e6c8b1d}">
+		<property name="maximum">
+			<value>10</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

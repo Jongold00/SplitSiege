@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DataFile" id="{930a6d43-cf53-4c26-8338-04e602a58425}">
+		<property name="assetPath">
+			<value>MX/Gameplay/8BitBand_Drums_SplitSiege_BuildPhaseTheme.wav.meta</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{57242b32-9511-4dfb-ad60-d2ea84eee8bf}</destination>
+		</relationship>
+	</object>
+</objects>

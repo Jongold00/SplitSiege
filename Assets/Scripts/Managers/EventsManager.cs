@@ -16,6 +16,8 @@ public class EventsManager : MonoBehaviour
         if (instance != null)
         {
             Destroy(gameObject);
+            DontDestroyOnLoad(gameObject);
+
         }
         else
         {
@@ -144,5 +146,30 @@ public class EventsManager : MonoBehaviour
         onEnemyReachesEnd(data);
     }
     #endregion
+
+    #region TowerBuilt
+
+    private event Action<TowerDataSO> onTowerBuilt;
+
+    public void SubscribeTowerBuilt(Action<TowerDataSO> func)
+    {
+        onTowerBuilt += func;
+    }
+
+    public void UnsubscribeTowerBuilt(Action<TowerDataSO> func)
+    {
+        onTowerBuilt -= func;
+    }
+
+    public void TowerBuilt(TowerDataSO data)
+    {
+        if (onTowerBuilt == null)
+        {
+            return;
+        }
+        onTowerBuilt(data);
+    }
+    #endregion
+
 
 }

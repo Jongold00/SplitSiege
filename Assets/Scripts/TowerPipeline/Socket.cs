@@ -18,6 +18,8 @@ public class Socket : MonoBehaviour
 
     public GameObject AddTowerToSocket(TowerDataSO objToSpawn)
     {
+        EventsManager.instance.TowerBuilt(objToSpawn);
+
         GameObject obj = Instantiate(objToSpawn.prefab, transform.position, objToSpawn.prefab.transform.rotation);
         Vector3 newPos = obj.transform.position;
         obj.transform.position = newPos;

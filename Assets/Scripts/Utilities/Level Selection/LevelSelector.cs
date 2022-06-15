@@ -5,10 +5,11 @@ using UnityEngine;
 public class LevelSelector : MonoBehaviour
 {
     [SerializeField]
-    GameObject SelectionScreen;
+    GameObject selectionScreen;
     // Start is called before the first frame update
     public void OnMouseDown()
     {
-        Instantiate(SelectionScreen);
+        SelectionScreen newScreen = Instantiate(selectionScreen).GetComponent<SelectionScreen>();
+        newScreen.Activate();
     }
 }

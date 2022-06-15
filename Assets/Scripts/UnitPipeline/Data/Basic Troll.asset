@@ -18,3 +18,4 @@ MonoBehaviour:
   unitPrefab: {fileID: 0}
   goldValue: 0
   creditCost: 2
+  damageToCastle: 5
