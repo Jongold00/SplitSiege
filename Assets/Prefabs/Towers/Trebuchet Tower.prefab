@@ -1352,11 +1352,11 @@ GameObject:
   - component: {fileID: 7529254368673352320}
   - component: {fileID: 8068182831889343196}
   - component: {fileID: 7149068964350726206}
-  - component: {fileID: 7149068964350726201}
   - component: {fileID: 7149068964350726200}
   - component: {fileID: 7149068964350726203}
+  - component: {fileID: 7681135019345545231}
   m_Layer: 5
-  m_Name: trebuchetFire
+  m_Name: Trebuchet Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1411,26 +1411,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.144118, y: 15.401174, z: 7.25432}
   m_Center: {x: 0.20073739, y: 7.2005863, z: 0.04491272}
---- !u!114 &7149068964350726201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7149068964350726202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d7f37a99f23a6c4093b181768c23e32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event:
-    Guid:
-      Data1: -1385019083
-      Data2: 1133097432
-      Data3: 1391915441
-      Data4: -1120539796
-    Path: event:/Trebuchet Fire
-  volume: 0
 --- !u!114 &7149068964350726200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1463,6 +1443,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildSpeed: 3.25
   startYBuildOffset: -3
+--- !u!114 &7681135019345545231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7149068964350726202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7f37a99f23a6c4093b181768c23e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  volume: 0
 --- !u!1 &7289598459485876508
 GameObject:
   m_ObjectHideFlags: 0

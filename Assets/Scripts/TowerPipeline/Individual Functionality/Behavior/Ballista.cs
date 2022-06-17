@@ -4,9 +4,5 @@ using UnityEngine;
 
 public class Ballista : OffensiveTower
 {
-    protected override void Fire()
-    {
-        base.Fire();
-    }
 
 }

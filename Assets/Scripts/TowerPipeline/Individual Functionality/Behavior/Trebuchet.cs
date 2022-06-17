@@ -8,11 +8,6 @@ public class Trebuchet : OffensiveTower
     [SerializeField] private float fullDamageRange = 5f;
 
 
-    protected override void Fire()
-    {
-        base.Fire();
-        //GetComponent<FMOD_PlayOneShot>().Play();
-    }
 
     protected override IEnumerator SpawnProjectile()
     {

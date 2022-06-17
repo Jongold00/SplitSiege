@@ -9723,11 +9723,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efffa2e420fc7424288632405e2b8ded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laser: {fileID: 1715912071}
-  hitParticles: {fileID: 414279482}
-  hitPointLight: {fileID: 1984338246}
-  hitPointLightOffset: {x: 0, y: 0.75, z: 0}
-  fire: {fileID: 279547035}
+  particleObj: {fileID: 0}
+  projectileObj: {fileID: 0}
 --- !u!1 &1715912069
 GameObject:
   m_ObjectHideFlags: 0
@@ -14978,6 +14975,7 @@ GameObject:
   - component: {fileID: 7105885547969157739}
   - component: {fileID: -1090311823617401611}
   - component: {fileID: -3334187917591347135}
+  - component: {fileID: 4460891728976561969}
   m_Layer: 5
   m_Name: laser tower
   m_TagString: Untagged
@@ -15064,3 +15062,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildSpeed: 3.25
   startYBuildOffset: -3
+--- !u!114 &4460891728976561969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6794464588044622516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7f37a99f23a6c4093b181768c23e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  volume: 0

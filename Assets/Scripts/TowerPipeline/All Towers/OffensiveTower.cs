@@ -138,6 +138,9 @@ public abstract class OffensiveTower : TowerBehavior
     {
         anim.SetFloat("Speed", 1 / offensiveTowerData.GetFireRate());
 
+        FMOD_PlayOneShot shootSFX;
+        TryGetComponent<FMOD_PlayOneShot>(out shootSFX);
+        shootSFX.Play();
 
         StartCoroutine(SpawnProjectile());
 
@@ -149,6 +152,7 @@ public abstract class OffensiveTower : TowerBehavior
     
     protected virtual IEnumerator SpawnProjectile()
     {
+        
 
         yield return new WaitForSeconds(offensiveTowerData.projectileSpawnOffset * offensiveTowerData.GetFireRate());
         GameObject projectile = Instantiate(offensiveTowerData.ProjectilePrefab.gameObject, projectileInstantiatePoint.position, Quaternion.identity);

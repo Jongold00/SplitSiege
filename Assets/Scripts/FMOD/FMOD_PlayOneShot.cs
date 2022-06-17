@@ -11,6 +11,10 @@ public class FMOD_PlayOneShot : MonoBehaviour
     float volume;
     public void Play()
     {
-        FMODUnity.RuntimeManager.PlayOneShot(Event);
+        if (!ReferenceEquals(Event, null))
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(Event);
+
+        }
     }
 }

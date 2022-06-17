@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3767558242204428793}
   - component: {fileID: 7913865973578691712}
   - component: {fileID: 1582921612498775238}
+  - component: {fileID: -3001543583857766195}
   m_Layer: 5
   m_Name: Graveyard Tower
   m_TagString: Untagged
@@ -74,6 +75,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildSpeed: 3.25
   startYBuildOffset: -3
+--- !u!114 &-3001543583857766195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087993359602902350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7f37a99f23a6c4093b181768c23e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  volume: 0
 --- !u!1 &4810040889585555755
 GameObject:
   m_ObjectHideFlags: 0

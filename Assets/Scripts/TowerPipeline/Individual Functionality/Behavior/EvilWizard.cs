@@ -60,6 +60,10 @@ public class EvilWizard : OffensiveTower
 
         }
 
+        FMOD_PlayOneShot shootSFX;
+        TryGetComponent<FMOD_PlayOneShot>(out shootSFX);
+        shootSFX.Play();
+
 
     }
 

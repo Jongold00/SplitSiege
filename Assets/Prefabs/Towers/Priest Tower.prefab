@@ -262,6 +262,7 @@ GameObject:
   - component: {fileID: 5837976518694933248}
   - component: {fileID: 1774023353729950274}
   - component: {fileID: 2528790643538003812}
+  - component: {fileID: -8717078405150966429}
   m_Layer: 5
   m_Name: Priest Tower
   m_TagString: Untagged
@@ -324,3 +325,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildSpeed: 3.25
   startYBuildOffset: -3
+--- !u!114 &-8717078405150966429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6272730658333761932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7f37a99f23a6c4093b181768c23e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  volume: 0

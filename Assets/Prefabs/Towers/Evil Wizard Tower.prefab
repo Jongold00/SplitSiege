@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 5189450646861166699}
   - component: {fileID: 2432421980888666685}
   - component: {fileID: -5938175416081028692}
+  - component: {fileID: 2817838816566206875}
   m_Layer: 5
   m_Name: Evil Wizard Tower
   m_TagString: Untagged
@@ -282,6 +283,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildSpeed: 3.25
   startYBuildOffset: -3
+--- !u!114 &2817838816566206875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187417336092707799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7f37a99f23a6c4093b181768c23e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  volume: 0
 --- !u!1 &1272066147321284873
 GameObject:
   m_ObjectHideFlags: 0
