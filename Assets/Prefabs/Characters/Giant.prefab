@@ -7077,7 +7077,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yOffset: 0
-  speed: 1
   endOfPathInstruction: 2
   unitData: {fileID: 11400000, guid: 5294e787ff47ea149aa883e8415e402f, type: 2}
 --- !u!1 &4633806444344378692

@@ -15019,6 +15019,13 @@ MonoBehaviour:
   zOffsetForRotatableTransform: 25
   projectileInstantiatePoint: {fileID: 7386717492689736767}
   maxMultiplier: 1
+  fmodEvent:
+    Guid:
+      Data1: 457438135
+      Data2: 1327555526
+      Data3: 170819737
+      Data4: 1666634336
+    Path: event:/SFX/Towers/Tower Builds/Good Tower Build
 --- !u!95 &7105885547969157739
 Animator:
   serializedVersion: 3

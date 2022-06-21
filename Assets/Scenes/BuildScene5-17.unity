@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18388408, g: 0.22888388, b: 0.30224705, a: 1}
+  m_IndirectSpecularColor: {r: 0.18388404, g: 0.22888349, b: 0.30224657, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2428,6 +2428,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drop In Every Level
       objectReference: {fileID: 0}
+    - target: {fileID: 8629945196339407876, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: rounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8629945196339407876, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: rounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: c539d666d56d29e4cb47cff9a664df6c, type: 2}
+    - target: {fileID: 8629945196339407876, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: rounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: d8d165c2fe3c8c24fb53da332a4d7520, type: 2}
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}

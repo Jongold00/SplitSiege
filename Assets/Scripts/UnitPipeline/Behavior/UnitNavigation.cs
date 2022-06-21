@@ -63,6 +63,10 @@ public class UnitNavigation : MonoBehaviour
 
     public float GetSpeed()
     {
+        if (GetComponent<UnitBehavior>().isStunned())
+        {
+            return 0;
+        }
         return speed * GetComponent<UnitBehavior>().GetTotalSpeedMultiplier();
     }
 

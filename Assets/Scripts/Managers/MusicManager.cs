@@ -146,7 +146,6 @@ public class MusicManager : MonoBehaviour
 
         float throwaway;
         musicInstance.getParameterByID(NumberOfMobsID, out throwaway);
-        print("numberof mobs parameter: " + throwaway);
 
     }
 
@@ -174,7 +173,6 @@ public class MusicManager : MonoBehaviour
                 GamePhase = 0;
                 break;
             case GameStateManager.GameState.Fighting:
-                print("here");
                 GamePhase = 1;
                 break;
             case GameStateManager.GameState.Won:

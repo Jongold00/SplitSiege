@@ -36,7 +36,6 @@ public class GlobalSFXManager : MonoBehaviour
 
     public void OnTowerPlaced(TowerDataSO newTower)
     {
-        print(newTower.name);
         if (newTower.faction == 0)
         {
             FMOD.Studio.EventInstance eventInstance = FMODUnity.RuntimeManager.CreateInstance(goodTowerPlaced);

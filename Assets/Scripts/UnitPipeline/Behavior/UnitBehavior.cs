@@ -65,8 +65,7 @@ public class UnitBehavior : MonoBehaviour
     public void Update()
     {
         TickStatusEffects(Time.deltaTime);
-        anim.SetFloat("MoveSpeed", nav.GetSpeed());
-
+        UpdateAnims();
     }
 
 
@@ -85,16 +84,7 @@ public class UnitBehavior : MonoBehaviour
         healthbar.value = healthpercent;
     }
 
-    public void Stunned(float duration)
-    {
-        anim.SetBool("isStunned", true);
-        Invoke("ResetStun", duration);
-    }
 
-    void ResetStun()
-    {
-        anim.SetBool("isStunned", false);
-    }
 
     public bool isDead()
     {
@@ -111,14 +101,14 @@ public class UnitBehavior : MonoBehaviour
 
     #region StatusEffectMethods
 
+    float currentStunDuration = 0.0f;
     public void AttachStatusEffect(StatusEffect effect)
     {
         foreach (StatusEffect curr in activeEffects)
         {
             if (curr.compareID(effect.id))
             {
-
-                switch (curr.stackType)
+                switch (effect.stackType)
                 {
                     case StatusEffect.StackType.Refreshing:
                         curr.Refresh();
@@ -128,6 +118,7 @@ public class UnitBehavior : MonoBehaviour
                         effect.OnApply(this);
                         break;
                     case StatusEffect.StackType.Multiplicative:
+
                         activeEffects.Add(effect);
                         effect.OnApply(this);
                         break;
@@ -140,6 +131,14 @@ public class UnitBehavior : MonoBehaviour
         activeEffects.Add(effect);
         effect.OnApply(this);
 
+    }
+
+    public void AttachStatusEffects(List<StatusEffect> effects)
+    {
+        foreach (StatusEffect curr in effects)
+        {
+            AttachStatusEffect(curr);
+        }
     }
 
     public void StatusEffectExpired(StatusEffect effect)
@@ -160,21 +159,53 @@ public class UnitBehavior : MonoBehaviour
         }
     }
 
+
+    public bool isStunned()
+    {
+        foreach (StatusEffect curr in activeEffects)
+        {
+            if (curr is Stun)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
     public float GetTotalSpeedMultiplier()
     {
-        float total = 1;
+        float ret = 1.0f;
         foreach (StatusEffect curr in activeEffects)
         {
             if (curr is Slow)
             {
                 Slow asSlow = (Slow)curr;
-                total *= 1 - asSlow.GetSlowMultiplier();
+                ret *= asSlow.GetSlowMultiplier();
             }
         }
-        return total;
+        return ret;
     }
 
 
+    #endregion
+
+    #region Animation
+
+    void UpdateAnims()
+    {
+        anim.SetFloat("MoveSpeed", nav.GetSpeed());
+
+        if (isStunned())
+        {
+            anim.SetBool("Stunned", true);
+        }
+        else
+        {
+            anim.SetBool("Stunned", false);
+        }
+
+    }
 
     #endregion
 }

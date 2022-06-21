@@ -47,4 +47,10 @@ public abstract class StatusEffect
 
     }
 
+
+    public float GetRemainingDuration()
+    {
+        return duration;
+    }
+
 }

@@ -7,7 +7,7 @@ public class Iceball : Projectile
     // Start is called before the first frame update
     void Start()
     {
-        statusEffect = new Icefreeze();
+        statusEffects.Add(new Stun(2.0f));
     }
 
 

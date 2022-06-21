@@ -8,21 +8,22 @@ public class Slow : StatusEffect
 
     public Slow(float slowAmount, float slowDuration)
     {
-        Debug.Log("slow created");
-
+        id = 1;
+        stackType = StackType.Multiplicative;
         slowPercentage = slowAmount;
         duration = slowDuration;
         maxDuration = slowDuration;
     }
 
-    public override void OnApply(UnitBehavior attached)
-    {
-        Debug.Log("slow applied");
-        base.OnApply(attached);
-    }
 
     public float GetSlowMultiplier()
     {
         return slowPercentage / 100;
+    }
+
+    public override void Tick(UnitBehavior attached, float deltaT)
+    {
+        base.Tick(attached, deltaT);
+        Debug.Log("slow tick");
     }
 }

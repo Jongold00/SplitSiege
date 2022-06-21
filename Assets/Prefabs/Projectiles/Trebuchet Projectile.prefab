@@ -4948,7 +4948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleObj: {fileID: 1472142108}
   projectileObj: {fileID: 6186689206996755274}
-  aoeRadius: 5
+  aoeRadius: 1.5
 --- !u!135 &6580472325841406658
 SphereCollider:
   m_ObjectHideFlags: 0

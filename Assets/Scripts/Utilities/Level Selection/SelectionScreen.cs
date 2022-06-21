@@ -30,6 +30,7 @@ public class SelectionScreen : MonoBehaviour
 
     public void PlayLevel()
     {
+        gameObject.SetActive(false);
         SceneLoadingManager.instance.LoadScene(sceneName);
     }
 

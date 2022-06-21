@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class Laser : OffensiveTower
 {
@@ -9,10 +10,33 @@ public class Laser : OffensiveTower
     LaserBeam laserBeam;
     UnitBehavior unitBehavior;
 
+
+    #region fmod
+
+    public EventReference fmodEvent;
+    FMOD.Studio.EventInstance fmodInstance;
+
+    FMOD.Studio.PARAMETER_ID multiplierID;
+
+    #endregion fmod
+
     protected override void Awake()
     {
         base.Awake();
         laserBeam = GetComponentInChildren<LaserBeam>();
+
+
+
+
+        fmodInstance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+        FMOD.Studio.EventDescription eventDescription;
+
+        fmodInstance.getDescription(out eventDescription);
+
+
+        FMOD.Studio.PARAMETER_DESCRIPTION multiplierDescription;
+        eventDescription.getParameterDescriptionByName("Gameplay Status", out multiplierDescription);
+        multiplierID = multiplierDescription.id;
     }
 
     public override void Update()
@@ -36,6 +60,7 @@ public class Laser : OffensiveTower
                 attackCD = offensiveTowerData.GetFireRate();
                 Fire();
                 currentMultiplier = Mathf.Min(currentMultiplier + 0.005f, maxMultiplier);
+                fmodInstance.setParameterByID(multiplierID, currentMultiplier);
 
             }
         }

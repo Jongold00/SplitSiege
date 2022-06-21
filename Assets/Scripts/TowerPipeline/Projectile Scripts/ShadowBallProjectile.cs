@@ -9,7 +9,7 @@ public class ShadowBallProjectile : Projectile
     // Start is called before the first frame update
     void Start()
     {
-        statusEffect = new ShadowballBurn();
+        statusEffects.Add(new ShadowballBurn());
     }
 
     // Update is called once per frame

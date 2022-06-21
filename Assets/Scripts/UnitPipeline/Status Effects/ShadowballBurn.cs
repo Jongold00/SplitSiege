@@ -8,6 +8,8 @@ public class ShadowballBurn : StatusEffect
 
     public ShadowballBurn()
     {
+        id = 3;
+
         damage = 0.1f;
         duration = 1.0f;
         maxDuration = 1.0f;

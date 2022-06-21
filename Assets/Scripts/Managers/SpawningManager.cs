@@ -52,7 +52,6 @@ public class SpawningManager : MonoBehaviour
 
     void ListenGameStateChange(GameStateManager.GameState newState)
     {
-        print("Spawning manager: gamestate is now " + newState);
 
         switch(newState)
         {
@@ -138,7 +137,6 @@ public class SpawningManager : MonoBehaviour
             currentRound = rounds[rounds.IndexOf(currentRound) + 1];
         }
 
-        print("Spawning Manager: just started round number " + rounds.IndexOf(currentRound));
 
 
         credits = currentRound.credits;

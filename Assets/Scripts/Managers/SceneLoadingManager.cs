@@ -43,6 +43,8 @@ public class SceneLoadingManager : MonoBehaviour
     IEnumerator AsyncSceneLoad(string sceneName)
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
+        operation.completed += Operation_completed;
+
         operation.allowSceneActivation = false;
 
         loadingScreen = GameObject.FindGameObjectWithTag("loading");
@@ -62,11 +64,15 @@ public class SceneLoadingManager : MonoBehaviour
             loadingSlider.value = progress;
             yield return null;
         }
-        loadingScreen.GetComponent<ActivateAllChildren>().DeActivate();
         operation.allowSceneActivation = true;
+
+        
 
 
     }
 
-
+    private void Operation_completed(AsyncOperation obj)
+    {
+        loadingScreen.GetComponent<ActivateAllChildren>().DeActivate();
+    }
 }

@@ -11,8 +11,7 @@ public class Projectile : MonoBehaviour
 
     private float rotationSpeed = 100f;
 
-    [SerializeField]
-    protected StatusEffect statusEffect;
+    protected List<StatusEffect> statusEffects = new List<StatusEffect>();
 
     protected float damage = 5f;
 
@@ -42,7 +41,7 @@ public class Projectile : MonoBehaviour
             // placeholder
             target.TakeDamage(damage);
 
-            if (statusEffect != null) target.AttachStatusEffect(statusEffect);
+            if (statusEffects.Count != 0) target.AttachStatusEffects(statusEffects);
 
             OnTargetHit?.Invoke();
             Destroy(this.gameObject);
@@ -65,7 +64,6 @@ public class Projectile : MonoBehaviour
     {
         if (particleObj != null && projectileObj != null)
         {
-            Debug.Log("particles!");
             projectileObj.SetActive(false);
             particleObj.SetActive(true);
         }

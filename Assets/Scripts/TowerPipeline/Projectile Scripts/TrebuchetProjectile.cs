@@ -6,13 +6,11 @@ using System;
 
 public class TrebuchetProjectile : Projectile
 {
-    private float movementSpeed;
     Rigidbody rb;
 
     float currentTimeToImpact;
 
 
-    [SerializeField] float launchAngle = 65.0f;
 
     [SerializeField] private float aoeRadius;
 
@@ -46,9 +44,10 @@ public class TrebuchetProjectile : Projectile
         }
         rb = GetComponent<Rigidbody>();
         target = newTarget;
-        this.movementSpeed = movementSpeed;
 
-        statusEffect = new Slow(75f, 3.0f);
+        statusEffects.Add(new Stun(1.5f));
+        statusEffects.Add(new Slow(65f, 3.0f));
+
 
 
         currentTimeToImpact = CalculateInitialFlightTime(transform.position.y);
@@ -81,7 +80,7 @@ public class TrebuchetProjectile : Projectile
             UnitBehavior unit = hitCollider.GetComponent<UnitBehavior>();
             if (unit != null && unit)
             {
-                unit.AttachStatusEffect(statusEffect);
+                unit.AttachStatusEffects(statusEffects);
                 unit.TakeDamage(dmg);
             }
         }
