@@ -90,10 +90,38 @@ public class BuildTowerPopupMenu : MonoBehaviour
 
         Vector2 viewportPoint = Camera.main.WorldToScreenPoint(obj.transform.position);
         rectTransformOfPopupMenu.anchoredPosition = viewportPoint;
+        ForcePopupMenuToFitScreen();
     }
 
     public void HidePopupMenu()
     {
         PopupMenuObj.SetActive(false);
+    }
+
+    private void ForcePopupMenuToFitScreen()
+    {
+        Vector2 currentPos = rectTransformOfPopupMenu.anchoredPosition;
+
+        if ((rectTransformOfPopupMenu.anchoredPosition.x - (rectTransformOfPopupMenu.sizeDelta.x / 2)) < 0)
+        {
+            currentPos.x = rectTransformOfPopupMenu.sizeDelta.x / 2;
+        }
+
+        if ((rectTransformOfPopupMenu.anchoredPosition.x + (rectTransformOfPopupMenu.sizeDelta.x / 2)) > Screen.width)
+        {
+            currentPos.x = Screen.width - (rectTransformOfPopupMenu.sizeDelta.x / 2);
+        }
+
+        if ((rectTransformOfPopupMenu.anchoredPosition.y - (rectTransformOfPopupMenu.sizeDelta.y / 2)) < 0)
+        {
+            currentPos.y = Screen.height + (rectTransformOfPopupMenu.sizeDelta.y / 2);
+        }
+
+        if ((rectTransformOfPopupMenu.anchoredPosition.y + (rectTransformOfPopupMenu.sizeDelta.y / 2)) > Screen.height)
+        {
+            currentPos.y = Screen.height - (rectTransformOfPopupMenu.sizeDelta.y / 2);
+        }
+
+        rectTransformOfPopupMenu.anchoredPosition = currentPos;
     }
 }

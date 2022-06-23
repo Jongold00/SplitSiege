@@ -97,7 +97,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/SplitSiege_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637908267875052162
+  lastModified: 637912723797908984
   FileSizes:
   - Name: Desktop
     Value: 1178
@@ -151,7 +151,7 @@ MonoBehaviour:
   - {fileID: 3173582690875323158}
   StringsBanks:
   - {fileID: -5010818958377035685}
-  cacheTime: 637909042816846280
+  cacheTime: 637912723797908984
   cacheVersion: 131591
 --- !u!114 &1185980321105221639
 MonoBehaviour:
@@ -192,7 +192,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/SplitSiege_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637909042816846280
+  lastModified: 637912723797908984
   FileSizes:
   - Name: Desktop
     Value: 5903552
