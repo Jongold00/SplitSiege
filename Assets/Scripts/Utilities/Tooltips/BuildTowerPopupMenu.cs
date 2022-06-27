@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using System;
 
 public class BuildTowerPopupMenu : MonoBehaviour
 {
@@ -13,6 +15,7 @@ public class BuildTowerPopupMenu : MonoBehaviour
     private GameObject popupMenuObj;
     public GameObject PopupMenuObj { get => popupMenuObj; private set => popupMenuObj = value; }
     private RectTransform rectTransformOfPopupMenu;
+    [SerializeField] GameObject closeBuildMenuOnBackgroundClickObj;
 
     #region Singleton
 
@@ -30,7 +33,6 @@ public class BuildTowerPopupMenu : MonoBehaviour
             instance = this;
         }
     }
-
 
     #endregion Singleton
 
@@ -91,6 +93,8 @@ public class BuildTowerPopupMenu : MonoBehaviour
         Vector2 viewportPoint = Camera.main.WorldToScreenPoint(obj.transform.position);
         rectTransformOfPopupMenu.anchoredPosition = viewportPoint;
         ForcePopupMenuToFitScreen();
+
+        Invoke("EnableMenuAutoHide", 1);
     }
 
     public void HidePopupMenu()
@@ -123,5 +127,10 @@ public class BuildTowerPopupMenu : MonoBehaviour
         }
 
         rectTransformOfPopupMenu.anchoredPosition = currentPos;
+    }
+
+    private void EnableMenuAutoHide()
+    {
+        closeBuildMenuOnBackgroundClickObj.SetActive(true);
     }
 }
