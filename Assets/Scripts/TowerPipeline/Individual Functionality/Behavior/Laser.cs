@@ -79,9 +79,15 @@ public class Laser : OffensiveTower
 
         if (!active)
         {
-            ResourceManager.instance.UpdateResources(offensiveTowerData.cost * -1, offensiveTowerData.faction);
             active = true;
         }
+    }
+
+    protected override void Fire()
+    {
+        anim.SetFloat("Speed", 1 / offensiveTowerData.GetFireRate());
+
+        StartCoroutine(SpawnProjectile());
     }
 
     protected override IEnumerator SpawnProjectile()
