@@ -15086,9 +15086,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  volume: 0
+      Data1: 34147674
+      Data2: 1150905992
+      Data3: 519291293
+      Data4: 1293873350
+    Path: event:/SFX/Towers/Laser/Laser Fire
+  volume: 10
