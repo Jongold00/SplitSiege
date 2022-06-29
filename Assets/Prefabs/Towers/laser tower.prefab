@@ -14978,7 +14978,6 @@ GameObject:
   - component: {fileID: 7105885547969157739}
   - component: {fileID: -1090311823617401611}
   - component: {fileID: -3334187917591347135}
-  - component: {fileID: 4460891728976561969}
   m_Layer: 5
   m_Name: laser tower
   m_TagString: Untagged
@@ -15021,11 +15020,11 @@ MonoBehaviour:
   maxMultiplier: 1
   fmodEvent:
     Guid:
-      Data1: 457438135
-      Data2: 1327555526
-      Data3: 170819737
-      Data4: 1666634336
-    Path: event:/SFX/Towers/Tower Builds/Good Tower Build
+      Data1: 34147674
+      Data2: 1150905992
+      Data3: 519291293
+      Data4: 1293873350
+    Path: event:/SFX/Towers/Laser/Laser Fire
 --- !u!95 &7105885547969157739
 Animator:
   serializedVersion: 3
@@ -15072,23 +15071,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildSpeed: 3.25
   startYBuildOffset: -3
---- !u!114 &4460891728976561969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6794464588044622516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d7f37a99f23a6c4093b181768c23e32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event:
-    Guid:
-      Data1: 34147674
-      Data2: 1150905992
-      Data3: 519291293
-      Data4: 1293873350
-    Path: event:/SFX/Towers/Laser/Laser Fire
-  volume: 10

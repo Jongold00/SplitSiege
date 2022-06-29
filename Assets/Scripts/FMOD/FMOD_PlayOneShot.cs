@@ -12,9 +12,8 @@ public class FMOD_PlayOneShot : MonoBehaviour
     public void Play()
     {
         FMOD.Studio.EventInstance eventInstance = FMODUnity.RuntimeManager.CreateInstance(Event);
-        eventInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(Camera.main.transform));
+        eventInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(transform));
         eventInstance.start();
-        print(eventInstance);
 
     }
     

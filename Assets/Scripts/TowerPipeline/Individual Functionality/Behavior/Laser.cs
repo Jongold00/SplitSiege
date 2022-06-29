@@ -16,8 +16,6 @@ public class Laser : OffensiveTower
     public EventReference fmodEvent;
     FMOD.Studio.EventInstance fmodInstance;
 
-    FMOD.Studio.PARAMETER_ID multiplierID;
-
     #endregion fmod
 
     protected override void Awake()
@@ -26,17 +24,24 @@ public class Laser : OffensiveTower
         laserBeam = GetComponentInChildren<LaserBeam>();
 
 
+        ResetFmodInstance();
+
+
+
+
+
+    }
+
+    void ResetFmodInstance()
+    {
+        fmodInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        fmodInstance.release();
 
 
         fmodInstance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
-        FMOD.Studio.EventDescription eventDescription;
-
-        fmodInstance.getDescription(out eventDescription);
-
-
-        FMOD.Studio.PARAMETER_DESCRIPTION multiplierDescription;
-        eventDescription.getParameterDescriptionByName("Gameplay Status", out multiplierDescription);
-        multiplierID = multiplierDescription.id;
+        fmodInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(Camera.main.transform));
+        fmodInstance.start();
+        fmodInstance.setPaused(true);
     }
 
     public override void Update()
@@ -57,22 +62,28 @@ public class Laser : OffensiveTower
 
             if (attackCD <= 0)
             {
+                fmodInstance.setPaused(false);
+
                 attackCD = offensiveTowerData.GetFireRate();
                 Fire();
                 currentMultiplier = Mathf.Min(currentMultiplier + 0.005f, maxMultiplier);
-                fmodInstance.setParameterByID(multiplierID, currentMultiplier);
-
             }
         }
         
         else
         {
+            ResetFmodInstance();
+
+
             anim.SetTrigger("Transition");
             currentMultiplier = 0;
         }
 
         if (switchedTarget)
         {
+            ResetFmodInstance();
+
+
             anim.SetTrigger("Transition");
             currentMultiplier = 0;
         }
