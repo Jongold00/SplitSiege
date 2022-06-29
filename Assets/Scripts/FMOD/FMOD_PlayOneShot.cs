@@ -11,11 +11,10 @@ public class FMOD_PlayOneShot : MonoBehaviour
     float volume;
     public void Play()
     {
-        FMOD.Studio.EventInstance eventInstance = FMODUnity.RuntimeManager.CreateInstance(Event);
-        eventInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(Camera.main.transform));
-        eventInstance.start();
-        print(eventInstance);
+        if (!ReferenceEquals(Event, null))
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(Event);
 
+        }
     }
-    
 }

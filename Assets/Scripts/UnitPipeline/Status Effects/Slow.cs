@@ -24,5 +24,6 @@ public class Slow : StatusEffect
     public override void Tick(UnitBehavior attached, float deltaT)
     {
         base.Tick(attached, deltaT);
+        Debug.Log("slow tick");
     }
 }

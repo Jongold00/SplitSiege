@@ -42,11 +42,8 @@ public class TowerSocketManager : MonoBehaviour
 
     public void BuildTower(TowerDataSO towerToBuild)
     {
-        if (ResourceManager.instance.CheckLegalTranscation(towerToBuild.cost))
-        {
-            ResourceManager.instance.UpdateResources(towerToBuild.cost * -1);
-
-
+        if (ResourceManager.instance.CheckLegalTranscation(towerToBuild.cost, towerToBuild.faction))
+        { 
             GameObject placedTowerObj = SelectedSocket.AddTowerToSocket(towerToBuild);
             ITowerBuilder build = placedTowerObj.GetComponent<ITowerBuilder>();
 
@@ -62,7 +59,7 @@ public class TowerSocketManager : MonoBehaviour
     public void SellTower()
     {
         SelectedSocket.RemoveTowerFromSocket();
-        ResourceManager.instance.UpdateResources(selectedSocket.CurrentlyPlacedTower.cost / 2);
+        ResourceManager.instance.UpdateResources(selectedSocket.CurrentlyPlacedTower.cost / 2, selectedSocket.CurrentlyPlacedTower.faction);
     }
     private void HandleSocketSelected(GameObject obj)
     {

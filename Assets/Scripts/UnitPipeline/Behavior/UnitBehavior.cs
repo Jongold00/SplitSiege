@@ -101,6 +101,7 @@ public class UnitBehavior : MonoBehaviour
 
     #region StatusEffectMethods
 
+    float currentStunDuration = 0.0f;
     public void AttachStatusEffect(StatusEffect effect)
     {
         foreach (StatusEffect curr in activeEffects)
