@@ -2380,6 +2380,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4309471569848180843, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8510534727430137998, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -2428,6 +2432,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drop In Every Level
       objectReference: {fileID: 0}
+    - target: {fileID: 8536401854542337648, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8629945196339407876, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
       propertyPath: rounds.Array.size
       value: 2
@@ -2435,7 +2443,7 @@ PrefabInstance:
     - target: {fileID: 8629945196339407876, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
       propertyPath: rounds.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: c539d666d56d29e4cb47cff9a664df6c, type: 2}
+      objectReference: {fileID: 11400000, guid: d8d165c2fe3c8c24fb53da332a4d7520, type: 2}
     - target: {fileID: 8629945196339407876, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
       propertyPath: rounds.Array.data[1]
       value: 
