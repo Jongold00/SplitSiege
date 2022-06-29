@@ -97,7 +97,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/SplitSiege_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637921182550000000
+  lastModified: 637921207020000000
   FileSizes:
   - Name: Desktop
     Value: 1356
@@ -181,7 +181,7 @@ MonoBehaviour:
   - {fileID: 3173582690875323158}
   StringsBanks:
   - {fileID: -5010818958377035685}
-  cacheTime: 637921182550000000
+  cacheTime: 637921207020000000
   cacheVersion: 131591
 --- !u!114 &1185980321105221639
 MonoBehaviour:
@@ -233,7 +233,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1370
+  Length: 3370
 --- !u!114 &3173582690875323158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,10 +249,10 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/SplitSiege_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637921182550000000
+  lastModified: 637921207020000000
   FileSizes:
   - Name: Desktop
-    Value: 8695680
+    Value: 8695296
   Exists: 1
 --- !u!114 &5062052457072394940
 MonoBehaviour:
