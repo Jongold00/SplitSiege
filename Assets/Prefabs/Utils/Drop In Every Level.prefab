@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLevelName: level1
   buildDuration: 30
-  castleHealth: 10
+  maxCastleHealth: 10
 --- !u!1 &8510534727430137999
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,13 +311,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b9bb28ceb2ffaf479a80c5fe6549579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldText: {fileID: 0}
-  popText: {fileID: 0}
-  gold: 0
-  population: 0
-  PassiveGoldRate: 0
-  startingGold: 1000
-  startingPop: 1000
+  resources: 0
+  PassiveResourceGain: 10
+  PassiveResourceRate: 2
+  startingResources: 250
 --- !u!1001 &7494245586426648466
 PrefabInstance:
   m_ObjectHideFlags: 0

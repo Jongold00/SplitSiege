@@ -629,11 +629,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 457438135
+      Data2: 1327555526
+      Data3: 170819737
+      Data4: 1666634336
+    Path: event:/SFX/Towers/Tower Builds/Good Tower Build
   volume: 0
 --- !u!1 &3315863244904464840
 GameObject:

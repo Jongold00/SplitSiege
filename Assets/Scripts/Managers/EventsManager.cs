@@ -171,5 +171,30 @@ public class EventsManager : MonoBehaviour
     }
     #endregion
 
+    #region UpdateResources
+
+    private event Action<float> onResourceUpdate;
+
+    public void SubscribeResourceUpdate(Action<float> func)
+    {
+        onResourceUpdate += func;
+    }
+
+    public void UnsubscribeResourceUpdate(Action<float> func)
+    {
+        onResourceUpdate -= func;
+    }
+
+    public void ResourcesUpdated(float data)
+    {
+        if (onResourceUpdate == null)
+        {
+            return;
+        }
+        onResourceUpdate(data);
+    }
+
+    #endregion
+
 
 }

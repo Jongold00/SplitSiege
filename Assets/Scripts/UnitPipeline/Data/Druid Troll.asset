@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4925f00fced4e384cb0a3e15bdd0f8ab, type: 3}
-  m_Name: Basic Troll
+  m_Name: Druid Troll
   m_EditorClassIdentifier: 
-  unitName: Basic Troll
-  unitHealth: 50
+  unitName: Druid Troll
+  unitHealth: 75
   unitSpeed: 1
-  unitPrefab: {fileID: 0}
-  goldValue: 15
-  creditCost: 2
-  damageToCastle: 1
+  unitPrefab: {fileID: 7421647908367529409, guid: 188d9b4689e182f4dbe96445e35dd710, type: 3}
+  goldValue: 35
+  creditCost: 6
+  damageToCastle: 3
