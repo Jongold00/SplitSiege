@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{1baedb15-866b-45c2-a598-9b68303773c8}">
+		<property name="assetPath">
+			<value>SFX/Towers/Laser/Laser Loop Electricity 1.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>24.539999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{57242b32-9511-4dfb-ad60-d2ea84eee8bf}</destination>
+		</relationship>
+	</object>
+</objects>

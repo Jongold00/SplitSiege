@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e9aaf8d4-37d9-420b-b739-7ef5ef69ad5f}">
+		<property name="assetPath">
+			<value>MX/Gameplay/Cajon_SplitSiege_BuildPhaseTheme.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>61.714285714285715</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{57242b32-9511-4dfb-ad60-d2ea84eee8bf}</destination>
+		</relationship>
+	</object>
+</objects>
