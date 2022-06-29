@@ -16,5 +16,4 @@ MonoBehaviour:
   spawns:
   - {fileID: 11400000, guid: c181704124b028f4ab6b697df9932fe6, type: 2}
   - {fileID: 11400000, guid: 8d5bcc0b09b71fe4eb2a6835a2905a25, type: 2}
-  - {fileID: 11400000, guid: 53b27c9c9fa08e34f9e728bcf1c0db8b, type: 2}
   globalCD: 8

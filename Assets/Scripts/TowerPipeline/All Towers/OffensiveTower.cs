@@ -116,6 +116,7 @@ public abstract class OffensiveTower : TowerBehavior
 
         if (!active)
         {
+            ResourceManager.instance.UpdateResources(offensiveTowerData.cost * -1, offensiveTowerData.faction);
             active = true;
         }
 
@@ -138,11 +139,8 @@ public abstract class OffensiveTower : TowerBehavior
         anim.SetFloat("Speed", 1 / offensiveTowerData.GetFireRate());
 
         FMOD_PlayOneShot shootSFX;
-        if (TryGetComponent<FMOD_PlayOneShot>(out shootSFX))
-        {
-            shootSFX.Play();
-
-        }
+        TryGetComponent<FMOD_PlayOneShot>(out shootSFX);
+        shootSFX.Play();
 
         StartCoroutine(SpawnProjectile());
 

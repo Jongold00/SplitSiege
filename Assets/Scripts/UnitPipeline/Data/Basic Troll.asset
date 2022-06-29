@@ -16,6 +16,6 @@ MonoBehaviour:
   unitHealth: 50
   unitSpeed: 1
   unitPrefab: {fileID: 0}
-  goldValue: 15
+  goldValue: 0
   creditCost: 2
-  damageToCastle: 1
+  damageToCastle: 5

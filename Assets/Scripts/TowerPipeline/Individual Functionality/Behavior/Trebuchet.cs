@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Trebuchet : OffensiveTower
 {
+    [SerializeField] private float splashRange = 10f;
+    [SerializeField] private float fullDamageRange = 5f;
 
 
 
