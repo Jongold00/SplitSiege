@@ -1427,8 +1427,6 @@ MonoBehaviour:
   rotatableTransform: {fileID: 3201424819791948050}
   zOffsetForRotatableTransform: -90
   projectileInstantiatePoint: {fileID: 8068182831592364573}
-  splashRange: 10
-  fullDamageRange: 5
 --- !u!114 &7149068964350726203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1457,11 +1455,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1240382494
+      Data2: 1303254811
+      Data3: -2100998264
+      Data4: 520745437
+    Path: event:/SFX/Towers/Ballista/Ballista Shot
   volume: 0
 --- !u!1 &7289598459485876508
 GameObject:
