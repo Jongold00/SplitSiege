@@ -22,7 +22,6 @@ public class GameStateManager : MonoBehaviour
         {
             instance = this;
         }
-        castleHealth = maxCastleHealth;
     }
 
 
@@ -46,9 +45,8 @@ public class GameStateManager : MonoBehaviour
     private float buildDuration = 30;
 
     [SerializeField]
-    int maxCastleHealth = 10;
+    int castleHealth = 10;
 
-    int castleHealth;
 
     private GameState currentGameState;
 
@@ -74,7 +72,7 @@ public class GameStateManager : MonoBehaviour
         switch (currentGameState)
         {
             case GameState.Building:
-                StartCoroutine(StartBuildTimer(buildDuration));
+                //StartCoroutine(StartBuildTimer(buildDuration));
                 break;
         }
     }
@@ -97,7 +95,6 @@ public class GameStateManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             timer--;
-            InGameUIManager.instance.buildPhaseTimer.text = timer.ToString();
         }
         StartRound();
 
@@ -135,10 +132,6 @@ public class GameStateManager : MonoBehaviour
         return 3;
     }
 
-    public float GetPercentCastleHealth()
-    {
-        return (float)castleHealth / (float)maxCastleHealth;
-    }
 
 
 

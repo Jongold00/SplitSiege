@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Priest
   range: 5
-  cost: 25
+  cost: 1
   faction: 0
   prefab: {fileID: 6272730658333761932, guid: bb4a4b7fe424045408e1b7c4e78646f1, type: 3}

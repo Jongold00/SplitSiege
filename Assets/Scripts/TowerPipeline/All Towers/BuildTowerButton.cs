@@ -25,7 +25,7 @@ public class BuildTowerButton : MonoBehaviour
 
     bool CanAfford()
     {
-        if (ResourceManager.instance.CheckLegalTranscation(cost.x))
+        if (ResourceManager.instance.CheckLegalTranscation(cost.x, cost.y))
         {
             return true;
         }
