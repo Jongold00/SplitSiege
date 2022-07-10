@@ -14,6 +14,7 @@ public class BuildTowerPopupMenu : MonoBehaviour
     [SerializeField]
     private GameObject popupMenuObj;
     public GameObject PopupMenuObj { get => popupMenuObj; private set => popupMenuObj = value; }
+
     private RectTransform rectTransformOfPopupMenu;
     [SerializeField] GameObject closeBuildMenuOnBackgroundClickObj;
 
@@ -86,6 +87,7 @@ public class BuildTowerPopupMenu : MonoBehaviour
 
     public void DisplayPopupMenuAtViewportOfObj(GameObject obj)
     {
+        closeBuildMenuOnBackgroundClickObj.SetActive(false);
         PopupMenuObj.SetActive(true);
         DisableAllTooltips();
         EnableAllButtons();
@@ -94,7 +96,7 @@ public class BuildTowerPopupMenu : MonoBehaviour
         rectTransformOfPopupMenu.anchoredPosition = viewportPoint;
         ForcePopupMenuToFitScreen();
 
-        Invoke("EnableMenuAutoHide", 1);
+        Invoke("EnableMenuAutoHide", 0.1f);
     }
 
     public void HidePopupMenu()

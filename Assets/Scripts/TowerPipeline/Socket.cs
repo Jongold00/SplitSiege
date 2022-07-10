@@ -9,11 +9,15 @@ public class Socket : MonoBehaviour
     private TowerDataSO currentlyPlacedTower;
     public TowerDataSO CurrentlyPlacedTower { get => currentlyPlacedTower; private set => currentlyPlacedTower = value; }
     public static event Action<GameObject> OnSocketSelected;
+    [SerializeField] HoverDetector popupMenuHoverDetector;
 
 
     public void OnMouseDown()
     {
-        OnSocketSelected?.Invoke(gameObject);
+        if (!popupMenuHoverDetector.IsHovering)
+        {
+            OnSocketSelected?.Invoke(gameObject);
+        }
     }
 
     public GameObject AddTowerToSocket(TowerDataSO objToSpawn)
