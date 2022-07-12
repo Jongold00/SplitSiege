@@ -1,22 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PopupUI : MonoBehaviour
 {
-    [SerializeField] protected GameObject closePopupUIOnBackgroundClickObj;
-    protected void EnableAutoHide()
-    {
-        closePopupUIOnBackgroundClickObj.SetActive(false);
-        Invoke("ActivateObject", 0.1f);
-    }
+    public static Action OnPopupDisplayed;
 
-    private void ActivateObject()
-    {
-        closePopupUIOnBackgroundClickObj.SetActive(true);
-    }
-
-    protected RectTransform ForceRectTransToFitScreen(RectTransform rectTransform)
+    protected RectTransform CalculateRectTransToFitScreen(RectTransform rectTransform)
     {
         Vector2 currentPos = rectTransform.anchoredPosition;
 

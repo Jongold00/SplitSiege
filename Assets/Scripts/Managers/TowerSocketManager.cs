@@ -61,7 +61,7 @@ public class TowerSocketManager : MonoBehaviour
     }
     private void HandleSocketSelected(GameObject obj)
     {
-        disableObjOnBackgroundClick.SetObjectsInactive();
+        disableObjOnBackgroundClick.SetAllObjsAndThisToInactive();
         BuildTowerPopupMenu.instance.HidePopupMenu();
         BuildTowerPopupMenu.instance.DisplayPopupMenuAtViewportOfObj(obj);
         SelectedSocket = obj.GetComponent<Socket>();

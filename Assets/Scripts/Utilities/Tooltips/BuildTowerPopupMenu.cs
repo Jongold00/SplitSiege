@@ -86,14 +86,14 @@ public class BuildTowerPopupMenu : PopupUI
 
     public void DisplayPopupMenuAtViewportOfObj(GameObject obj)
     {
-        EnableAutoHide();
+        OnPopupDisplayed?.Invoke();
         PopupMenuObj.SetActive(true);
         DisableAllTooltips();
         EnableAllButtons();
 
         Vector2 viewportPoint = Camera.main.WorldToScreenPoint(obj.transform.position);
         rectTransformOfPopupMenu.anchoredPosition = viewportPoint;
-        rectTransformOfPopupMenu = ForceRectTransToFitScreen(rectTransformOfPopupMenu);
+        rectTransformOfPopupMenu = CalculateRectTransToFitScreen(rectTransformOfPopupMenu);
     }
 
     public void HidePopupMenu()
