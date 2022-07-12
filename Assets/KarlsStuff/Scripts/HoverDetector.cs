@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class HoverDetector : MonoBehaviour
+public class HoverDetector : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private bool isHovering;
     public bool IsHovering { get => isHovering; set => isHovering = value; }
@@ -26,14 +26,16 @@ public class HoverDetector : MonoBehaviour
     }
 
     #endregion Singleton
-
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        IsHovering = EventSystem.current.IsPointerOverGameObject();
+        IsHovering = false;
+    }
+    public void OnPointerEnter(PointerEventData pointerEventData)
+    {
+        IsHovering = true;
     }
 
-    private void OnDisable()
+    public void OnPointerExit(PointerEventData pointerEventData)
     {
         IsHovering = false;
     }

@@ -11,9 +11,9 @@ public class Socket : MonoBehaviour
     public static event Action<GameObject> OnSocketSelected;
     [SerializeField] HoverDetector popupMenuHoverDetector;
 
-
     public void OnMouseDown()
     {
+        Debug.Log(popupMenuHoverDetector.IsHovering);
         if (!popupMenuHoverDetector.IsHovering)
         {
             OnSocketSelected?.Invoke(gameObject);

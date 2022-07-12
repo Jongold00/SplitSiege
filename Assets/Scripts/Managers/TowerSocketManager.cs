@@ -9,9 +9,7 @@ public class TowerSocketManager : MonoBehaviour
     private Socket selectedSocket;
     public Socket SelectedSocket { get => selectedSocket; set => selectedSocket = value; }
     [SerializeField] GameObject buildParticlePrefab;
-
-
-
+    [SerializeField] DisableObjOnBackgroundClick disableObjOnBackgroundClick;
 
     #region Singleton
 
@@ -63,6 +61,7 @@ public class TowerSocketManager : MonoBehaviour
     }
     private void HandleSocketSelected(GameObject obj)
     {
+        disableObjOnBackgroundClick.SetObjectsInactive();
         BuildTowerPopupMenu.instance.HidePopupMenu();
         BuildTowerPopupMenu.instance.DisplayPopupMenuAtViewportOfObj(obj);
         SelectedSocket = obj.GetComponent<Socket>();

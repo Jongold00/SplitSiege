@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System;
 
-public class BuildTowerPopupMenu : MonoBehaviour
+public class BuildTowerPopupMenu : PopupUI
 {
     // This script should be placed on a canvas object,
     // inside of which is the popup menu itself and related buttons/images
@@ -16,7 +16,6 @@ public class BuildTowerPopupMenu : MonoBehaviour
     public GameObject PopupMenuObj { get => popupMenuObj; private set => popupMenuObj = value; }
 
     private RectTransform rectTransformOfPopupMenu;
-    [SerializeField] GameObject closeBuildMenuOnBackgroundClickObj;
 
     #region Singleton
 
@@ -87,52 +86,18 @@ public class BuildTowerPopupMenu : MonoBehaviour
 
     public void DisplayPopupMenuAtViewportOfObj(GameObject obj)
     {
-        closeBuildMenuOnBackgroundClickObj.SetActive(false);
+        EnableAutoHide();
         PopupMenuObj.SetActive(true);
         DisableAllTooltips();
         EnableAllButtons();
 
         Vector2 viewportPoint = Camera.main.WorldToScreenPoint(obj.transform.position);
         rectTransformOfPopupMenu.anchoredPosition = viewportPoint;
-        ForcePopupMenuToFitScreen();
-
-        Invoke("EnableMenuAutoHide", 0.1f);
+        rectTransformOfPopupMenu = ForceRectTransToFitScreen(rectTransformOfPopupMenu);
     }
 
     public void HidePopupMenu()
     {
         PopupMenuObj.SetActive(false);
-    }
-
-    private void ForcePopupMenuToFitScreen()
-    {
-        Vector2 currentPos = rectTransformOfPopupMenu.anchoredPosition;
-
-        if ((rectTransformOfPopupMenu.anchoredPosition.x - (rectTransformOfPopupMenu.sizeDelta.x / 2)) < 0)
-        {
-            currentPos.x = rectTransformOfPopupMenu.sizeDelta.x / 2;
-        }
-
-        if ((rectTransformOfPopupMenu.anchoredPosition.x + (rectTransformOfPopupMenu.sizeDelta.x / 2)) > Screen.width)
-        {
-            currentPos.x = Screen.width - (rectTransformOfPopupMenu.sizeDelta.x / 2);
-        }
-
-        if ((rectTransformOfPopupMenu.anchoredPosition.y - (rectTransformOfPopupMenu.sizeDelta.y / 2)) < 0)
-        {
-            currentPos.y = Screen.height + (rectTransformOfPopupMenu.sizeDelta.y / 2);
-        }
-
-        if ((rectTransformOfPopupMenu.anchoredPosition.y + (rectTransformOfPopupMenu.sizeDelta.y / 2)) > Screen.height)
-        {
-            currentPos.y = Screen.height - (rectTransformOfPopupMenu.sizeDelta.y / 2);
-        }
-
-        rectTransformOfPopupMenu.anchoredPosition = currentPos;
-    }
-
-    private void EnableMenuAutoHide()
-    {
-        closeBuildMenuOnBackgroundClickObj.SetActive(true);
     }
 }
