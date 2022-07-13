@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using System;
 
-public class BuildTowerPopupMenu : MonoBehaviour
+public class BuildTowerPopupMenu : PopupUI
 {
     // This script should be placed on a canvas object,
     // inside of which is the popup menu itself and related buttons/images
@@ -12,6 +14,7 @@ public class BuildTowerPopupMenu : MonoBehaviour
     [SerializeField]
     private GameObject popupMenuObj;
     public GameObject PopupMenuObj { get => popupMenuObj; private set => popupMenuObj = value; }
+
     private RectTransform rectTransformOfPopupMenu;
 
     #region Singleton
@@ -30,7 +33,6 @@ public class BuildTowerPopupMenu : MonoBehaviour
             instance = this;
         }
     }
-
 
     #endregion Singleton
 
@@ -84,12 +86,14 @@ public class BuildTowerPopupMenu : MonoBehaviour
 
     public void DisplayPopupMenuAtViewportOfObj(GameObject obj)
     {
+        OnPopupDisplayed?.Invoke();
         PopupMenuObj.SetActive(true);
         DisableAllTooltips();
         EnableAllButtons();
 
         Vector2 viewportPoint = Camera.main.WorldToScreenPoint(obj.transform.position);
         rectTransformOfPopupMenu.anchoredPosition = viewportPoint;
+        rectTransformOfPopupMenu = CalculateRectTransToFitScreen(rectTransformOfPopupMenu);
     }
 
     public void HidePopupMenu()
