@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class TowerTooltipManager : MonoBehaviour
+public class TowerTooltipManager : PopupUI
 {
     private TowerBehavior selectedTower;
     public TowerBehavior SelectedTower { get => selectedTower; set => selectedTower = value; }
@@ -65,6 +65,8 @@ public class TowerTooltipManager : MonoBehaviour
 
     private void ShowRangeIndicator(GameObject obj)
     {
+        BuildTowerPopupMenu.instance.HidePopupMenu();
+        OnPopupDisplayed?.Invoke();
         Vector3 indicatorPos = new Vector3(0, 0.1f, 0);
         TowerDataSO data = obj.GetComponent<TowerBehavior>().GetTowerData();
 
@@ -91,8 +93,5 @@ public class TowerTooltipManager : MonoBehaviour
                 goodRangeIndicator.SetActive(false);
                 break;
         }
-        
-
-
     }
 }
