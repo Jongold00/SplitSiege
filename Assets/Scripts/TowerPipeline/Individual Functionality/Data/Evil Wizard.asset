@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Evil Wizard
   range: 6
-  cost: 1
+  cost: 10
   faction: 1
   prefab: {fileID: 1187417336092707799, guid: a3ad4ed99890a66439f825f43b56e124, type: 3}
   damage: 0
