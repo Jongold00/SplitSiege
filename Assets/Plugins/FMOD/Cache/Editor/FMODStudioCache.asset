@@ -97,10 +97,10 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/SplitSiege_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637920983740000000
+  lastModified: 637921207020000000
   FileSizes:
   - Name: Desktop
-    Value: 1290
+    Value: 1356
   Exists: 1
 --- !u!114 &-4022444636186199291
 MonoBehaviour:
@@ -175,12 +175,13 @@ MonoBehaviour:
   - {fileID: 5062052457072394940}
   - {fileID: 5729227446726678471}
   - {fileID: -4022444636186199291}
+  - {fileID: 2811556781473941826}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3173582690875323158}
   StringsBanks:
   - {fileID: -5010818958377035685}
-  cacheTime: 637920983740000000
+  cacheTime: 637921207020000000
   cacheVersion: 131591
 --- !u!114 &1185980321105221639
 MonoBehaviour:
@@ -206,6 +207,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &2811556781473941826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Towers/Trebuchet/Trebuchet Fire
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Towers/Trebuchet/Trebuchet Fire
+  Guid:
+    Data1: 563575297
+    Data2: 1303713998
+    Data3: 793839028
+    Data4: -270687943
+  Banks:
+  - {fileID: 3173582690875323158}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3370
 --- !u!114 &3173582690875323158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,10 +249,10 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/SplitSiege_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637920983740000000
+  lastModified: 637921207020000000
   FileSizes:
   - Name: Desktop
-    Value: 8675136
+    Value: 8695296
   Exists: 1
 --- !u!114 &5062052457072394940
 MonoBehaviour:
