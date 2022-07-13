@@ -2450,6 +2450,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1ac825fa32f304aa543461c7728a95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1772976740 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7931859001984205040, guid: d58d53b364f56d145a2114f0090c32be, type: 3}
+  m_PrefabInstance: {fileID: 7931859001290898069}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772976738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1848000732
 GameObject:
   m_ObjectHideFlags: 0
@@ -12100,6 +12111,10 @@ PrefabInstance:
       value: CanvasBackgroundClicks
       objectReference: {fileID: 0}
     - target: {fileID: 7931859001984205041, guid: d58d53b364f56d145a2114f0090c32be, type: 3}
+      propertyPath: background
+      value: 
+      objectReference: {fileID: 1772976740}
+    - target: {fileID: 7931859001984205041, guid: d58d53b364f56d145a2114f0090c32be, type: 3}
       propertyPath: objToDisable
       value: 
       objectReference: {fileID: 5649859893253940327}
@@ -12123,6 +12138,10 @@ PrefabInstance:
       propertyPath: objsToDisable.Array.data[3]
       value: 
       objectReference: {fileID: 1660670251}
+    - target: {fileID: 7931859001984205047, guid: d58d53b364f56d145a2114f0090c32be, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d58d53b364f56d145a2114f0090c32be, type: 3}
 --- !u!33 &7952255958614074267
