@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
+using System;
 
 
 
@@ -28,87 +27,68 @@ public class ResourceManager : MonoBehaviour
 
     #endregion Singleton
 
-    #region UI
+
+    public int resources;
 
     [SerializeField]
-    TextMeshProUGUI goldText;
+    private int PassiveResourceGain;
 
     [SerializeField]
-    TextMeshProUGUI popText;
+    private int PassiveResourceRate;
+
+    public int startingResources = 500;
+
+    bool passiveGainOn = false;
 
 
-    void UpdateUI()
-    {
-        //goldText.text = gold.ToString();
-        //popText.text = population.ToString();
-    }
-
-    #endregion
-
-
-    public int gold;
-    public int population;
-
-    [SerializeField]
-    private int PassiveGoldRate;
-    private int PassivePopulationRate;
-
-    public int startingGold = 500;
-    public int startingPop = 500;
+    Action<GameStateManager.GameState> onGameStateChanged;
 
     private void Start()
     {
-        UpdateResources(startingGold, 0);
-        UpdateResources(startingPop, 1);
+        onGameStateChanged += OnGameStateChange;
+        EventsManager.instance.SubscribeGameStateChange(onGameStateChanged);
+
+        UpdateResources(startingResources);
+        InvokeRepeating("PassiveUpdate", 1, PassiveResourceRate);
     }
 
-    public void UpdateResources(int delta, int resource)
+    private void OnDestroy()
     {
-        switch (resource)
-        {
-            case 0:
-                gold += delta;
-                break;
-
-            case 1:
-                population += delta;
-                break;
-            default:
-                break;
-        }
-
-        //UpdateUI();
+        EventsManager.instance.UnSubscribeGameStateChange(onGameStateChanged);
     }
-        public bool CheckLegalTranscation(int cost, int resource) 
+
+
+    public void UpdateResources(int delta)
     {
-        switch (resource)
-        {
-            case 0:
-                return (cost <= gold);
-            case 1:
-                return (cost <= population);
-            default:
-                return false;
-        }
+        resources += delta;
+        EventsManager.instance.ResourcesUpdated(delta);
+    }
+
+    public bool CheckLegalTranscation(int cost) 
+    {
+        return cost <= resources;
     }
 
     public void PassiveUpdate()
     {
-
-        switch (GameStateManager.instance.GetState())
+        if (passiveGainOn)
         {
-            case GameStateManager.GameState.Building:
-                break;
-            case GameStateManager.GameState.Fighting:
-                gold += PassiveGoldRate;
-                population += PassivePopulationRate;
-                break;
-            default:
-                break;
+            UpdateResources(PassiveResourceGain);
         }
-
-        //UpdateUI();
     }
+
+    void OnGameStateChange(GameStateManager.GameState newState)
+    {
+        if (newState == GameStateManager.GameState.Fighting)
+        {
+            passiveGainOn = true;
+        }
+        else
+        {
+            passiveGainOn = false;
+        }
+    }
+
 
     
 }

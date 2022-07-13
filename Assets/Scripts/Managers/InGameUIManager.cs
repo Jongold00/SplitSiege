@@ -31,23 +31,52 @@ public class InGameUIManager : MonoBehaviour
     [SerializeField]
     GameObject[] tabs;
 
-    [SerializeField]
-    TextMeshProUGUI buildPhaseTimer;
+    public TextMeshProUGUI buildPhaseTimer;
 
     [SerializeField]
     Image[] stars;
 
+
+    [SerializeField]
+    Image[] castleHealthMeters;
+
+
+    [SerializeField]
+    Color fullHP;
+
+    [SerializeField]
+    Color noHP;
+
+    float lerpValue;
+
+
+    [SerializeField]
+    TextMeshProUGUI[] resourceBar;
+
+    float currentResource = 0;
+
+
+
+
     Action<GameStateManager.GameState> onGameStateChange;
+    Action<float> onResourcesUpdated;
+
 
     private void Start()
     {
         onGameStateChange += ActivateUI;
         EventsManager.instance.SubscribeGameStateChange(onGameStateChange);
+
+        onResourcesUpdated += OnResourceUpdate;
+        EventsManager.instance.SubscribeResourceUpdate(onResourcesUpdated);
+
     }
 
     private void OnDestroy()
     {
         EventsManager.instance.UnSubscribeGameStateChange(onGameStateChange);
+        EventsManager.instance.UnsubscribeResourceUpdate(onResourcesUpdated);
+
 
     }
     void ActivateUI(GameStateManager.GameState state)
@@ -73,6 +102,12 @@ public class InGameUIManager : MonoBehaviour
 
     }
 
+    public void Update()
+    {
+        CastleHealthUIComponent();
+        ResourceBarComponent();
+    }
+
     void ToggleTab(int turnOn)
     {
         for (int i = 0; i < tabs.Length; i++)
@@ -96,4 +131,28 @@ public class InGameUIManager : MonoBehaviour
         }
     }
 
+
+
+    void CastleHealthUIComponent()
+    {
+        foreach (Image curr in castleHealthMeters)
+        {
+            curr.fillAmount = GameStateManager.instance.GetPercentCastleHealth();
+            curr.color = Color.Lerp(noHP, fullHP, GameStateManager.instance.GetPercentCastleHealth());
+
+        }
+    }
+
+    void OnResourceUpdate(float delta)
+    {
+        currentResource += delta;
+    }
+
+    void ResourceBarComponent()
+    {
+        foreach (TextMeshProUGUI curr in resourceBar)
+        {
+            curr.text = currentResource.ToString();
+        }
+    }
 }
