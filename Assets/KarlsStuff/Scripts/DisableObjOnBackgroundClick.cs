@@ -42,5 +42,4 @@ public class DisableObjOnBackgroundClick : MonoBehaviour, IPointerDownHandler
     {
         background.enabled = true;
     }
-
 }

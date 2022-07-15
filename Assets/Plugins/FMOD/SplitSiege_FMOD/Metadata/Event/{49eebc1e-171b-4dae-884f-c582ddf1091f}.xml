@@ -120,7 +120,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{206a4753-56d0-49ef-aa53-d5f591020d0f}">
 		<property name="volume">
-			<value>-0.5</value>
+			<value>-1</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{1c3caaa2-e61e-4d3b-ad3b-e5ceaced491a}</destination>
@@ -162,9 +162,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{0b4ddf99-0b49-42e1-a3e7-ebc7b6d4e7f0}">
-		<property name="volume">
-			<value>-5</value>
-		</property>
 		<property name="name">
 			<value>Tension</value>
 		</property>
@@ -223,9 +220,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{aeb7a4d7-2130-4a5a-96cf-d5de0ed6f379}">
-		<property name="volume">
-			<value>-6.5</value>
-		</property>
 		<property name="name">
 			<value>Woosh</value>
 		</property>
@@ -260,7 +254,7 @@
 			<value>volume</value>
 		</property>
 		<property name="amount">
-			<value>8</value>
+			<value>4</value>
 		</property>
 	</object>
 	<object class="SingleSound" id="{45ba16ff-4b64-47d2-8315-04354984fb67}">
@@ -322,13 +316,16 @@
 	<object class="MixerBusFader" id="{493a749a-ad36-4d4a-9260-6aebdf84a424}" />
 	<object class="SpatialiserEffect" id="{dbef81d9-d464-47a3-9094-11106fad4f6b}">
 		<property name="minimumDistance">
-			<value>4.80000019</value>
+			<value>7.5999999</value>
 		</property>
 		<property name="maximumDistance">
-			<value>45</value>
+			<value>93.5</value>
 		</property>
 		<property name="overrideRange">
 			<value>true</value>
+		</property>
+		<property name="userStereoSeparation">
+			<value>52</value>
 		</property>
 	</object>
 	<object class="ThreeEQEffect" id="{de1a64e9-93e7-4c5f-ad6f-63e07044fb56}">

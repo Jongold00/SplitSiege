@@ -23,7 +23,7 @@ public class PopupUI : MonoBehaviour
 
         if ((rectTransform.anchoredPosition.y - (rectTransform.sizeDelta.y / 2)) < 0)
         {
-            currentPos.y = Screen.height + (rectTransform.sizeDelta.y / 2);
+            currentPos.y = rectTransform.sizeDelta.y / 2;
         }
 
         if ((rectTransform.anchoredPosition.y + (rectTransform.sizeDelta.y / 2)) > Screen.height)
