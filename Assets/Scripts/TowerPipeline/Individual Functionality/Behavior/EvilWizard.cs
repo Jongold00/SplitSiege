@@ -6,6 +6,9 @@ public class EvilWizard : OffensiveTower
     [SerializeField]
     GameObject[] spells;
 
+    [SerializeField]
+    float[] cds;
+
     HashSet<UnitBehavior> inRange = new HashSet<UnitBehavior>();
 
     public override void AcquireTarget()
@@ -48,7 +51,10 @@ public class EvilWizard : OffensiveTower
 
     protected override void Fire()
     {
+
         int spellChoice = Random.Range(0, spells.Length);
+
+        attackCD = cds[spellChoice];
 
         if (spellChoice == 1)
         {

@@ -64,7 +64,6 @@ public class Laser : OffensiveTower
             {
                 fmodInstance.setPaused(false);
 
-                attackCD = offensiveTowerData.GetFireRate();
                 Fire();
                 currentMultiplier = Mathf.Min(currentMultiplier + 0.005f, maxMultiplier);
             }
@@ -96,6 +95,8 @@ public class Laser : OffensiveTower
 
     protected override void Fire()
     {
+        attackCD = offensiveTowerData.GetFireRate();
+
         anim.SetFloat("Speed", 1 / offensiveTowerData.GetFireRate());
 
         StartCoroutine(SpawnProjectile());

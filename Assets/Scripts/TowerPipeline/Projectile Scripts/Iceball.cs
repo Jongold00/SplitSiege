@@ -8,6 +8,8 @@ public class Iceball : Projectile
     void Start()
     {
         statusEffects.Add(new Stun(2.0f));
+        statusEffects.Add(new Slow(75f, 4f));
+
     }
 
 

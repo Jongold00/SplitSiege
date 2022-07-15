@@ -103,7 +103,6 @@ public abstract class OffensiveTower : TowerBehavior
 
             if (attackCD <= 0 && CanFire)
             {
-                attackCD = offensiveTowerData.GetFireRate();
                 Fire();
 
             }
@@ -136,6 +135,7 @@ public abstract class OffensiveTower : TowerBehavior
     protected virtual void Fire()
     {
         anim.SetFloat("Speed", 1 / offensiveTowerData.GetFireRate());
+        attackCD = offensiveTowerData.GetFireRate();
 
         FMOD_PlayOneShot shootSFX;
         if (TryGetComponent<FMOD_PlayOneShot>(out shootSFX))

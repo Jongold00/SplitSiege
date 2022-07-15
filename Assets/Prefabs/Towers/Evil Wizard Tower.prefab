@@ -207,6 +207,9 @@ MonoBehaviour:
   spells:
   - {fileID: 6146613989090943027, guid: fa31ab7ef664f1b44be268964c1bbc8d, type: 3}
   - {fileID: 6146613989090943027, guid: fa31ab7ef664f1b44be268964c1bbc8d, type: 3}
+  cds:
+  - 2
+  - 4
 --- !u!114 &4406250714033189942
 MonoBehaviour:
   m_ObjectHideFlags: 0
