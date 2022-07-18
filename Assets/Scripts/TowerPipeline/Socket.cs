@@ -16,7 +16,9 @@ public class Socket : MonoBehaviour
         Debug.Log(popupMenuHoverDetector.IsHovering);
         if (!popupMenuHoverDetector.IsHovering)
         {
+
             OnSocketSelected?.Invoke(gameObject);
+
         }
     }
 
@@ -30,7 +32,8 @@ public class Socket : MonoBehaviour
 
         CurrentlyPlacedTower = objToSpawn;
 
-        gameObject.SetActive(false);        
+        gameObject.SetActive(false);
+
         return obj;
     }
 

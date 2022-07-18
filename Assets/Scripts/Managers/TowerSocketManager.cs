@@ -55,6 +55,7 @@ public class TowerSocketManager : MonoBehaviour
 
             BuildTowerPopupMenu.instance.HidePopupMenu();
         }
+
     }
 
     public void SellTower()

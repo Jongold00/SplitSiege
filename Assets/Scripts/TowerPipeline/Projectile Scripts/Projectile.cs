@@ -38,13 +38,10 @@ public class Projectile : MonoBehaviour
 
         if (direction.magnitude < distanceToMove)
         {
+
+            HitTarget();
             // placeholder
-            target.TakeDamage(damage);
-
-            if (statusEffects.Count != 0) target.AttachStatusEffects(statusEffects);
-
-            OnTargetHit?.Invoke();
-            Destroy(this.gameObject);
+            
         }
         else
         {
@@ -67,6 +64,16 @@ public class Projectile : MonoBehaviour
             projectileObj.SetActive(false);
             particleObj.SetActive(true);
         }
+    }
+
+    protected virtual void HitTarget()
+    {
+        target.TakeDamage(damage);
+
+        if (statusEffects.Count != 0) target.AttachStatusEffects(statusEffects);
+
+        OnTargetHit?.Invoke();
+        Destroy(this.gameObject);
     }
 
     public void SetDamage(float set)
