@@ -82,6 +82,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-6039995163431774308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Towers/Ballista/Ballista Shot
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Towers/Ballista/Ballista Shot
+  Guid:
+    Data1: 1240382494
+    Data2: 1303254811
+    Data3: -2100998264
+    Data4: 520745437
+  Banks:
+  - {fileID: 3173582690875323158}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 4.8
+  MaxDistance: 45
+  Length: 1500
 --- !u!114 &-5010818958377035685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +124,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/SplitSiege_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637920983740000000
+  lastModified: 637933392280795890
   FileSizes:
   - Name: Desktop
     Value: 1290
@@ -153,6 +180,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-2658825380432949753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Towers/Laser/Laser Fire
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Towers/Laser/Laser Fire
+  Guid:
+    Data1: 34147674
+    Data2: 1150905992
+    Data3: 519291293
+    Data4: 1293873350
+  Banks:
+  - {fileID: 3173582690875323158}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 24540
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,14 +227,14 @@ MonoBehaviour:
   - {fileID: -6280911663439487076}
   - {fileID: 9076846315282559785}
   - {fileID: 5062052457072394940}
-  - {fileID: 5729227446726678471}
-  - {fileID: -4022444636186199291}
+  - {fileID: -6039995163431774308}
+  - {fileID: -2658825380432949753}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3173582690875323158}
   StringsBanks:
   - {fileID: -5010818958377035685}
-  cacheTime: 637920983740000000
+  cacheTime: 637933392280795890
   cacheVersion: 131591
 --- !u!114 &1185980321105221639
 MonoBehaviour:
@@ -221,7 +275,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/SplitSiege_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637920983740000000
+  lastModified: 637933392280774699
   FileSizes:
   - Name: Desktop
     Value: 8675136

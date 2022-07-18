@@ -14,8 +14,9 @@ public class BuildTowerPopupMenu : PopupUI
     [SerializeField]
     private GameObject popupMenuObj;
     public GameObject PopupMenuObj { get => popupMenuObj; private set => popupMenuObj = value; }
-
     private RectTransform rectTransformOfPopupMenu;
+    [SerializeField] GameObject confirmOrCancelObj;
+    TowerDataSO towerToBuild;
 
     #region Singleton
 
@@ -49,6 +50,14 @@ public class BuildTowerPopupMenu : PopupUI
         }
     }
 
+    public void DisableAllButtons()
+    {
+        foreach (TowerUIElements obj in towerImagesAndTooltips)
+        {
+            obj?.Button.SetActive(false);
+        }
+    }
+
     public void DisableAllTooltips()
     {
         foreach (TowerUIElements obj in towerImagesAndTooltips)
@@ -76,20 +85,24 @@ public class BuildTowerPopupMenu : PopupUI
     {
         towerImagesAndTooltips[indexOfTooltip].Tooltip.SetActive(false);
     }
-    public void SwitchTowerImageForTooltip(int indexOfButton)
+    public void SwitchTowerImageForTooltipAndConfirmOrCancelMenu(int indexOfButton)
     {
-        EnableAllButtons();
-        DisableButton(indexOfButton);
+        DisableAllButtons();
         DisableAllTooltips();
         EnableTooltip(indexOfButton);
+        EnableConfirmOrCancelMenu();
+    }
+
+    public void SetTowerToBuild(TowerDataSO towerToBuild)
+    {
+        this.towerToBuild = towerToBuild;
     }
 
     public void DisplayPopupMenuAtViewportOfObj(GameObject obj)
     {
         OnPopupDisplayed?.Invoke();
         PopupMenuObj.SetActive(true);
-        DisableAllTooltips();
-        EnableAllButtons();
+        ResetPopupMenuToStartingLayout();
 
         Vector2 viewportPoint = Camera.main.WorldToScreenPoint(obj.transform.position);
         rectTransformOfPopupMenu.anchoredPosition = viewportPoint;
@@ -99,5 +112,27 @@ public class BuildTowerPopupMenu : PopupUI
     public void HidePopupMenu()
     {
         PopupMenuObj.SetActive(false);
+    }
+
+    public void EnableConfirmOrCancelMenu()
+    {
+        confirmOrCancelObj.SetActive(true);
+    }
+
+    public void DisableConfirmOrCancelMenu()
+    {
+        confirmOrCancelObj.SetActive(false);
+    }
+
+    public void ResetPopupMenuToStartingLayout()
+    {
+        DisableAllTooltips();
+        DisableConfirmOrCancelMenu();
+        EnableAllButtons();
+    }
+
+    public void ConfirmSelection()
+    {
+        TowerSocketManager.instance.BuildTower(towerToBuild);
     }
 }
