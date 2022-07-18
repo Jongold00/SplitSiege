@@ -118,7 +118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7931859001984205042
 RectTransform:
   m_ObjectHideFlags: 0
@@ -188,4 +188,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1ac825fa32f304aa543461c7728a95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objToDisable: {fileID: 0}
+  objsToDisable:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  background: {fileID: 7931859001984205040}
