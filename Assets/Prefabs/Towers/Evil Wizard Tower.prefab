@@ -300,11 +300,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event:
     Guid:
-      Data1: 1240382494
-      Data2: 1303254811
-      Data3: -2100998264
-      Data4: 520745437
-    Path: event:/SFX/Towers/Ballista/Ballista Shot
+      Data1: 1612627050
+      Data2: 1122622193
+      Data3: 252528536
+      Data4: -989227051
+    Path: event:/SFX/Towers/Mage/Fireball
   volume: 0
 --- !u!1 &1272066147321284873
 GameObject:

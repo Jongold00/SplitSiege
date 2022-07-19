@@ -109,6 +109,33 @@ MonoBehaviour:
   MinDistance: 4.8
   MaxDistance: 45
   Length: 1500
+--- !u!114 &-5288315890866536683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Towers/Mage/Icicle
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Towers/Mage/Icicle
+  Guid:
+    Data1: -2047362038
+    Data2: 1199838920
+    Data3: -573088854
+    Data4: -1436319128
+  Banks:
+  - {fileID: 3173582690875323158}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
 --- !u!114 &-5010818958377035685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,10 +151,10 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/SplitSiege_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637937898499706425
+  lastModified: 637938427560000000
   FileSizes:
   - Name: Desktop
-    Value: 1356
+    Value: 1448
   Exists: 1
 --- !u!114 &-4022444636186199291
 MonoBehaviour:
@@ -207,6 +234,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 24540
+--- !u!114 &-1313982291086342549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Towers/Mage/Fireball
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Towers/Mage/Fireball
+  Guid:
+    Data1: 1612627050
+    Data2: 1122622193
+    Data3: 252528536
+    Data4: -989227051
+  Banks:
+  - {fileID: 3173582690875323158}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1875
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,12 +284,14 @@ MonoBehaviour:
   - {fileID: 5729227446726678471}
   - {fileID: -4022444636186199291}
   - {fileID: 2811556781473941826}
+  - {fileID: -5288315890866536683}
+  - {fileID: -1313982291086342549}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3173582690875323158}
   StringsBanks:
   - {fileID: -5010818958377035685}
-  cacheTime: 637937898499706425
+  cacheTime: 637938427560000000
   cacheVersion: 131591
 --- !u!114 &1185980321105221639
 MonoBehaviour:
@@ -303,10 +359,10 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/SplitSiege_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637937898499695037
+  lastModified: 637938427560000000
   FileSizes:
   - Name: Desktop
-    Value: 8695296
+    Value: 8731648
   Exists: 1
 --- !u!114 &5062052457072394940
 MonoBehaviour:
