@@ -604,19 +604,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8321578032408394534}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TowerSocketManager, Assembly-CSharp
-        m_MethodName: BuildTower
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 56b3eb484922a2647bbeb8e74fc48d7d, type: 2}
-          m_ObjectArgumentAssemblyTypeName: TowerDataSO, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &8321578032466881081
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,19 +778,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8321578032466881084}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TowerSocketManager, Assembly-CSharp
-        m_MethodName: BuildTower
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 5afe7fce1d3ccf3418b9b2c7ca17a29e, type: 2}
-          m_ObjectArgumentAssemblyTypeName: TowerDataSO, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &8321578032574781407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1866,19 +1842,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8321578033282857619}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TowerSocketManager, Assembly-CSharp
-        m_MethodName: BuildTower
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 2c64dd2789cdf08428020063aeb9630d, type: 2}
-          m_ObjectArgumentAssemblyTypeName: TowerDataSO, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &8321578033372868938
 GameObject:
   m_ObjectHideFlags: 0
@@ -2320,19 +2284,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8321578033477925396}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TowerSocketManager, Assembly-CSharp
-        m_MethodName: BuildTower
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 2ace7fd68285a934ab51bd279ed947a0, type: 2}
-          m_ObjectArgumentAssemblyTypeName: TowerDataSO, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &8321578033478951394
 GameObject:
   m_ObjectHideFlags: 0
@@ -2506,19 +2458,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8321578033478951401}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TowerSocketManager, Assembly-CSharp
-        m_MethodName: BuildTower
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 70f039668c968804eb9a9bf4c9a5056e, type: 2}
-          m_ObjectArgumentAssemblyTypeName: TowerDataSO, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &8321578033615135039
 GameObject:
   m_ObjectHideFlags: 0
@@ -2939,19 +2879,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8321578033854422958}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TowerSocketManager, Assembly-CSharp
-        m_MethodName: BuildTower
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: c968aea8f8c9d7a44bb207f8614e781f, type: 2}
-          m_ObjectArgumentAssemblyTypeName: TowerDataSO, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &8321578034185761156
 GameObject:
   m_ObjectHideFlags: 0

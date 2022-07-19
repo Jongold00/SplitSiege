@@ -1962,17 +1962,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 133075337876402686, guid: 492cd04f05bff2a41b2487f8d1d28e79, type: 3}
   m_PrefabInstance: {fileID: 1228337846}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1228337848 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 133075338656349937, guid: 492cd04f05bff2a41b2487f8d1d28e79, type: 3}
-  m_PrefabInstance: {fileID: 1228337846}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ad138f2c2ae26e4c850ac924094061d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1228337849 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8494601504959894302, guid: 492cd04f05bff2a41b2487f8d1d28e79, type: 3}
@@ -8077,30 +8066,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1641003953577985537, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1228337848}
-    - target: {fileID: 2758499055640107082, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1228337848}
-    - target: {fileID: 4401277436441776229, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1228337848}
-    - target: {fileID: 5854585348563908983, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1228337848}
-    - target: {fileID: 7247650715981291728, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1228337848}
-    - target: {fileID: 8206534016191119400, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1228337848}
     - target: {fileID: 8321578034297064466, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
       propertyPath: m_Name
       value: CanvasPopupMenu
