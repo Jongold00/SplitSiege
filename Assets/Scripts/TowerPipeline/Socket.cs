@@ -13,6 +13,12 @@ public class Socket : MonoBehaviour
 
     public void OnMouseDown()
     {
+        if (!popupMenuHoverDetector)
+        {
+            print("here");
+            popupMenuHoverDetector = FindObjectOfType<HoverDetector>();
+        }
+
         if (!popupMenuHoverDetector.IsHovering)
         {
 

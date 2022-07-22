@@ -213,7 +213,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28065769}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.11, y: -1.1574831, z: 3.862814}
+  m_LocalPosition: {x: -0.08, y: -1.1574831, z: 3.862814}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 428460335}
@@ -292,8 +292,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Level 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5218fa94574f49f4d9001074084c78ac, type: 2}
+  m_sharedMaterial: {fileID: 5479034716789299436, guid: 5218fa94574f49f4d9001074084c78ac, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -386,7 +386,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &86912994
 BoxCollider:
   m_ObjectHideFlags: 0

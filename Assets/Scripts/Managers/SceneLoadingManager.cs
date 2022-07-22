@@ -57,7 +57,7 @@ public class SceneLoadingManager : MonoBehaviour
 
         while (!operation.isDone && timeElapsed < randomizedPad * 1.5f)
         {
-            print(timeElapsed);
+
             timeElapsed += Time.deltaTime;
             progress = Mathf.Min(operation.progress / 0.9f, timeElapsed / randomizedPad);
 

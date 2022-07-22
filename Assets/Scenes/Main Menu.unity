@@ -508,6 +508,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 948627471003334168, guid: fbf68b0a64242674080defffe169cad4, type: 3}
+      propertyPath: musicEvent.Path
+      value: event:/MX/Gameplay/Level1
+      objectReference: {fileID: 0}
+    - target: {fileID: 948627471003334168, guid: fbf68b0a64242674080defffe169cad4, type: 3}
+      propertyPath: musicEvent.Guid.Data1
+      value: -1364181704
+      objectReference: {fileID: 0}
+    - target: {fileID: 948627471003334168, guid: fbf68b0a64242674080defffe169cad4, type: 3}
+      propertyPath: musicEvent.Guid.Data2
+      value: 1296925899
+      objectReference: {fileID: 0}
+    - target: {fileID: 948627471003334168, guid: fbf68b0a64242674080defffe169cad4, type: 3}
+      propertyPath: musicEvent.Guid.Data3
+      value: -2119895920
+      objectReference: {fileID: 0}
+    - target: {fileID: 948627471003334168, guid: fbf68b0a64242674080defffe169cad4, type: 3}
+      propertyPath: musicEvent.Guid.Data4
+      value: 1995795515
+      objectReference: {fileID: 0}
+    - target: {fileID: 948627471003334170, guid: fbf68b0a64242674080defffe169cad4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8225081682167244092, guid: fbf68b0a64242674080defffe169cad4, type: 3}
       propertyPath: m_Name
       value: DDOL

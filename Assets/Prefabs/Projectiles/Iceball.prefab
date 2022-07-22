@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8900495579125582100}
   - component: {fileID: 6954707787928086720}
   - component: {fileID: 6954707787928086723}
+  - component: {fileID: -8249720572936826650}
   m_Layer: 0
   m_Name: Iceball
   m_TagString: Untagged
@@ -120,3 +121,23 @@ MonoBehaviour:
   particleObj: {fileID: 0}
   projectileObj: {fileID: 0}
   aoeRadius: 2.5
+--- !u!114 &-8249720572936826650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6954707787928086721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7f37a99f23a6c4093b181768c23e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    Guid:
+      Data1: -2047362038
+      Data2: 1199838920
+      Data3: -573088854
+      Data4: -1436319128
+    Path: event:/SFX/Towers/Mage/Icicle
+  volume: 0

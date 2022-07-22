@@ -1332,6 +1332,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DDOL
       objectReference: {fileID: 0}
+    - target: {fileID: 8225081682167244092, guid: fbf68b0a64242674080defffe169cad4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8225081682167244095, guid: fbf68b0a64242674080defffe169cad4, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -2151,7 +2155,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
 --- !u!114 &1624654507 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4679593549062565215, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4747452393236733290, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
   m_PrefabInstance: {fileID: 1624654506}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
