@@ -33,7 +33,8 @@ public class GameStateManager : MonoBehaviour
         Building,
         Fighting,
         Won,
-        Lost
+        Lost,
+        Story
     }
 
     public string currentLevelName = "level1";
@@ -112,7 +113,8 @@ public class GameStateManager : MonoBehaviour
         listenEnemyReachedEnd += EnemyReachedEnd;
         EventsManager.instance.SubscribeEnemyReachesEnd(listenEnemyReachedEnd);
 
-        EventsManager.instance.GameStateChange(GameState.Building);
+        //EventsManager.instance.GameStateChange(GameState.Building);
+        EventsManager.instance.GameStateChange(GameState.Story);
     }
 
     private void OnDestroy()

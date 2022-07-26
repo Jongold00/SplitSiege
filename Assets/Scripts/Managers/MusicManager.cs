@@ -197,7 +197,6 @@ public class MusicManager : MonoBehaviour
 
         foreach (UnitNavigation curr in navs)
         {
-            print(curr.GetDistanceTravelled());
             float progress = (curr.GetDistanceTravelled() / path.path.length) * 100;
             highestSoFar = Mathf.Max(highestSoFar, progress);
         }

@@ -67,6 +67,7 @@ public class EventsManager : MonoBehaviour
 
     public void GameStateChange(GameStateManager.GameState change)
     {
+
         if (onGameStateChange == null)
         {
             return;
