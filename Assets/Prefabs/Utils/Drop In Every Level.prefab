@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 708c3928424a82842af62f52f55f5c7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fontToUse: {fileID: 11400000, guid: 92e0b9992ca11624e8308a2e50a3919a, type: 2}
   textBox: {fileID: 0}
   dialogueSet: []
 --- !u!1 &8510534727430137999
@@ -865,6 +866,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8510534727430137998}
     m_Modifications:
+    - target: {fileID: 759682081444520946, guid: 3c672f3376ac58a4da25dc15c1d45690, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 92e0b9992ca11624e8308a2e50a3919a, type: 2}
+    - target: {fileID: 759682081444520946, guid: 3c672f3376ac58a4da25dc15c1d45690, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2169493231663837618, guid: 3c672f3376ac58a4da25dc15c1d45690, type: 3}
       propertyPath: m_Pivot.x
       value: 0

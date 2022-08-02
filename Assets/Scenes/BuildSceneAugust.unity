@@ -1437,6 +1437,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3263615509325102163, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: m_fontSize
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 3263615509325102163, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 3bd9511c097b9b643be6ec7491eefa59, type: 2}
+    - target: {fileID: 3263615509325102163, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 48
+      objectReference: {fileID: 0}
     - target: {fileID: 3425608221723255073, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1448,6 +1460,18 @@ PrefabInstance:
     - target: {fileID: 4309471569848180843, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7100494859546735712, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: m_fontSize
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 7100494859546735712, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 3bd9511c097b9b643be6ec7491eefa59, type: 2}
+    - target: {fileID: 7100494859546735712, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 8510534727430137998, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
       propertyPath: m_RootOrder
@@ -1503,7 +1527,7 @@ PrefabInstance:
       objectReference: {fileID: 339802544}
     - target: {fileID: 8641917970879590852, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
       propertyPath: dialogueSet.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8641917970879590852, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
       propertyPath: dialogueSet.Array.data[0]
