@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class HoverDetector : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class HoverDetector : MonoBehaviour
 {
-    private bool isHovering;
-    public bool IsHovering { get => isHovering; set => isHovering = value; }
+    public bool IsHovering { get {
+            Debug.Log(EventSystem.current.IsPointerOverGameObject());
+            return EventSystem.current.IsPointerOverGameObject();
+        }}
 
     #region Singleton
 
@@ -26,17 +28,4 @@ public class HoverDetector : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     }
 
     #endregion Singleton
-    private void OnDisable()
-    {
-        IsHovering = false;
-    }
-    public void OnPointerEnter(PointerEventData pointerEventData)
-    {
-        IsHovering = true;
-    }
-
-    public void OnPointerExit(PointerEventData pointerEventData)
-    {
-        IsHovering = false;
-    }
 }

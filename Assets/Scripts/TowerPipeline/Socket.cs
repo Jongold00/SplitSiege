@@ -3,21 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.EventSystems;
 
 public class Socket : MonoBehaviour
 {
     private TowerDataSO currentlyPlacedTower;
     public TowerDataSO CurrentlyPlacedTower { get => currentlyPlacedTower; private set => currentlyPlacedTower = value; }
+
     public static event Action<GameObject> OnSocketSelected;
     [SerializeField] HoverDetector popupMenuHoverDetector;
+    public static Socket socketSelected;
 
     public void OnMouseDown()
     {
-        if (!popupMenuHoverDetector.IsHovering)
+        if (!popupMenuHoverDetector.gameObject.activeInHierarchy || !popupMenuHoverDetector.IsHovering)
         {
-
+            socketSelected = this;
             OnSocketSelected?.Invoke(gameObject);
-
         }
     }
 
