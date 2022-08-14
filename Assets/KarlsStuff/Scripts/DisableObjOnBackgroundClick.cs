@@ -22,6 +22,7 @@ public class DisableObjOnBackgroundClick : MonoBehaviour, IPointerDownHandler
     {
         SetAllObjsAndThisToInactive();
     }
+
     public void SetAllObjsAndThisToInactive()
     {
         foreach (GameObject item in objsToDisable)

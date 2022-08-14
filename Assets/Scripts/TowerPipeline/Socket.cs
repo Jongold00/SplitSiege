@@ -16,7 +16,7 @@ public class Socket : MonoBehaviour
 
     public void OnMouseDown()
     {
-        if (!popupMenuHoverDetector.gameObject.activeInHierarchy || !popupMenuHoverDetector.IsHovering)
+        if (socketSelected != this)
         {
             socketSelected = this;
             OnSocketSelected?.Invoke(gameObject);
