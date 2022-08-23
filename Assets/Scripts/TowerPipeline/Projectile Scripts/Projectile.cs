@@ -74,6 +74,7 @@ public class Projectile : MonoBehaviour
 
         OnTargetHit?.Invoke();
         Destroy(this.gameObject);
+
     }
 
     public void SetDamage(float set)

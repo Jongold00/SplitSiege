@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f17b8bb91f3dba842be6b3e5cc7a21ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  particleObj: {fileID: 0}
+  projectileObj: {fileID: 0}
 --- !u!1 &7851986600483987912
 GameObject:
   m_ObjectHideFlags: 0

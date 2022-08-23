@@ -109,7 +109,6 @@ public class MusicManager : MonoBehaviour
         GamePhase = 0;
         NumberOfMobs = 0;
 
-        path = FindObjectOfType<PathCreator>();
 
 
         onTowerBuilt += OnTowerBuilt;
@@ -188,11 +187,17 @@ public class MusicManager : MonoBehaviour
 
     public float GetHighestProgress()
     {
+        if (path == null)
+        {
+            path = FindObjectOfType<PathCreator>();
+        }
+
         float highestSoFar = 0;
         UnitNavigation[] navs = GameObject.FindObjectsOfType<UnitNavigation>();
 
         foreach (UnitNavigation curr in navs)
         {
+            print(curr.GetDistanceTravelled());
             float progress = (curr.GetDistanceTravelled() / path.path.length) * 100;
             highestSoFar = Mathf.Max(highestSoFar, progress);
         }

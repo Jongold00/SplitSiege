@@ -169,7 +169,7 @@ Transform:
   - {fileID: 8629945196339407879}
   - {fileID: 6067766659177486476}
   - {fileID: 1489529009838297604}
-  - {fileID: 4679593549476380793}
+  - {fileID: 4747452392824287308}
   - {fileID: 8510534725894415904}
   - {fileID: 2346110600792827060}
   m_Father: {fileID: 0}
@@ -317,85 +317,13 @@ MonoBehaviour:
   PassiveResourceGain: 10
   PassiveResourceRate: 2
   startingResources: 250
---- !u!1001 &3714746952014335087
+--- !u!1001 &3647486809826851930
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 8510534727430137998}
     m_Modifications:
-    - target: {fileID: 1641003953577985537, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 8629945195491959560}
-    - target: {fileID: 1641003953577985537, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuildTower
-      objectReference: {fileID: 0}
-    - target: {fileID: 2758499055640107082, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 8629945195491959560}
-    - target: {fileID: 2758499055640107082, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuildTower
-      objectReference: {fileID: 0}
-    - target: {fileID: 4401277436441776229, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 8629945195491959560}
-    - target: {fileID: 4401277436441776229, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuildTower
-      objectReference: {fileID: 0}
-    - target: {fileID: 5854585348563908983, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 8629945195491959560}
-    - target: {fileID: 5854585348563908983, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuildTower
-      objectReference: {fileID: 0}
-    - target: {fileID: 7247650715981291728, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 8629945195491959560}
-    - target: {fileID: 7247650715981291728, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuildTower
-      objectReference: {fileID: 0}
-    - target: {fileID: 8206534016191119400, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 8629945195491959560}
-    - target: {fileID: 8206534016191119400, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuildTower
-      objectReference: {fileID: 0}
-    - target: {fileID: 8321578032408394532, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8321578032408394532, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8321578032408394532, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8321578032408394532, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8321578032408394532, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8321578032408394532, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8321578032574781406, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -730,10 +658,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
---- !u!224 &4679593549476380793 stripped
+--- !u!224 &4747452392824287308 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8321578034297064470, guid: fe5768171d3dbc04fa2cfd3ddf425ec4, type: 3}
-  m_PrefabInstance: {fileID: 3714746952014335087}
+  m_PrefabInstance: {fileID: 3647486809826851930}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &4679593549062565200 stripped
 GameObject:
@@ -1330,6 +1258,11 @@ GameObject:
 --- !u!224 &6260026395616250827 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2376610776943456152, guid: 6f342b8a087064d489db0120cf361f8b, type: 3}
+  m_PrefabInstance: {fileID: 8510534725907178579}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6260026394687579874 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2376610776551965361, guid: 6f342b8a087064d489db0120cf361f8b, type: 3}
   m_PrefabInstance: {fileID: 8510534725907178579}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8510534727669120613

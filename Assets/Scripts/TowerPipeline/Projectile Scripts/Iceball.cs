@@ -33,6 +33,7 @@ public class Iceball : Projectile
         }
 
         Destroy(this.gameObject);
+        GetComponent<FMOD_PlayOneShot>().Play();
     }
     
 }
