@@ -12,12 +12,21 @@ public class LaserBeam : MonoBehaviour
     private Transform target = null;
     public Transform Target { get => target; set => target = value; }
     private UnitBehavior unitBehaviorOfTarget;
+    private bool laserOn;
+
+    private void Start()
+    {
+        ToggleLaserOnOff(false);
+    }
 
     private void Update()
     {
-        ToggleLaserOnOff(target != null);
-
         if (target == null)
+        {
+            return;
+        }
+
+        if (!laserOn)
         {
             return;
         }
@@ -39,8 +48,9 @@ public class LaserBeam : MonoBehaviour
         }
     }
 
-    private void ToggleLaserOnOff(bool laserEnabled)
+    public void ToggleLaserOnOff(bool laserEnabled)
     {
+        laserOn = laserEnabled;
         laser.gameObject.SetActive(laserEnabled);
         hitParticles.gameObject.SetActive(laserEnabled);
         fire.gameObject.SetActive(laserEnabled);

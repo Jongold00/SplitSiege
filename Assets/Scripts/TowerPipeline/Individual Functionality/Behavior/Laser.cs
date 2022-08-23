@@ -25,11 +25,6 @@ public class Laser : OffensiveTower
 
 
         ResetFmodInstance();
-
-
-
-
-
     }
 
     void ResetFmodInstance()
@@ -56,14 +51,17 @@ public class Laser : OffensiveTower
 
         if (CurrentTarget)
         {
-            RotateTowardsTarget();
+            bool isFacingTarget = RotateTowardsTarget();
 
+            if (!isFacingTarget)
+            {
+                laserBeam.ToggleLaserOnOff(false);
+            }
 
-
-            if (attackCD <= 0)
+            if (attackCD <= 0 && isFacingTarget)
             {
                 fmodInstance.setPaused(false);
-
+                laserBeam.ToggleLaserOnOff(true);
                 Fire();
                 currentMultiplier = Mathf.Min(currentMultiplier + 0.005f, maxMultiplier);
             }
@@ -71,9 +69,8 @@ public class Laser : OffensiveTower
         
         else
         {
+            laserBeam.ToggleLaserOnOff(false);
             ResetFmodInstance();
-
-
             anim.SetTrigger("Transition");
             currentMultiplier = 0;
         }
@@ -81,7 +78,6 @@ public class Laser : OffensiveTower
         if (switchedTarget)
         {
             ResetFmodInstance();
-
 
             anim.SetTrigger("Transition");
             currentMultiplier = 0;

@@ -98,7 +98,6 @@ public abstract class OffensiveTower : TowerBehavior
 
         if (CurrentTarget)
         {
-            RotateTowardsTarget();
             anim.SetBool("Firing", true);
 
             if (attackCD <= 0 && CanFire)
@@ -125,11 +124,21 @@ public abstract class OffensiveTower : TowerBehavior
         return offensiveTowerData;
     }
 
-    protected void RotateTowardsTarget()
+    protected bool RotateTowardsTarget()
     {
         Quaternion targetRotation = Quaternion.LookRotation(CurrentTarget.transform.position - rotatableTransform.position);
         targetRotation.eulerAngles = new Vector3(rotatableTransform.rotation.eulerAngles.x, targetRotation.eulerAngles.y, zOffsetForRotatableTransform);
         rotatableTransform.rotation = Quaternion.RotateTowards(rotatableTransform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+
+        if (Math.Abs(targetRotation.eulerAngles.y - rotatableTransform.rotation.eulerAngles.y) < 5)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+         
     }
 
     protected virtual void Fire()
