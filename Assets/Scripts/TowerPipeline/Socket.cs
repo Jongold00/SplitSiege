@@ -9,15 +9,17 @@ public class Socket : MonoBehaviour
 {
     private TowerDataSO currentlyPlacedTower;
     public TowerDataSO CurrentlyPlacedTower { get => currentlyPlacedTower; private set => currentlyPlacedTower = value; }
+    private GameObject currentlyPlacedTowerObj;
+    public GameObject CurrentlyPlacedTowerObj { get => currentlyPlacedTowerObj; private set => currentlyPlacedTowerObj = value; }
 
     public static event Action<GameObject> OnSocketSelected;
-    [SerializeField] HoverDetector popupMenuHoverDetector;
     public static Socket socketSelected;
 
     public void OnMouseDown()
     {
-        if (socketSelected != this)
+        if (socketSelected != this || !BuildTowerPopupMenu.instance.PopupMenuObj.activeInHierarchy)
         {
+            Debug.Log("clicked on socket");
             socketSelected = this;
             OnSocketSelected?.Invoke(gameObject);
         }
@@ -32,6 +34,7 @@ public class Socket : MonoBehaviour
         obj.transform.position = newPos;
 
         CurrentlyPlacedTower = objToSpawn;
+        CurrentlyPlacedTowerObj = obj;
 
         gameObject.SetActive(false);
 
@@ -40,6 +43,9 @@ public class Socket : MonoBehaviour
 
     public void RemoveTowerFromSocket()
     {
-        Destroy(currentlyPlacedTower.prefab);
+        Destroy(CurrentlyPlacedTowerObj);
+        CurrentlyPlacedTowerObj = null;
+        CurrentlyPlacedTower = null;
+        gameObject.SetActive(true);
     }
 }

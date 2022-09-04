@@ -60,8 +60,14 @@ public class TowerSocketManager : MonoBehaviour
 
     public void SellTower()
     {
-        SelectedSocket.RemoveTowerFromSocket();
         ResourceManager.instance.UpdateResources(selectedSocket.CurrentlyPlacedTower.cost / 2);
+        SelectedSocket.RemoveTowerFromSocket();
+        TowerStatsPopupMenu.instance.HidePopupMenu();
+    }
+
+    public void UpgradeTower()
+    {
+        Debug.Log("Upgrade tower!");
     }
     private void HandleSocketSelected(GameObject obj)
     {

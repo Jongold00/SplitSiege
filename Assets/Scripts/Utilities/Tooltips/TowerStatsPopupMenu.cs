@@ -24,6 +24,9 @@ public class TowerStatsPopupMenu : PopupUI
     public GameObject goodRangeIndicator;
     public GameObject evilRangeIndicator;
 
+    private Transform goodRangeIndicatorOriginalParent;
+    private Transform evilRangeIndicatorOriginalParent;
+
     #region Singleton
 
     public static TowerStatsPopupMenu instance;
@@ -47,6 +50,8 @@ public class TowerStatsPopupMenu : PopupUI
     private void Start()
     {
         rectTransformOfPopupMenu = PopupMenuObj.GetComponent<RectTransform>();
+        goodRangeIndicatorOriginalParent = goodRangeIndicator.transform.parent;
+        evilRangeIndicatorOriginalParent = evilRangeIndicator.transform.parent;
     }
 
     private void OnEnable()
@@ -59,7 +64,6 @@ public class TowerStatsPopupMenu : PopupUI
     {
         TowerBehavior.OnTowerSelected -= HandleSelectedTower;
         TowerBehavior.OnTowerSelected -= ShowRangeIndicator;
-
     }
 
 
@@ -72,8 +76,10 @@ public class TowerStatsPopupMenu : PopupUI
         rectTransformOfPopupMenu.anchoredPosition = viewportPoint + offset;
     }
 
-    public void HidePopupMenu(GameObject obj)
+    public void HidePopupMenu()
     {
+        goodRangeIndicator.transform.SetParent(goodRangeIndicatorOriginalParent);
+        evilRangeIndicator.transform.SetParent(evilRangeIndicatorOriginalParent);
         PopupMenuObj.SetActive(false);
     }
 
@@ -84,7 +90,7 @@ public class TowerStatsPopupMenu : PopupUI
 
     private void HandleSelectedTower(GameObject obj)
     {
-        TowerStatsPopupMenu.instance.HidePopupMenu(obj);
+        TowerStatsPopupMenu.instance.HidePopupMenu();
         TowerStatsPopupMenu.instance.DisplayPopupMenuAtViewportOfObj(obj);
         SelectedTower = obj.GetComponent<TowerBehavior>();
         FormatPopup();
