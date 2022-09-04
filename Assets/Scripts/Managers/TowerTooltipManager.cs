@@ -56,7 +56,6 @@ public class TowerTooltipManager : PopupUI
 
     private void HandleSelectedTower(GameObject obj)
     {
-
         TowerStatsPopupMenu.instance.HidePopupMenu(obj);
         TowerStatsPopupMenu.instance.DisplayPopupMenuAtViewportOfObj(obj);
         SelectedTower = obj.GetComponent<TowerBehavior>();
