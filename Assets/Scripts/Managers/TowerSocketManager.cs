@@ -59,9 +59,9 @@ public class TowerSocketManager : MonoBehaviour
     }
 
     public void SellTower()
-    {
-        ResourceManager.instance.UpdateResources(selectedSocket.CurrentlyPlacedTower.cost / 2);
-        SelectedSocket.RemoveTowerFromSocket();
+    {    
+        ResourceManager.instance.UpdateResources(TowerBehavior.CurrentlySelectedTower.GetComponent<TowerBehavior>().GetTowerData().cost / 2);
+        TowerBehavior.CurrentlySelectedTower.GetComponent<TowerBehavior>().SocketTowerIsPlacedOn.RemoveTowerFromSocket();
         TowerStatsPopupMenu.instance.HidePopupMenu();
     }
 
@@ -71,9 +71,9 @@ public class TowerSocketManager : MonoBehaviour
     }
     private void HandleSocketSelected(GameObject obj)
     {
+        SelectedSocket = obj.GetComponent<Socket>();
         disableObjOnBackgroundClick.SetAllObjsAndThisToInactive();
         BuildTowerPopupMenu.instance.HidePopupMenu();
         BuildTowerPopupMenu.instance.DisplayPopupMenuAtViewportOfObj(obj);
-        SelectedSocket = obj.GetComponent<Socket>();
     }
 }

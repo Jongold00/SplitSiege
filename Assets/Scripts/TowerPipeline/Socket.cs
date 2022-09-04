@@ -13,14 +13,14 @@ public class Socket : MonoBehaviour
     public GameObject CurrentlyPlacedTowerObj { get => currentlyPlacedTowerObj; private set => currentlyPlacedTowerObj = value; }
 
     public static event Action<GameObject> OnSocketSelected;
-    public static Socket socketSelected;
+    public static Socket SocketSelected;
 
     public void OnMouseDown()
     {
-        if (socketSelected != this || !BuildTowerPopupMenu.instance.PopupMenuObj.activeInHierarchy)
+        if (SocketSelected != this || !BuildTowerPopupMenu.instance.PopupMenuObj.activeInHierarchy)
         {
             Debug.Log("clicked on socket");
-            socketSelected = this;
+            SocketSelected = this;
             OnSocketSelected?.Invoke(gameObject);
         }
     }
@@ -35,6 +35,8 @@ public class Socket : MonoBehaviour
 
         CurrentlyPlacedTower = objToSpawn;
         CurrentlyPlacedTowerObj = obj;
+
+        obj.GetComponent<TowerBehavior>().SocketTowerIsPlacedOn = this;
 
         gameObject.SetActive(false);
 
