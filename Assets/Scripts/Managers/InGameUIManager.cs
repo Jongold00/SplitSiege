@@ -81,6 +81,7 @@ public class InGameUIManager : MonoBehaviour
     }
     void ActivateUI(GameStateManager.GameState state)
     {
+        print(state);
         switch (state)
         {
             case GameStateManager.GameState.Building:
@@ -95,6 +96,9 @@ public class InGameUIManager : MonoBehaviour
                 break;
             case GameStateManager.GameState.Lost:
                 ToggleTab(3);
+                break;
+            case GameStateManager.GameState.Story:
+                ToggleTab(4);
                 break;
 
 
