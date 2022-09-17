@@ -962,6 +962,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: In Game UI
       objectReference: {fileID: 0}
+    - target: {fileID: 3025780346544212588, guid: 3c672f3376ac58a4da25dc15c1d45690, type: 3}
+      propertyPath: m_text
+      value: 'Zoom In
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 4779863501317704378, guid: 3c672f3376ac58a4da25dc15c1d45690, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
