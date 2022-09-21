@@ -17,6 +17,13 @@ public class Socket : MonoBehaviour
 
     public void OnMouseDown()
     {
+
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            Debug.Log("Pointer over UI");
+            return;
+        }
+        Debug.Log(BuildTowerPopupMenu.instance.isMouseOverMenu);
         if (SocketSelected != this || !BuildTowerPopupMenu.instance.PopupMenuObj.activeInHierarchy)
         {
             Debug.Log("clicked on socket");
