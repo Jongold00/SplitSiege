@@ -59,7 +59,6 @@ public class TowerStatsPopupMenu : PopupUI
         TowerBehavior.OnTowerSelected += HandleSelectedTower;
         TowerBehavior.OnTowerSelected += ShowRangeIndicator;
         Socket.OnSocketSelected += HandleSocketSelected;
-
     }
 
     private void OnDisable()
@@ -81,6 +80,7 @@ public class TowerStatsPopupMenu : PopupUI
 
     public void HidePopupMenu()
     {
+        Debug.Log("Hiding popup menu");
         goodRangeIndicator.transform.SetParent(goodRangeIndicatorOriginalParent);
         evilRangeIndicator.transform.SetParent(evilRangeIndicatorOriginalParent);
         goodRangeIndicator.SetActive(false);
@@ -108,7 +108,10 @@ public class TowerStatsPopupMenu : PopupUI
         Vector3 indicatorPos = new Vector3(0, 0.1f, 0);
         TowerDataSO data = obj.GetComponent<TowerBehavior>().GetTowerData();
 
-        Vector3 indicatorScale = new Vector3(data.range * 2, data.range * 2, 1f);
+        Vector3 indicatorScale = new Vector3(
+            (data.range * 2) * (1 / data.prefab.transform.localScale.x),
+            (data.range * 2) * (1 / data.prefab.transform.localScale.y),
+            1f * (1 / data.prefab.transform.localScale.z));
 
         switch (data.faction)
         {
@@ -118,7 +121,6 @@ public class TowerStatsPopupMenu : PopupUI
                 goodRangeIndicator.transform.localPosition = indicatorPos;
                 goodRangeIndicator.transform.localScale = indicatorScale;
 
-
                 evilRangeIndicator.SetActive(false);
                 break;
             case 1:
@@ -126,7 +128,6 @@ public class TowerStatsPopupMenu : PopupUI
                 evilRangeIndicator.transform.SetParent(obj.transform);
                 evilRangeIndicator.transform.localPosition = indicatorPos;
                 evilRangeIndicator.transform.localScale = indicatorScale;
-
 
                 goodRangeIndicator.SetActive(false);
                 break;

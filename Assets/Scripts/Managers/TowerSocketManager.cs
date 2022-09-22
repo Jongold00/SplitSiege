@@ -9,6 +9,7 @@ public class TowerSocketManager : MonoBehaviour
     private Socket selectedSocket;
     public Socket SelectedSocket { get => selectedSocket; set => selectedSocket = value; }
     [SerializeField] GameObject buildParticlePrefab;
+    [SerializeField] TowerDataSO testingLevel2Ballista;
 
     #region Singleton
 
@@ -58,15 +59,33 @@ public class TowerSocketManager : MonoBehaviour
     }
 
     public void SellTower()
-    {    
+    {
+        Debug.Log("sell tower");
         ResourceManager.instance.UpdateResources(TowerBehavior.CurrentlySelectedTower.GetComponent<TowerBehavior>().GetTowerData().cost / 2);
-        TowerBehavior.CurrentlySelectedTower.GetComponent<TowerBehavior>().SocketTowerIsPlacedOn.RemoveTowerFromSocket();
         TowerStatsPopupMenu.instance.HidePopupMenu();
+        TowerBehavior.CurrentlySelectedTower.GetComponent<TowerBehavior>().SocketTowerIsPlacedOn.RemoveTowerFromSocket();
     }
 
     public void UpgradeTower()
     {
         Debug.Log("Upgrade tower!");
+        TowerStatsPopupMenu.instance.HidePopupMenu();
+        TowerBehavior selectedTowerBehavior = TowerBehavior.CurrentlySelectedTower.GetComponent<TowerBehavior>();
+        selectedTowerBehavior.SocketTowerIsPlacedOn.RemoveTowerFromSocket();
+
+        TowerDataSO towerDataSO = selectedTowerBehavior.GetTowerData();
+
+        Debug.Log("tower name = " + towerDataSO.name);
+        if (towerDataSO.name == "BallistaLvl1" && towerDataSO.level < 2)
+        {
+            BuildTower(testingLevel2Ballista);
+        }
+        else
+        {
+
+        }
+
+
     }
     private void HandleSocketSelected(GameObject obj)
     {
