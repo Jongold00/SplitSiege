@@ -58,12 +58,15 @@ public class TowerStatsPopupMenu : PopupUI
     {
         TowerBehavior.OnTowerSelected += HandleSelectedTower;
         TowerBehavior.OnTowerSelected += ShowRangeIndicator;
+        Socket.OnSocketSelected += HandleSocketSelected;
+
     }
 
     private void OnDisable()
     {
         TowerBehavior.OnTowerSelected -= HandleSelectedTower;
         TowerBehavior.OnTowerSelected -= ShowRangeIndicator;
+        Socket.OnSocketSelected -= HandleSocketSelected;
     }
 
 
@@ -80,6 +83,8 @@ public class TowerStatsPopupMenu : PopupUI
     {
         goodRangeIndicator.transform.SetParent(goodRangeIndicatorOriginalParent);
         evilRangeIndicator.transform.SetParent(evilRangeIndicatorOriginalParent);
+        goodRangeIndicator.SetActive(false);
+        evilRangeIndicator.SetActive(false);
         PopupMenuObj.SetActive(false);
     }
 
@@ -126,5 +131,10 @@ public class TowerStatsPopupMenu : PopupUI
                 goodRangeIndicator.SetActive(false);
                 break;
         }
+    }
+
+    private void HandleSocketSelected(GameObject socket)
+    {
+        HidePopupMenu();
     }
 }

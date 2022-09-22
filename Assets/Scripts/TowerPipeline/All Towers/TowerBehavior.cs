@@ -18,9 +18,11 @@ public abstract class TowerBehavior : MonoBehaviour
     {
         // This If statement is to prevent the tower stats popup menu loading again when a button on the popup menu is
         // clicked and the pointer is over the tower. The behaviour we want here is for the button click to be registered
-        // but the click on the tower ignored 
+        // but the click on the tower ignored
+        Debug.Log("tower clicked");
         if (CurrentlySelectedTower!= null && (CurrentlySelectedTower == this.gameObject && TowerStatsPopupMenu.instance.PopupMenuObj.activeInHierarchy))
         {
+            Debug.Log("returning on tower click");
             return;
         }
         OnTowerSelected?.Invoke(gameObject);

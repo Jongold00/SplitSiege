@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using System.Linq;
 
 public class DisableObjectsOnObjectHitWithRayCast : MonoBehaviour
 {
     [SerializeField] GameObject[] objsToDisable;
-    [SerializeField] int layerIndexOfLayerToIgnore;
+    [SerializeField] int[] layerIndexOfLayersToIgnore;
     [SerializeField] string nameOfTagOnClickObject;
 
-    List<GameObject> collisionList = new List<GameObject>();
+    RaycastHit[] hits = null;
     private MeshCollider meshCollider;
 
     private void Awake()
@@ -32,31 +33,26 @@ public class DisableObjectsOnObjectHitWithRayCast : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit hit;
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit))
 
-                if (hit.transform.gameObject.layer == 6)
-                {
-                    return;
-                }
+            hits = Physics.RaycastAll(ray);
 
-                if (hit.transform.gameObject.tag == "Background")
-                {
-                    SetAllObjsAndThisToInactive();
-                }
+            bool shouldReturn = hits.Any((h) => layerIndexOfLayersToIgnore.Contains(h.transform.gameObject.layer));
+
+            if (shouldReturn)
+            {
+                Debug.Log("return!");
+                return;
+            }
+            
+            SetAllObjsAndThisToInactive();
+
         }
-    }
-
-    void OnTriggerEnter(Collider col)
-    {
-        collisionList.Add(col.gameObject);
-    }
-
-
-    void OnTriggerExit(Collider col)
-    {
-        collisionList.Remove(col.gameObject);
     }
     public void SetAllObjsAndThisToInactive()
     {
