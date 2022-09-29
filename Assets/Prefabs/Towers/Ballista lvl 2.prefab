@@ -988,7 +988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951b8d7b1b8091e4a812fbcb34ca132b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offensiveTowerData: {fileID: 11400000, guid: 56b3eb484922a2647bbeb8e74fc48d7d, type: 2}
+  offensiveTowerData: {fileID: 11400000, guid: b554d5d80cde5274bada51fa9b3e537a, type: 2}
   rotatableTransform: {fileID: 7211901392406387256, guid: 484b7428aa3ae734c81dbd2881d4fcba, type: 3}
   zOffsetForRotatableTransform: 0
   projectileInstantiatePoint: {fileID: 122745588652717991, guid: 484b7428aa3ae734c81dbd2881d4fcba, type: 3}

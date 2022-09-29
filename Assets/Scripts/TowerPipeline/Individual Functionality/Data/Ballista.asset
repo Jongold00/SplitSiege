@@ -17,7 +17,7 @@ MonoBehaviour:
   range: 8
   cost: 5
   faction: 0
-  prefab: {fileID: 2787549249678008424, guid: 47a6123389941e0488edffda46c59e75, type: 3}
+  prefab: {fileID: 2342528570031081947, guid: 945312448e0b1b3478484c4fae0acb2e, type: 3}
   damage: 2
   damageMultiplier: 1
   fireRate: 1

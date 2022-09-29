@@ -40,7 +40,7 @@ public class Socket : MonoBehaviour
         CurrentlyPlacedTower = objToSpawn;
         CurrentlyPlacedTowerObj = obj;
 
-        obj.GetComponent<TowerBehavior>().SocketTowerIsPlacedOn = this;
+        obj.GetComponentInChildren<TowerBehavior>().SocketTowerIsPlacedOn = this;
 
         gameObject.SetActive(false);
 

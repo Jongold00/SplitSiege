@@ -46,7 +46,7 @@ public class TowerSocketManager : MonoBehaviour
 
 
             GameObject placedTowerObj = SelectedSocket.AddTowerToSocket(towerToBuild);
-            ITowerBuilder build = placedTowerObj.GetComponent<ITowerBuilder>();
+            ITowerBuilder build = placedTowerObj.GetComponentInChildren<ITowerBuilder>();
 
             GameObject particleObj = Instantiate(buildParticlePrefab, placedTowerObj.transform.position, buildParticlePrefab.transform.rotation);
             BuildParticleController buildParticle = particleObj.GetComponent<BuildParticleController>();
@@ -70,20 +70,9 @@ public class TowerSocketManager : MonoBehaviour
     {
         Debug.Log("Upgrade tower!");
         TowerStatsPopupMenu.instance.HidePopupMenu();
-        TowerBehavior selectedTowerBehavior = TowerBehavior.CurrentlySelectedTower.GetComponent<TowerBehavior>();
-        selectedTowerBehavior.SocketTowerIsPlacedOn.RemoveTowerFromSocket();
-
-        TowerDataSO towerDataSO = selectedTowerBehavior.GetTowerData();
-
-        Debug.Log("tower name = " + towerDataSO.name);
-        if (towerDataSO.name == "BallistaLvl1" && towerDataSO.level < 2)
-        {
-            BuildTower(testingLevel2Ballista);
-        }
-        else
-        {
-
-        }
+        TowerUpgrader towerUpgrader = TowerBehavior.CurrentlySelectedTower.GetComponentInParent<TowerUpgrader>();
+        Debug.Log(towerUpgrader);
+        towerUpgrader.SwitchCurrentTowerWithNextLevelTower();
 
 
     }
