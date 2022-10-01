@@ -212,9 +212,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offensiveTowerData: {fileID: 11400000, guid: 56b3eb484922a2647bbeb8e74fc48d7d, type: 2}
-  rotatableTransform: {fileID: 7211901392406387256, guid: 484b7428aa3ae734c81dbd2881d4fcba, type: 3}
-  zOffsetForRotatableTransform: 0
-  projectileInstantiatePoint: {fileID: 122745588652717991, guid: 484b7428aa3ae734c81dbd2881d4fcba, type: 3}
+  rotatableTransform: {fileID: 5123940305498934502}
+  zOffsetForRotatableTransform: 180
+  projectileInstantiatePoint: {fileID: 8386866238485967462}
 --- !u!114 &-3768188263069507548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -770,6 +770,36 @@ Transform:
   m_Father: {fileID: 4834619789888632727}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6718631784884340010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8386866238485967462}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8386866238485967462
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6718631784884340010}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.0179, z: 0.016}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5123940305498934502}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7297971445484924783
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,6 +1046,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 987686134895633141}
+  - {fileID: 8386866238485967462}
   m_Father: {fileID: 8126809311576192357}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

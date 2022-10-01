@@ -80,7 +80,6 @@ public class TowerStatsPopupMenu : PopupUI
 
     public void HidePopupMenu()
     {
-        Debug.Log("Hiding popup menu");
         goodRangeIndicator.transform.SetParent(goodRangeIndicatorOriginalParent);
         evilRangeIndicator.transform.SetParent(evilRangeIndicatorOriginalParent);
         goodRangeIndicator.SetActive(false);
@@ -108,10 +107,15 @@ public class TowerStatsPopupMenu : PopupUI
         Vector3 indicatorPos = new Vector3(0, 0.1f, 0);
         TowerDataSO data = obj.GetComponent<TowerBehavior>().GetTowerData();
 
+        //Vector3 indicatorScale = new Vector3(
+        //    (data.range * 2) * (1 / data.prefab.transform.localScale.x),
+        //    (data.range * 2) * (1 / data.prefab.transform.localScale.y),
+        //    1f * (1 / data.prefab.transform.localScale.z));               
+
         Vector3 indicatorScale = new Vector3(
-            (data.range * 2) * (1 / data.prefab.transform.localScale.x),
-            (data.range * 2) * (1 / data.prefab.transform.localScale.y),
-            1f * (1 / data.prefab.transform.localScale.z));
+            (data.range * 2) * (1 / obj.transform.localScale.x),
+            (data.range * 2) * (1 / obj.transform.localScale.y),
+            1f * (1 / obj.transform.localScale.z));
 
         switch (data.faction)
         {

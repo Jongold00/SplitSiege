@@ -5,6 +5,7 @@ using System;
 
 public class TowerUpgrader : MonoBehaviour
 {
+    // Array of each tower prefab. Element 0 should be the lowest level tower and will be the first to be active.
     [SerializeField] private GameObject[] objects;
     private GameObject currentlyActive;
 
@@ -41,11 +42,14 @@ public class TowerUpgrader : MonoBehaviour
 
     public void SwitchCurrentTowerWithNextLevelTower()
     {
+        Debug.Log(IsUpgradePossible());
         if (IsUpgradePossible())
         {
             int currentlyActiveIndex = Array.IndexOf(objects, currentlyActive);
+            Debug.Log("currently active index = " + currentlyActiveIndex.ToString());
             currentlyActive.SetActive(false);
-            objects[currentlyActiveIndex + 1].SetActive(true);
+            currentlyActive = objects[currentlyActiveIndex + 1];
+            currentlyActive.SetActive(true);
         }
     }
 }
