@@ -8,10 +8,14 @@ public class TowerUpgrader : MonoBehaviour
     // Array of each tower prefab. Element 0 should be the lowest level tower and will be the first to be active.
     [SerializeField] private GameObject[] objects;
     private GameObject currentlyActive;
+    private int numberOfTowerLevelsAvailable;
+    public int NumberOfTowerLevelsAvailable { get; private set; }
 
     // Start is called before the first frame update
     void Start()
     {
+        NumberOfTowerLevelsAvailable = objects.Length;
+
         if (objects.Length < 1)
         {
             Debug.LogError("No tower object references set on tower upgrader script");

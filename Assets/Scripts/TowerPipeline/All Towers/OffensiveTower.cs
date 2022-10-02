@@ -32,6 +32,7 @@ public abstract class OffensiveTower : TowerBehavior
     #region Rotation Stuff
 
     float rotationSpeed = 100;
+    private bool animationEventInstantiateProjectileTriggered;
 
 
     #endregion
@@ -62,8 +63,6 @@ public abstract class OffensiveTower : TowerBehavior
 
         float furthestSoFar = 0;
         UnitBehavior closest = null;
-
-
         
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, offensiveTowerData.range);
         foreach (Collider curr in hitColliders)
@@ -99,18 +98,21 @@ public abstract class OffensiveTower : TowerBehavior
         if (CurrentTarget)
         {
             RotateTowardsTarget();
-            anim.SetBool("Firing", true);
 
-            if (attackCD <= 0 && CanFire)
+            if (attackCD <= 0)
+            {
+                anim.SetBool("Firing", true);
+            }
+
+            if (CanFire && animationEventInstantiateProjectileTriggered)
             {
                 Fire();
-
+                animationEventInstantiateProjectileTriggered = false;
             }
         }
         else
         {
             anim.SetBool("Firing", false);
-
         }
 
         if (!active)
@@ -163,20 +165,24 @@ public abstract class OffensiveTower : TowerBehavior
 
     
     protected virtual IEnumerator SpawnProjectile()
-    {
-        
-
-        yield return new WaitForSeconds(offensiveTowerData.projectileSpawnOffset * offensiveTowerData.GetFireRate());
+    {       
         GameObject projectile = Instantiate(offensiveTowerData.ProjectilePrefab.gameObject, projectileInstantiatePoint.position, Quaternion.identity);
         Projectile projectileScript = projectile.GetComponent<Projectile>();
 
         projectileScript.SetTarget(CurrentTarget, offensiveTowerData.SpeedOfProjectile);
         projectileScript.SetDamage(offensiveTowerData.GetDamage());
+        yield return new WaitForSeconds(offensiveTowerData.projectileSpawnOffset * offensiveTowerData.GetFireRate());
     }
 
     private void EnableFiring()
     {
         CanFire = true;
+    }
+
+    public void AnimationEventInstantiateProjectile()
+    {
+        Debug.Log("AnimationEventInstantiateProjectile");
+        animationEventInstantiateProjectileTriggered = true;
     }
 
 

@@ -27,6 +27,8 @@ public class TowerStatsPopupMenu : PopupUI
     private Transform goodRangeIndicatorOriginalParent;
     private Transform evilRangeIndicatorOriginalParent;
 
+    [SerializeField] private ButtonAvailability upgradeButtonAvailability;
+
     #region Singleton
 
     public static TowerStatsPopupMenu instance;
@@ -71,11 +73,29 @@ public class TowerStatsPopupMenu : PopupUI
 
     public void DisplayPopupMenuAtViewportOfObj(GameObject obj)
     {
+        TowerStatsPopupMenu.instance.HidePopupMenu();
+
         Vector2 offset = new Vector2(0, 80f);
         PopupMenuObj.SetActive(true);
 
         Vector2 viewportPoint = Camera.main.WorldToScreenPoint(obj.transform.position);
         rectTransformOfPopupMenu.anchoredPosition = viewportPoint + offset;
+
+        SelectedTower = obj.GetComponent<TowerBehavior>();
+        TowerDataSO towerDataSO = selectedTower.GetTowerData();
+
+        if (towerDataSO.level >= selectedTower.GetComponentInParent<TowerUpgrader>().NumberOfTowerLevelsAvailable)
+        {
+            Debug.Log("upgrade NOT available");
+            upgradeButtonAvailability.MakeButtonUnavailable();
+        }
+        else
+        {
+            Debug.Log("upgrade available");
+            upgradeButtonAvailability.MakeButtonAvailable();
+        }
+
+        FormatPopup();
     }
 
     public void HidePopupMenu()
@@ -94,10 +114,7 @@ public class TowerStatsPopupMenu : PopupUI
 
     private void HandleSelectedTower(GameObject obj)
     {
-        TowerStatsPopupMenu.instance.HidePopupMenu();
         TowerStatsPopupMenu.instance.DisplayPopupMenuAtViewportOfObj(obj);
-        SelectedTower = obj.GetComponent<TowerBehavior>();
-        FormatPopup();
     }
 
     private void ShowRangeIndicator(GameObject obj)
@@ -105,12 +122,7 @@ public class TowerStatsPopupMenu : PopupUI
         BuildTowerPopupMenu.instance.HidePopupMenu();
         OnPopupDisplayed?.Invoke();
         Vector3 indicatorPos = new Vector3(0, 0.1f, 0);
-        TowerDataSO data = obj.GetComponent<TowerBehavior>().GetTowerData();
-
-        //Vector3 indicatorScale = new Vector3(
-        //    (data.range * 2) * (1 / data.prefab.transform.localScale.x),
-        //    (data.range * 2) * (1 / data.prefab.transform.localScale.y),
-        //    1f * (1 / data.prefab.transform.localScale.z));               
+        TowerDataSO data = obj.GetComponent<TowerBehavior>().GetTowerData();            
 
         Vector3 indicatorScale = new Vector3(
             (data.range * 2) * (1 / obj.transform.localScale.x),
