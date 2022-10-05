@@ -59,8 +59,7 @@ public class PerspectivePanAndZoom : MonoBehaviour
         {
             Vector3 currentPanPosition = GetPerspectiveWorldPos(groundY);
             Vector3 panOffset = panStart - currentPanPosition;
-            //transform.position += panOffset * panScaleFactor;
-            print("panoffest: " + panOffset);
+            //transform.position += panOffset * panScaleFactor; 
 
             float clampedX = Mathf.Clamp(transform.position.x + (panOffset.x * panScaleFactor), lowerBounds.x, upperBounds.x);
             float clampedZ = Mathf.Clamp(transform.position.z + (panOffset.z * panScaleFactor), lowerBounds.y, upperBounds.y);

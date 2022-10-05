@@ -1551,7 +1551,7 @@ PrefabInstance:
       objectReference: {fileID: 339802544}
     - target: {fileID: 8641917970879590852, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
       propertyPath: dialogueSet.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8641917970879590852, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
       propertyPath: dialogueSet.Array.data[0]
@@ -1564,7 +1564,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8641917970879590852, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
       propertyPath: dialogueSet.Array.data[2]
-      value: 'Hi Tayloor D:'
+      value: You'll never get away with this!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641917970879590852, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: dialogueFactions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641917970879590852, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: dialogueFactions.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641917970879590852, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: dialogueFactions.Array.data[1]
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9207473895775685711, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode

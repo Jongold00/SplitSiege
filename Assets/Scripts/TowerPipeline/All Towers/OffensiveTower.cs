@@ -99,7 +99,7 @@ public abstract class OffensiveTower : TowerBehavior
         if (CurrentTarget)
         {
             anim.SetBool("Firing", true);
-
+            RotateTowardsTarget();
             if (attackCD <= 0 && CanFire)
             {
                 Fire();

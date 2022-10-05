@@ -12,8 +12,14 @@ public class DialogueManager : MonoBehaviour
     public TMPro.TMP_FontAsset fontToUse;
     public TMP_Text textBox;
 
+    public Image textBoxImage;
+
+    public Sprite arcaneTextBoxImage;
+    public Sprite ironboundTextBoxImage;
+
     [TextArea(0, 5)]
     public string[] dialogueSet;
+    public bool[] dialogueFactions;
     private int currentDialogueIndex = 0;
 
     private Coroutine dialogueRoutine;
@@ -36,7 +42,14 @@ public class DialogueManager : MonoBehaviour
             EventsManager.instance.GameStateChange(GameStateManager.GameState.Building);
             return;
         }
-
+        if (dialogueFactions[currentDialogueIndex])
+        {
+            textBoxImage.sprite = ironboundTextBoxImage;
+        }
+        else
+        {
+            textBoxImage.sprite = arcaneTextBoxImage;
+        }
         List<DialogueUtility.DialogueCommand> commands = DialogueUtility.ProcessInputString(dialogueSet[currentDialogueIndex], out string totalTextMessage);
         currentDialogueIndex++;
         dialogueRoutine = StartCoroutine(dialogueVertexAnimator.AnimateTextIn(commands, totalTextMessage, null));
