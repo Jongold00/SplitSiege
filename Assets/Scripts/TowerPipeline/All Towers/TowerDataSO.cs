@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class TowerDataSO : ScriptableObject
 {
     public new string name;
+    public int level;
     public float range;
     public int cost;
     public int faction;
