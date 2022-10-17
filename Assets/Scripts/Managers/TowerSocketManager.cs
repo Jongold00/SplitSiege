@@ -9,7 +9,7 @@ public class TowerSocketManager : MonoBehaviour
     private Socket selectedSocket;
     public Socket SelectedSocket { get => selectedSocket; set => selectedSocket = value; }
     [SerializeField] GameObject buildParticlePrefab;
-    [SerializeField] DisableObjOnBackgroundClick disableObjOnBackgroundClick;
+    [SerializeField] TowerDataSO testingLevel2Ballista;
 
     #region Singleton
 
@@ -46,7 +46,7 @@ public class TowerSocketManager : MonoBehaviour
 
 
             GameObject placedTowerObj = SelectedSocket.AddTowerToSocket(towerToBuild);
-            ITowerBuilder build = placedTowerObj.GetComponent<ITowerBuilder>();
+            ITowerBuilder build = placedTowerObj.GetComponentInChildren<ITowerBuilder>();
 
             GameObject particleObj = Instantiate(buildParticlePrefab, placedTowerObj.transform.position, buildParticlePrefab.transform.rotation);
             BuildParticleController buildParticle = particleObj.GetComponent<BuildParticleController>();
@@ -60,14 +60,26 @@ public class TowerSocketManager : MonoBehaviour
 
     public void SellTower()
     {
-        SelectedSocket.RemoveTowerFromSocket();
-        ResourceManager.instance.UpdateResources(selectedSocket.CurrentlyPlacedTower.cost / 2);
+        Debug.Log("sell tower");
+        ResourceManager.instance.UpdateResources(TowerBehavior.CurrentlySelectedTower.GetComponent<TowerBehavior>().GetTowerData().cost / 2);
+        TowerStatsPopupMenu.instance.HidePopupMenu();
+        TowerBehavior.CurrentlySelectedTower.GetComponent<TowerBehavior>().SocketTowerIsPlacedOn.RemoveTowerFromSocket();
+    }
+
+    public void UpgradeTower()
+    {
+        Debug.Log("Upgrade tower!");
+        TowerStatsPopupMenu.instance.HidePopupMenu();
+        TowerUpgrader towerUpgrader = TowerBehavior.CurrentlySelectedTower.GetComponentInParent<TowerUpgrader>();
+        Debug.Log(towerUpgrader);
+        towerUpgrader.SwitchCurrentTowerWithNextLevelTower();
+
+
     }
     private void HandleSocketSelected(GameObject obj)
     {
-        disableObjOnBackgroundClick.SetAllObjsAndThisToInactive();
+        SelectedSocket = obj.GetComponent<Socket>();
         BuildTowerPopupMenu.instance.HidePopupMenu();
         BuildTowerPopupMenu.instance.DisplayPopupMenuAtViewportOfObj(obj);
-        SelectedSocket = obj.GetComponent<Socket>();
     }
 }

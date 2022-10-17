@@ -17,6 +17,8 @@ public class BuildTowerPopupMenu : PopupUI
     private RectTransform rectTransformOfPopupMenu;
     [SerializeField] GameObject confirmOrCancelObj;
     TowerDataSO towerToBuild;
+    [SerializeField] HoverDetector hoverDetector;
+    public bool isMouseOverMenu { get => hoverDetector.IsHovering; }
 
     #region Singleton
 
