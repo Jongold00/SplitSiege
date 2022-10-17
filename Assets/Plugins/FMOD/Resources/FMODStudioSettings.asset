@@ -573,7 +573,7 @@ MonoBehaviour:
   TargetAssetPath: FMODBanks
   TargetBankFolder: Assets/Plugins/FMOD/SplitSiege_FMOD/Metadata/Bank
   EventLinkage: 0
-  LoggingLevel: 2
+  LoggingLevel: 0
   SpeakerModeSettings: []
   SampleRateSettings: []
   LiveUpdateSettings: []

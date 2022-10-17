@@ -755,7 +755,7 @@ GameObject:
   - component: {fileID: 8321578032466881083}
   - component: {fileID: 2758499055640107082}
   m_Layer: 5
-  m_Name: PriestTooltip
+  m_Name: WorkshopTooltip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -925,7 +925,7 @@ GameObject:
   - component: {fileID: 8321578032574781377}
   - component: {fileID: 8321578032574781376}
   m_Layer: 5
-  m_Name: EvilTowers
+  m_Name: Arcane Towers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1017,7 +1017,7 @@ GameObject:
   - component: {fileID: 8321578032580628408}
   - component: {fileID: 1198690839}
   m_Layer: 5
-  m_Name: GraveyardButton
+  m_Name: ChronobeaconButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1196,7 +1196,7 @@ GameObject:
   - component: {fileID: 8321578032891568423}
   - component: {fileID: 1781489899}
   m_Layer: 5
-  m_Name: PriestButton
+  m_Name: WorkshopButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1730,7 +1730,7 @@ GameObject:
   - component: {fileID: 8321578033176458093}
   - component: {fileID: 8321578033176458090}
   m_Layer: 5
-  m_Name: GoodAndEvilTowers
+  m_Name: TowerSelection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1989,7 +1989,7 @@ GameObject:
   - component: {fileID: 8321578033372868940}
   - component: {fileID: 8321578033372868943}
   m_Layer: 5
-  m_Name: GoodTowers
+  m_Name: Ironbound Towers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2081,7 +2081,7 @@ GameObject:
   - component: {fileID: 8321578033435918827}
   - component: {fileID: 480987663}
   m_Layer: 5
-  m_Name: TrebuchetButton
+  m_Name: CatapultButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2435,7 +2435,7 @@ GameObject:
   - component: {fileID: 8321578033478951396}
   - component: {fileID: 1641003953577985537}
   m_Layer: 5
-  m_Name: TrebuchetTooltip
+  m_Name: CatapultTooltip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2844,7 +2844,7 @@ GameObject:
   - component: {fileID: 8321578033854422957}
   - component: {fileID: 5854585348563908983}
   m_Layer: 5
-  m_Name: GraveyardTooltip
+  m_Name: ChronoBeaconTooltip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

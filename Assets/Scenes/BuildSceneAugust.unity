@@ -1473,6 +1473,30 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 48
       objectReference: {fileID: 0}
+    - target: {fileID: 7337498310402668375, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7337498310402668375, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1629453500}
+    - target: {fileID: 7337498310402668375, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExposedPinchMock
+      objectReference: {fileID: 0}
+    - target: {fileID: 7337498310402668375, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PerspectivePanAndZoom, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7337498310402668375, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7337498310402668375, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8510534727430137998, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -1527,7 +1551,7 @@ PrefabInstance:
       objectReference: {fileID: 339802544}
     - target: {fileID: 8641917970879590852, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
       propertyPath: dialogueSet.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8641917970879590852, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
       propertyPath: dialogueSet.Array.data[0]
@@ -1540,7 +1564,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8641917970879590852, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
       propertyPath: dialogueSet.Array.data[2]
-      value: 'Hi Tayloor D:'
+      value: You'll never get away with this!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641917970879590852, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: dialogueFactions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641917970879590852, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: dialogueFactions.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641917970879590852, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: dialogueFactions.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207473895775685711, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207473895775685711, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1629453500}
+    - target: {fileID: 9207473895775685711, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExposedPinchMock
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207473895775685711, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PerspectivePanAndZoom, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207473895775685711, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94b0dc0f21f79844cb8102aec20f82f2, type: 3}
@@ -2043,6 +2099,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 2176784736013389722, guid: 48e3ab1bdac4cba4db28e748bfa536dc, type: 3}
+      propertyPath: panScaleFactor
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2176784736013389722, guid: 48e3ab1bdac4cba4db28e748bfa536dc, type: 3}
+      propertyPath: zoomScaleFactor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623068951620571988, guid: 48e3ab1bdac4cba4db28e748bfa536dc, type: 3}
+      propertyPath: m_FOVAxisMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7814233105242632119, guid: 48e3ab1bdac4cba4db28e748bfa536dc, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2124,6 +2192,17 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &1629453500 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2176784736013389722, guid: 48e3ab1bdac4cba4db28e748bfa536dc, type: 3}
+  m_PrefabInstance: {fileID: 1629453493}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629453494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1754911f55540446a281648bd9cfa9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1645943295
 PrefabInstance:
   m_ObjectHideFlags: 0
