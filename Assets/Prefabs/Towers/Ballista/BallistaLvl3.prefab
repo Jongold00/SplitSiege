@@ -843,12 +843,12 @@ GameObject:
   - component: {fileID: 3972959170264901343}
   - component: {fileID: 5529827875292678907}
   m_Layer: 5
-  m_Name: Ballista_lvl_3
+  m_Name: BallistaLvl3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5853041067324508055
 Transform:
   m_ObjectHideFlags: 0
@@ -929,7 +929,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offensiveTowerData: {fileID: 11400000, guid: f6f3fa8340599714581c2d661a6f99d0, type: 2}
   rotatableTransform: {fileID: 4433004336248520767}
-  zOffsetForRotatableTransform: 180
+  zOffsetForRotatableTransform: 0
   projectileInstantiatePoint: {fileID: 1786336321873126046}
 --- !u!114 &5529827875292678907
 MonoBehaviour:
