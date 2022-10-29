@@ -73,7 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offensiveTowerData: {fileID: 11400000, guid: 56b3eb484922a2647bbeb8e74fc48d7d, type: 2}
   rotatableTransform: {fileID: 7405677762116396666}
-  zOffsetForRotatableTransform: 0
+  zOffsetForRotatableTransform: 180
   projectileInstantiatePoint: {fileID: 7156335374856056459}
 --- !u!65 &1527843219958585573
 BoxCollider:
