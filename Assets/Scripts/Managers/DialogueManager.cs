@@ -54,5 +54,5 @@ public class DialogueManager : MonoBehaviour
         currentDialogueIndex++;
         dialogueRoutine = StartCoroutine(dialogueVertexAnimator.AnimateTextIn(commands, totalTextMessage, null));
     }
-    
+
 }
