@@ -10,8 +10,8 @@ public class UserData
     public UserData()
     {
         levelData = new Dictionary<string, LevelCompletionData>();
-        levelData["level1"] = new LevelCompletionData();
-        Debug.Log("level1 has a best completion of " + levelData["level1"].bestPerformance);
+        levelData["Level1"] = new LevelCompletionData();
+        Debug.Log("Level1 has a best completion of " + levelData["Level1"].bestPerformance);
     }
 
     Dictionary<string, LevelCompletionData> levelData;
