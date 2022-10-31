@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class EvilWizard : OffensiveTower
+public class Plasma : OffensiveTower
 {
     [SerializeField]
     GameObject[] spells;

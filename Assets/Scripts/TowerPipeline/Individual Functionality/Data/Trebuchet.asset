@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 431581062ac661d4da226ee3ce1a75ea, type: 3}
-  m_Name: BallistaLvl2 1
+  m_Name: Trebuchet
   m_EditorClassIdentifier: 
-  name: Ballista
-  level: 2
+  name: Trebuchet
+  level: 0
   range: 10
   cost: 5
   faction: 0
-  prefab: {fileID: 7253077918006109846, guid: 26652b8fc90bbe544bac844f3282e9d9, type: 3}
-  damage: 2
+  prefab: {fileID: 6516760186577287183, guid: 26816eb8b6f88fb4d84f9b803223028d, type: 3}
+  damage: 0
   damageMultiplier: 1
-  fireRate: 2
+  fireRate: 4.5
   fireRateMultiplier: 1
-  projectilePrefab: {fileID: 7066393166104553515, guid: 585180bfcd6c6c8488ff4e99ffdc3f43, type: 3}
-  speedOfProjectile: 25
-  projectileSpawnOffset: 0.5
+  projectilePrefab: {fileID: 4166669596327524140, guid: 783ef8064227aed419487cc8a6278ddb, type: 3}
+  speedOfProjectile: 10
+  projectileSpawnOffset: 0.075
