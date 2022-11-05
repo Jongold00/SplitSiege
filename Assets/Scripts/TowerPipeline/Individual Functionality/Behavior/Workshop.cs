@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Workshop : MonoBehaviour
+public class Workshop : OffensiveTower
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Update()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // tower logic here
     }
 }

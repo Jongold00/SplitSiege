@@ -623,7 +623,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6771891710041232225}
-  - component: {fileID: 6095001560352565552}
   m_Layer: 0
   m_Name: Geometry
   m_TagString: Untagged
@@ -650,25 +649,6 @@ Transform:
   m_Father: {fileID: 6516760186577287182}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &6095001560352565552
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6246852279314139611}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: ad22a5a7cfde358439941c144abb34d6, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6273072231605206196
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,8 +748,9 @@ GameObject:
   - component: {fileID: 1408623734}
   - component: {fileID: 1408623735}
   - component: {fileID: 9046594925437532617}
+  - component: {fileID: 6532364444746326606}
   m_Layer: 0
-  m_Name: Catapult lvl 1
+  m_Name: TrebuchetLvl1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -853,6 +834,25 @@ MonoBehaviour:
   rotatableTransform: {fileID: 5155898380226049599}
   zOffsetForRotatableTransform: 180
   projectileInstantiatePoint: {fileID: 2125138595873621112}
+--- !u!95 &6532364444746326606
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6516760186577287183}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: ad22a5a7cfde358439941c144abb34d6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8978356694883569637
 GameObject:
   m_ObjectHideFlags: 0
