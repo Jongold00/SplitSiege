@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 431581062ac661d4da226ee3ce1a75ea, type: 3}
-  m_Name: BallistaLvl3
+  m_Name: BallistaLvl2
   m_EditorClassIdentifier: 
   name: Ballista
-  level: 3
-  range: 12
+  level: 2
+  range: 10
   cost: 5
   faction: 0
-  prefab: {fileID: 0}
-  damage: 3
+  prefab: {fileID: 7253077918006109846, guid: 26652b8fc90bbe544bac844f3282e9d9, type: 3}
+  damage: 2
   damageMultiplier: 1
-  fireRate: 3
+  fireRate: 2
   fireRateMultiplier: 1
   projectilePrefab: {fileID: 7066393166104553515, guid: 585180bfcd6c6c8488ff4e99ffdc3f43, type: 3}
-  speedOfProjectile: 28
+  speedOfProjectile: 25
   projectileSpawnOffset: 0.5
