@@ -10,4 +10,10 @@ public class SceneLoadOnClick : MonoBehaviour
     {
         SceneLoadingManager.instance.LoadScene(sceneName);
     }
+
+    public void LoadSceneWithoutLoadScene()
+    {
+        SceneLoadingManager.instance.LoadSceneWithoutLoadScreen(sceneName);
+    }
+    
 }
