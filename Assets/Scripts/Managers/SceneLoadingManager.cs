@@ -57,6 +57,12 @@ public class SceneLoadingManager : MonoBehaviour
             loadingSlider.value = Mathf.Clamp01(operation.progress / 0.9f);
             yield return null;
         }
+
+        loadingSlider.value = 1;
+        
+        //Prevents the loading screen from flashing and out of its almost no load time
+        yield return new WaitForSeconds(.05f);
+        
         operation.allowSceneActivation = true;
         
     }
