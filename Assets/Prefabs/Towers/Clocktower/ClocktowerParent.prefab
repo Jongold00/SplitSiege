@@ -169,7 +169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6840025384220994322, guid: 13636dae4e684c0438a323fd5608eb24, type: 3}
       propertyPath: m_Name
-      value: ClocktowerLvl1
+      value: Clocktower Level 1
       objectReference: {fileID: 0}
     - target: {fileID: 6840025384220994322, guid: 13636dae4e684c0438a323fd5608eb24, type: 3}
       propertyPath: m_Layer
@@ -196,7 +196,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2636912111333785668, guid: f89666c6926821149b8e1655e0e83029, type: 3}
       propertyPath: m_Name
-      value: ClocktowerLvl2
+      value: Clocktower Level 2
       objectReference: {fileID: 0}
     - target: {fileID: 2636912111333785668, guid: f89666c6926821149b8e1655e0e83029, type: 3}
       propertyPath: m_Layer
@@ -315,7 +315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 782926517735408975, guid: 0e303859306d19148b00b980e22f03c0, type: 3}
       propertyPath: m_Name
-      value: ClocktowerLvl3
+      value: Clocktower Level 3
       objectReference: {fileID: 0}
     - target: {fileID: 782926517735408975, guid: 0e303859306d19148b00b980e22f03c0, type: 3}
       propertyPath: m_Layer
