@@ -55,6 +55,10 @@ public class InGameUIManager : MonoBehaviour
 
     float currentResource = 0;
 
+    [SerializeField]
+    TextMeshProUGUI[] waveCounter;
+
+    float currentWave = 0;
 
 
 
@@ -86,6 +90,7 @@ public class InGameUIManager : MonoBehaviour
         {
             case GameStateManager.GameState.Building:
                 ToggleTab(0);
+                WaveCounterComponent();
                 break;
             case GameStateManager.GameState.Fighting:
                 ToggleTab(1);
@@ -157,6 +162,16 @@ public class InGameUIManager : MonoBehaviour
         foreach (TextMeshProUGUI curr in resourceBar)
         {
             curr.text = currentResource.ToString();
+        }
+    }
+    
+
+    void WaveCounterComponent()
+    {
+        currentWave++;
+        foreach (TextMeshProUGUI curr in waveCounter)
+        {
+            curr.text = "Wave\n" + currentWave.ToString();
         }
     }
 }
