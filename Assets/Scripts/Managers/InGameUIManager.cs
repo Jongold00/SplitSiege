@@ -40,6 +40,9 @@ public class InGameUIManager : MonoBehaviour
     [SerializeField]
     Image[] castleHealthMeters;
 
+    [SerializeField]
+    TextMeshProUGUI[] healthBarLabels;
+
 
     [SerializeField]
     Color fullHP;
@@ -147,7 +150,12 @@ public class InGameUIManager : MonoBehaviour
         foreach (Image curr in castleHealthMeters)
         {
             curr.fillAmount = GameStateManager.instance.GetPercentCastleHealth();
-            curr.color = Color.Lerp(noHP, fullHP, GameStateManager.instance.GetPercentCastleHealth());
+            //curr.color = Color.Lerp(noHP, fullHP, GameStateManager.instance.GetPercentCastleHealth());
+        }
+
+        foreach (TextMeshProUGUI curr in healthBarLabels)
+        {
+            curr.text = ((int)GameStateManager.instance.GetPercentCastleHealth() * 100).ToString() + " / 100";
 
         }
     }
@@ -171,7 +179,7 @@ public class InGameUIManager : MonoBehaviour
         currentWave++;
         foreach (TextMeshProUGUI curr in waveCounter)
         {
-            curr.text = "Wave\n" + currentWave.ToString();
+            curr.text = "Wave " + currentWave.ToString();
         }
     }
 }
