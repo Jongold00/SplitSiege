@@ -15,12 +15,12 @@ GameObject:
   - component: {fileID: 120189944024802364}
   - component: {fileID: 1271899030231316191}
   m_Layer: 5
-  m_Name: BallistaLvl1
+  m_Name: Ballista Level 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &880781200323612750
 Transform:
   m_ObjectHideFlags: 0

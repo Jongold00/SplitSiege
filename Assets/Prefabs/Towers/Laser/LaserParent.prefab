@@ -14988,7 +14988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9220722785133406489, guid: c9008ccbb9528b947af12d2a2f0d8b41, type: 3}
       propertyPath: m_Name
-      value: LaserLvl2
+      value: Laser Level 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9008ccbb9528b947af12d2a2f0d8b41, type: 3}
@@ -15011,7 +15011,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3476124898742694567, guid: d9873ab2e9557844896c687fbceb7bb4, type: 3}
       propertyPath: m_Name
-      value: LaserLvl3
+      value: Laser Level 3
       objectReference: {fileID: 0}
     - target: {fileID: 3476124898742694567, guid: d9873ab2e9557844896c687fbceb7bb4, type: 3}
       propertyPath: m_Layer
@@ -15096,7 +15096,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3205676925185113545, guid: 5a4d70b64e1382a468b21f019834f570, type: 3}
       propertyPath: m_Name
-      value: LaserLvl1
+      value: Laser Level 1
       objectReference: {fileID: 0}
     - target: {fileID: 6604262348147770106, guid: 5a4d70b64e1382a468b21f019834f570, type: 3}
       propertyPath: m_RootOrder

@@ -59,7 +59,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5133903931125526343, guid: aeccf6323494701429e966c9034d4ba6, type: 3}
       propertyPath: m_Name
-      value: WorkshopLvl2
+      value: Workshop Level 2
       objectReference: {fileID: 0}
     - target: {fileID: 5509198394260174333, guid: aeccf6323494701429e966c9034d4ba6, type: 3}
       propertyPath: m_RootOrder
@@ -126,7 +126,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2496248895377255178, guid: f498e8482cd07a745ac16affcb3de7e5, type: 3}
       propertyPath: m_Name
-      value: WorkshopLvl3
+      value: Workshop Level 3
       objectReference: {fileID: 0}
     - target: {fileID: 2496248895377255178, guid: f498e8482cd07a745ac16affcb3de7e5, type: 3}
       propertyPath: m_IsActive
@@ -241,7 +241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5906029144854543331, guid: 612d7f112ec37e4469140dc3f2b35509, type: 3}
       propertyPath: m_Name
-      value: WorkshopLvl1
+      value: Workshop Level 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 612d7f112ec37e4469140dc3f2b35509, type: 3}

@@ -457,7 +457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8885397155324237078, guid: 804a2e3487658c449af201764e2f047b, type: 3}
       propertyPath: m_Name
-      value: PlasmaLvl1
+      value: Plasma Level 1
       objectReference: {fileID: 0}
     - target: {fileID: 8885397155324237078, guid: 804a2e3487658c449af201764e2f047b, type: 3}
       propertyPath: m_Layer
@@ -542,7 +542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3090815052478285923, guid: 705953ec6e6db7247a990a8acd25a5d5, type: 3}
       propertyPath: m_Name
-      value: PlasmaLvl3
+      value: Plasma Level 3
       objectReference: {fileID: 0}
     - target: {fileID: 3090815052478285923, guid: 705953ec6e6db7247a990a8acd25a5d5, type: 3}
       propertyPath: m_Layer
@@ -583,7 +583,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1356419707034733377, guid: c03a6a3e0a8728c4e81cbcb5f7ad7b54, type: 3}
       propertyPath: m_Name
-      value: PlasmaLvl2
+      value: Plasma Level 2
       objectReference: {fileID: 0}
     - target: {fileID: 1356419707034733377, guid: c03a6a3e0a8728c4e81cbcb5f7ad7b54, type: 3}
       propertyPath: m_Layer
