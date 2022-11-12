@@ -18,7 +18,7 @@ public class BuildTowerPopupMenu : PopupUI
     TowerDataSO towerToBuild;
     [SerializeField] HoverDetector hoverDetector;
     public bool isMouseOverMenu { get => hoverDetector.IsHovering; }
-    [SerializeField] private GameObject buildMenuContainer;
+    private GameObject buildMenuContainer;
     private Vector3 startingLocalScale;
     private RectTransform rectTransform;
 
@@ -45,7 +45,7 @@ public class BuildTowerPopupMenu : PopupUI
     {
         rectTransform = GetComponent<RectTransform>();
         startingLocalScale = rectTransform.localScale;
-        Debug.Log(startingLocalScale);
+        buildMenuContainer = GetComponentInParent<Transform>().gameObject;
     }
 
     public void EnableAllButtons()
@@ -106,7 +106,6 @@ public class BuildTowerPopupMenu : PopupUI
 
     public void DisplayPopupMenuAtViewportOfObj(GameObject obj)
     {
-        OnPopupDisplayed?.Invoke();
         PopupMenuObj.SetActive(true);
         ResetPopupMenuToStartingLayout();
         buildMenuContainer.transform.position = obj.transform.position;
@@ -115,7 +114,9 @@ public class BuildTowerPopupMenu : PopupUI
         // Ensures size of canvas is scaled based on distance from camera so it always appears to be same size to the user
         Canvas canvas = GetComponent<Canvas>();
         float dist = Vector3.Distance(canvas.transform.position, Camera.main.transform.position);
-        canvas.transform.localScale = startingLocalScale * dist / (rectTransform.sizeDelta.x / 2);
+        canvas.transform.localScale = startingLocalScale * dist / (rectTransform.rect.height / 20);
+
+        OnPopupDisplayed?.Invoke(popupMenuObj);
     }
 
     public void HidePopupMenu()

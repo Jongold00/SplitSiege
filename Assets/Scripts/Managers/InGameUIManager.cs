@@ -79,6 +79,16 @@ public class InGameUIManager : MonoBehaviour
 
     }
 
+    private void OnEnable()
+    {
+        PopupUI.OnPopupDisplayed += MoveRectTransInsideScreenBounds;
+    }
+
+    private void OnDisable()
+    {
+        PopupUI.OnPopupDisplayed -= MoveRectTransInsideScreenBounds;        
+    }
+
     private void OnDestroy()
     {
         EventsManager.instance.UnSubscribeGameStateChange(onGameStateChange);
@@ -181,5 +191,16 @@ public class InGameUIManager : MonoBehaviour
         {
             curr.text = "Wave " + currentWave.ToString();
         }
+    }
+
+    void MoveRectTransInsideScreenBounds(GameObject obj)
+    {
+        RectTransform rectTransform = obj.GetComponent<RectTransform>();
+
+        bool topVisible = RendererExtensions.IsTopFullyVisible(rectTransform, Camera.main);
+        bool bottomVisible = RendererExtensions.IsBottomFullyVisible(rectTransform, Camera.main);
+
+        Debug.Log("Top visible = " + topVisible);
+        Debug.Log("Bottom visible = " + bottomVisible);
     }
 }

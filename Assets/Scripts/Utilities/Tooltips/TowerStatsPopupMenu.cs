@@ -120,7 +120,7 @@ public class TowerStatsPopupMenu : PopupUI
     private void ShowRangeIndicator(GameObject obj)
     {
         BuildTowerPopupMenu.instance.HidePopupMenu();
-        OnPopupDisplayed?.Invoke();
+        OnPopupDisplayed?.Invoke(null);
         Vector3 indicatorPos = new Vector3(0, 0.1f, 0);
         TowerDataSO data = obj.GetComponent<TowerBehavior>().GetTowerData();            
 

@@ -52,4 +52,70 @@ public static class RendererExtensions
     {
         return CountCornersVisibleFrom(rectTransform, camera) > 0; // True if any corners are visible
     }
+
+    public static bool IsTopFullyVisible(this RectTransform rectTransform, Camera camera)
+    {
+        Rect screenBounds = new Rect(0f, 0f, Screen.width, Screen.height); // Screen space bounds (assumes camera renders across the entire screen)
+        Vector3[] objectCorners = new Vector3[4];
+        rectTransform.GetWorldCorners(objectCorners);
+
+        int visibleUpperHalfCorners = 0;
+
+        Vector3 tempScreenSpaceCorner; // Cached
+        for (var i = 0; i < objectCorners.Length; i++) // For each corner in rectTransform
+        {
+            tempScreenSpaceCorner = camera.WorldToScreenPoint(objectCorners[i]); // Transform world space position of corner to screen space
+            if (tempScreenSpaceCorner.y > (Screen.height / 2) && screenBounds.Contains(tempScreenSpaceCorner))
+            {
+                // Corner is in upper half of screen and is visible
+                visibleUpperHalfCorners++;
+            }
+        }
+
+        Debug.Log("Upper half corners " + visibleUpperHalfCorners);
+
+        if (visibleUpperHalfCorners >= 2)
+        {
+            return true;
+        }
+
+        else
+        {
+            return false;
+        }
+
+    }
+
+    public static bool IsBottomFullyVisible(this RectTransform rectTransform, Camera camera)
+    {
+        Rect screenBounds = new Rect(0f, 0f, Screen.width, Screen.height); // Screen space bounds (assumes camera renders across the entire screen)
+        Vector3[] objectCorners = new Vector3[4];
+        rectTransform.GetWorldCorners(objectCorners);
+
+        int visibleLowerHalfCorners = 0;
+
+        Vector3 tempScreenSpaceCorner; // Cached
+        for (var i = 0; i < objectCorners.Length; i++) // For each corner in rectTransform
+        {
+            tempScreenSpaceCorner = camera.WorldToScreenPoint(objectCorners[i]); // Transform world space position of corner to screen space
+            if (tempScreenSpaceCorner.y < (Screen.height / 2) && screenBounds.Contains(tempScreenSpaceCorner))
+            {
+                // Corner is in upper half of screen and is visible
+                visibleLowerHalfCorners++;
+            }
+        }
+
+        Debug.Log("Lower half corners " + visibleLowerHalfCorners);
+
+
+        if (visibleLowerHalfCorners >= 2)
+        {
+            return true;
+        }
+
+        else
+        {
+            return false;
+        }
+    }
 }
