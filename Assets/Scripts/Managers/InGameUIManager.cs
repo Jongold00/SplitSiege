@@ -68,6 +68,12 @@ public class InGameUIManager : MonoBehaviour
     Action<GameStateManager.GameState> onGameStateChange;
     Action<float> onResourcesUpdated;
 
+    [Range(0, 5)]
+    [SerializeField] float buildMenuBottomOfScreenOutOfBoundsCorrection;
+    
+    [Range(0, 5)]
+    [SerializeField] float buildMenuTopOfScreenOutOfBoundsCorrection; 
+
 
     private void Start()
     {
@@ -118,8 +124,6 @@ public class InGameUIManager : MonoBehaviour
             case GameStateManager.GameState.Story:
                 ToggleTab(4);
                 break;
-
-
         }
 
     }
@@ -196,11 +200,23 @@ public class InGameUIManager : MonoBehaviour
     void MoveRectTransInsideScreenBounds(GameObject obj)
     {
         RectTransform rectTransform = obj.GetComponent<RectTransform>();
+        rectTransform.anchoredPosition = new Vector2(0, 0);
 
-        bool topVisible = RendererExtensions.IsTopFullyVisible(rectTransform, Camera.main);
-        bool bottomVisible = RendererExtensions.IsBottomFullyVisible(rectTransform, Camera.main);
+        bool bottomVisible = RendererExtensions.IsHalfFullyVisible(rectTransform, Camera.main, RectTransHalf.Bottom, out float distToMove);
 
-        Debug.Log("Top visible = " + topVisible);
-        Debug.Log("Bottom visible = " + bottomVisible);
+        if (!bottomVisible)
+        {
+            Vector2 newPos = new Vector2(rectTransform.anchoredPosition.x, (rectTransform.anchoredPosition.y + distToMove) * buildMenuBottomOfScreenOutOfBoundsCorrection);
+            rectTransform.anchoredPosition = newPos;
+            return;
+        }
+        
+        bool topVisible = RendererExtensions.IsHalfFullyVisible(rectTransform, Camera.main, RectTransHalf.Top, out distToMove);
+        if (!topVisible)
+        {
+            Vector2 newPos = new Vector2(rectTransform.anchoredPosition.x, (rectTransform.anchoredPosition.y - distToMove) * buildMenuTopOfScreenOutOfBoundsCorrection);
+            rectTransform.anchoredPosition = newPos;
+            return;
+        }
     }
 }
