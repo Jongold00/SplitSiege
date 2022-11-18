@@ -13,10 +13,14 @@ public class BuildParticle : BuildParticleController
         base.Start();
         Builder.OnBuildComplete += StopAllParticles;
     }
-    private void OnDestroy()
-    {
-        Builder.OnBuildComplete -= StopAllParticles;
 
+    private void OnEnable()
+    {
+    }
+
+    private void OnDisable()
+    {
+        Builder.OnBuildComplete -= StopAllParticles;        
     }
 
     // Update is called once per frame
@@ -30,6 +34,7 @@ public class BuildParticle : BuildParticleController
     public override void StopAllParticles()
     {
         splash.Play();
+        splashTriggered = true;
         foreach (ParticleSystem item in allParticles)
         {
             if (item != splash)

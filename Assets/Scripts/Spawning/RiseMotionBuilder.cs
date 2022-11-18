@@ -35,6 +35,7 @@ public class RiseMotionBuilder : MonoBehaviour, ITowerBuilder
         if (Vector3.Distance(transform.position, targetPos) < 0.001f)
         {
             BuildingComplete = true;
+            Delegate[] invList = OnBuildComplete.GetInvocationList();
             OnBuildComplete?.Invoke();
         }
     }
