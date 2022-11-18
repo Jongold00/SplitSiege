@@ -29,6 +29,10 @@ public class TowerStatsPopupMenu : PopupUI
 
     [SerializeField] private ButtonAvailability upgradeButtonAvailability;
 
+    private Vector3 startingPopupMenuObjLocalScale;
+    RectTransform rectTransform;
+    [SerializeField] private float offsetYPosition;
+
     #region Singleton
 
     public static TowerStatsPopupMenu instance;
@@ -54,6 +58,8 @@ public class TowerStatsPopupMenu : PopupUI
         rectTransformOfPopupMenu = PopupMenuObj.GetComponent<RectTransform>();
         goodRangeIndicatorOriginalParent = goodRangeIndicator.transform.parent;
         evilRangeIndicatorOriginalParent = evilRangeIndicator.transform.parent;
+        rectTransform =  GetComponent<RectTransform>();
+        startingPopupMenuObjLocalScale = rectTransformOfPopupMenu.localScale;
     }
 
     private void OnEnable()
@@ -73,13 +79,17 @@ public class TowerStatsPopupMenu : PopupUI
 
     public void DisplayPopupMenuAtViewportOfObj(GameObject obj)
     {
-        TowerStatsPopupMenu.instance.HidePopupMenu();
+        HidePopupMenu();
 
-        Vector2 offset = new Vector2(0, 80f);
         PopupMenuObj.SetActive(true);
 
-        Vector2 viewportPoint = Camera.main.WorldToScreenPoint(obj.transform.position);
-        rectTransformOfPopupMenu.anchoredPosition = viewportPoint + offset;
+        Vector3 currentPos = obj.transform.position;
+        Vector3 newPos = new Vector3(currentPos.x, currentPos.y + offsetYPosition, currentPos.z);
+        rectTransform.position = newPos;
+
+        Canvas canvas = GetComponent<Canvas>();
+        float dist = Vector3.Distance(canvas.transform.position, Camera.main.transform.position);
+        canvas.transform.localScale = startingPopupMenuObjLocalScale * dist;
 
         SelectedTower = obj.GetComponent<TowerBehavior>();
         TowerDataSO towerDataSO = selectedTower.GetTowerData();
@@ -120,7 +130,7 @@ public class TowerStatsPopupMenu : PopupUI
     private void ShowRangeIndicator(GameObject obj)
     {
         BuildTowerPopupMenu.instance.HidePopupMenu();
-        OnPopupDisplayed?.Invoke();
+        OnPopupDisplayed?.Invoke(popupMenuObj);
         Vector3 indicatorPos = new Vector3(0, 0.1f, 0);
         TowerDataSO data = obj.GetComponent<TowerBehavior>().GetTowerData();            
 

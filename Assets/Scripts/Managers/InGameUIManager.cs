@@ -63,10 +63,14 @@ public class InGameUIManager : MonoBehaviour
 
     float currentWave = 0;
 
-
-
     Action<GameStateManager.GameState> onGameStateChange;
     Action<float> onResourcesUpdated;
+
+    [Range(0, 5)]
+    [SerializeField] float buildMenuBottomOfScreenOutOfBoundsCorrection;
+    
+    [Range(0, 5)]
+    [SerializeField] float buildMenuTopOfScreenOutOfBoundsCorrection; 
 
 
     private void Start()
@@ -79,12 +83,20 @@ public class InGameUIManager : MonoBehaviour
 
     }
 
+    private void OnEnable()
+    {
+        PopupUI.OnPopupDisplayed += MoveRectTransInsideScreenBounds;
+    }
+
+    private void OnDisable()
+    {
+        PopupUI.OnPopupDisplayed -= MoveRectTransInsideScreenBounds;        
+    }
+
     private void OnDestroy()
     {
         EventsManager.instance.UnSubscribeGameStateChange(onGameStateChange);
         EventsManager.instance.UnsubscribeResourceUpdate(onResourcesUpdated);
-
-
     }
     void ActivateUI(GameStateManager.GameState state)
     {
@@ -108,10 +120,7 @@ public class InGameUIManager : MonoBehaviour
             case GameStateManager.GameState.Story:
                 ToggleTab(4);
                 break;
-
-
         }
-
     }
 
     public void Update()
@@ -180,6 +189,33 @@ public class InGameUIManager : MonoBehaviour
         foreach (TextMeshProUGUI curr in waveCounter)
         {
             curr.text = "Wave " + currentWave.ToString();
+        }
+    }
+
+    void MoveRectTransInsideScreenBounds(GameObject obj)
+    {
+        RectTransform rectTransform = obj.GetComponent<RectTransform>();
+        rectTransform.anchoredPosition = new Vector2(0, 0);
+
+        bool bottomVisible = RendererExtensions.IsHalfFullyVisible(rectTransform, Camera.main, RectTransHalf.Bottom, out float distToMove);
+
+        if (!bottomVisible)
+        {
+            Debug.Log("bottom not visible");
+            Debug.Log(distToMove);
+            Vector2 newPos = new Vector2(rectTransform.anchoredPosition.x, (rectTransform.anchoredPosition.y + distToMove) * buildMenuBottomOfScreenOutOfBoundsCorrection);
+            rectTransform.anchoredPosition = newPos;
+            return;
+        }
+        
+        bool topVisible = RendererExtensions.IsHalfFullyVisible(rectTransform, Camera.main, RectTransHalf.Top, out distToMove);
+        Debug.Log("dist to move" + distToMove);
+        if (!topVisible)
+        {
+            Debug.Log("top not visible");
+            Vector2 newPos = new Vector2(rectTransform.anchoredPosition.x, (rectTransform.anchoredPosition.y - distToMove) * buildMenuTopOfScreenOutOfBoundsCorrection);
+            rectTransform.anchoredPosition = newPos;
+            return;
         }
     }
 }

@@ -5,7 +5,7 @@ using System;
 
 public class PopupUI : MonoBehaviour
 {
-    public static Action OnPopupDisplayed;
+    public static Action<GameObject> OnPopupDisplayed;
 
     protected RectTransform CalculateRectTransToFitScreen(RectTransform rectTransform)
     {

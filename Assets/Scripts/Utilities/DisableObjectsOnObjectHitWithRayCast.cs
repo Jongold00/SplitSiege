@@ -62,7 +62,7 @@ public class DisableObjectsOnObjectHitWithRayCast : MonoBehaviour
         }
     }
 
-    public void EnableAutoHide()
+    public void EnableAutoHide(GameObject obj)
     {
         meshCollider.enabled = false;
         Invoke("ActivateObject", 0.1f);
