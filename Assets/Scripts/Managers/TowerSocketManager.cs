@@ -89,6 +89,5 @@ public class TowerSocketManager : MonoBehaviour
     private void SpawnSellParticlesOnObj(GameObject obj)
     {
         Instantiate(goldSplashParticlePrefab, obj.transform.position, goldSplashParticlePrefab.transform.rotation);
-        Instantiate(smokeSplashParticlePrefab, obj.transform.position, smokeSplashParticlePrefab.transform.rotation);
     }
 }
