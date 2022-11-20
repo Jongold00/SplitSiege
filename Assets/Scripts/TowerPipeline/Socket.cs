@@ -14,6 +14,12 @@ public class Socket : MonoBehaviour
 
     public static event Action<GameObject> OnSocketSelected;
     public static Socket SocketSelected;
+    private BoxCollider boxCollider;
+
+    private void Start()
+    {
+        boxCollider = GetComponent<BoxCollider>();
+    }
 
     public void OnMouseDown()
     {
@@ -24,7 +30,9 @@ public class Socket : MonoBehaviour
 
         if (SocketSelected != this || !BuildTowerPopupMenu.instance.PopupMenuObj.activeInHierarchy)
         {
+            SocketSelected?.EnableBoxCollider();
             SocketSelected = this;
+            DisableBoxCollider();
             OnSocketSelected?.Invoke(gameObject);
         }
     }
@@ -53,5 +61,15 @@ public class Socket : MonoBehaviour
         CurrentlyPlacedTowerObj = null;
         CurrentlyPlacedTower = null;
         gameObject.SetActive(true);
+    }
+
+    public void DisableBoxCollider()
+    {
+        boxCollider.enabled = false;
+    }
+
+    public void EnableBoxCollider()
+    {
+        boxCollider.enabled = true;
     }
 }

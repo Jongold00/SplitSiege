@@ -67,7 +67,6 @@ public static class RendererExtensions
         {
             if ((i == 1 || i == 2) && rectTransHalf == RectTransHalf.Bottom)
             {
-                Debug.Log("ignoring corner " + i.ToString());
                 //ignore bottom corners
                 continue;
             }
@@ -75,12 +74,10 @@ public static class RendererExtensions
             if ((i == 0 || i == 3) && rectTransHalf == RectTransHalf.Top)
             {
                 //ignore top corners
-                Debug.Log("ignoring corner " + i.ToString());
                 continue;
             }
 
             tempScreenSpaceCorner = camera.WorldToScreenPoint(objectCorners[i]); // Transform world space position of corner to screen space
-            Debug.Log(tempScreenSpaceCorner.y);
 
             if (screenBounds.Contains(tempScreenSpaceCorner))
             {

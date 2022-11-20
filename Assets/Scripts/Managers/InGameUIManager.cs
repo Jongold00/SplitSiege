@@ -209,7 +209,6 @@ public class InGameUIManager : MonoBehaviour
         }
         
         bool topVisible = RendererExtensions.IsHalfFullyVisible(rectTransform, Camera.main, RectTransHalf.Top, out distToMove);
-        Debug.Log("dist to move" + distToMove);
         if (!topVisible)
         {
             Debug.Log("top not visible");

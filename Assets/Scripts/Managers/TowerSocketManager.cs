@@ -32,11 +32,13 @@ public class TowerSocketManager : MonoBehaviour
     private void OnEnable()
     {
         Socket.OnSocketSelected += HandleSocketSelected;
+        DisableObjectsOnObjectHitWithRayCast.OnObjectClicked += HandleBackgrounPlaneClicked;
     }
 
     private void OnDisable()
     {
         Socket.OnSocketSelected -= HandleSocketSelected;
+        DisableObjectsOnObjectHitWithRayCast.OnObjectClicked -= HandleBackgrounPlaneClicked;
     }
 
     public void BuildTower(TowerDataSO towerToBuild)
@@ -67,6 +69,7 @@ public class TowerSocketManager : MonoBehaviour
         GameObject selectedTowerObj = TowerBehavior.CurrentlySelectedTower;
         TowerUpgrader towerUpgrader = selectedTowerObj.GetComponentInParent<TowerUpgrader>();
         GameObject upgradedTowerObj = towerUpgrader.SwitchCurrentTowerWithNextLevelTower();
+        TowerBehavior.CurrentlySelectedTower = upgradedTowerObj;
         SpawnBuildParticlesOnObj(upgradedTowerObj);
 
 
@@ -89,5 +92,10 @@ public class TowerSocketManager : MonoBehaviour
     private void SpawnSellParticlesOnObj(GameObject obj)
     {
         Instantiate(goldSplashParticlePrefab, obj.transform.position, goldSplashParticlePrefab.transform.rotation);
+    }
+
+    private void HandleBackgrounPlaneClicked()
+    {
+        Socket.SocketSelected.EnableBoxCollider();
     }
 }
