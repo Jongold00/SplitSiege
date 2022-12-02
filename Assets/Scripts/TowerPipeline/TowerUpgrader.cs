@@ -7,22 +7,23 @@ public class TowerUpgrader : MonoBehaviour
 {
     // Array of each tower prefab. Element 0 should be the lowest level tower and will be the first to be active.
     [SerializeField] private GameObject[] objects;
+    public GameObject[] Objects { get => objects; set => objects = value; }
     private GameObject currentlyActive;
     public int NumberOfTowerLevelsAvailable { get; private set; }
 
     // Start is called before the first frame update
     void Start()
     {
-        NumberOfTowerLevelsAvailable = objects.Length;
+        NumberOfTowerLevelsAvailable = Objects.Length;
 
-        if (objects.Length < 1)
+        if (Objects.Length < 1)
         {
             Debug.LogError("No tower object references set on tower upgrader script");
             return;
         }
 
         int index = 0;
-        foreach (var item in objects)
+        foreach (var item in Objects)
         {
             if (index == 0)
             {
@@ -40,17 +41,19 @@ public class TowerUpgrader : MonoBehaviour
 
     public bool IsUpgradePossible()
     {
-        return (Array.IndexOf(objects, currentlyActive) + 1 >= objects.Length) ? false : true;
+        return (Array.IndexOf(Objects, currentlyActive) + 1 >= Objects.Length) ? false : true;
     }
 
     public GameObject SwitchCurrentTowerWithNextLevelTower()
     {
         if (IsUpgradePossible())
         {
-            int currentlyActiveIndex = Array.IndexOf(objects, currentlyActive);
+            int currentlyActiveIndex = Array.IndexOf(Objects, currentlyActive);
+            Socket socketTowerIsPlacedOn = currentlyActive.GetComponent<TowerBehavior>().SocketTowerIsPlacedOn;
             currentlyActive.SetActive(false);
-            currentlyActive = objects[currentlyActiveIndex + 1];
+            currentlyActive = Objects[currentlyActiveIndex + 1];
             currentlyActive.SetActive(true);
+            currentlyActive.GetComponent<TowerBehavior>().SocketTowerIsPlacedOn = socketTowerIsPlacedOn;
         }
 
         return currentlyActive;

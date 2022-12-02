@@ -61,6 +61,7 @@ public class Socket : MonoBehaviour
         CurrentlyPlacedTowerObj = null;
         CurrentlyPlacedTower = null;
         gameObject.SetActive(true);
+        EnableBoxCollider();
     }
 
     public void DisableBoxCollider()

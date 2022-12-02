@@ -96,6 +96,6 @@ public class TowerSocketManager : MonoBehaviour
 
     private void HandleBackgrounPlaneClicked()
     {
-        Socket.SocketSelected.EnableBoxCollider();
+        Socket.SocketSelected?.EnableBoxCollider();
     }
 }
