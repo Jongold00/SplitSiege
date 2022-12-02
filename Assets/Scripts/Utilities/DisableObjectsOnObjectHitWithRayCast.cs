@@ -4,12 +4,14 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System.Linq;
+using System;
 
 public class DisableObjectsOnObjectHitWithRayCast : MonoBehaviour
 {
     [SerializeField] GameObject[] objsToDisable;
     [SerializeField] int[] layerIndexOfLayersToIgnore;
     [SerializeField] string nameOfTagOnClickObject;
+    public static event Action OnObjectClicked;
 
     RaycastHit[] hits = null;
     private MeshCollider meshCollider;
@@ -46,15 +48,15 @@ public class DisableObjectsOnObjectHitWithRayCast : MonoBehaviour
 
             if (shouldReturn)
             {
-                Debug.Log("return!");
                 return;
             }
-            
-            SetAllObjsAndThisToInactive();
+
+            OnObjectClicked?.Invoke();
+            SetAllObjsToInactive();
 
         }
     }
-    public void SetAllObjsAndThisToInactive()
+    public void SetAllObjsToInactive()
     {
         foreach (GameObject item in objsToDisable)
         {
@@ -62,7 +64,7 @@ public class DisableObjectsOnObjectHitWithRayCast : MonoBehaviour
         }
     }
 
-    public void EnableAutoHide()
+    public void EnableAutoHide(GameObject obj)
     {
         meshCollider.enabled = false;
         Invoke("ActivateObject", 0.1f);

@@ -9,7 +9,8 @@ public class TowerSocketManager : MonoBehaviour
     private Socket selectedSocket;
     public Socket SelectedSocket { get => selectedSocket; set => selectedSocket = value; }
     [SerializeField] GameObject buildParticlePrefab;
-    [SerializeField] TowerDataSO testingLevel2Ballista;
+    [SerializeField] GameObject goldSplashParticlePrefab;
+    [SerializeField] GameObject smokeSplashParticlePrefab;
 
     #region Singleton
 
@@ -31,11 +32,13 @@ public class TowerSocketManager : MonoBehaviour
     private void OnEnable()
     {
         Socket.OnSocketSelected += HandleSocketSelected;
+        DisableObjectsOnObjectHitWithRayCast.OnObjectClicked += HandleBackgrounPlaneClicked;
     }
 
     private void OnDisable()
     {
         Socket.OnSocketSelected -= HandleSocketSelected;
+        DisableObjectsOnObjectHitWithRayCast.OnObjectClicked -= HandleBackgrounPlaneClicked;
     }
 
     public void BuildTower(TowerDataSO towerToBuild)
@@ -44,14 +47,8 @@ public class TowerSocketManager : MonoBehaviour
         {
             ResourceManager.instance.UpdateResources(towerToBuild.cost * -1);
 
-
             GameObject placedTowerObj = SelectedSocket.AddTowerToSocket(towerToBuild);
-            ITowerBuilder build = placedTowerObj.GetComponentInChildren<ITowerBuilder>();
-
-            GameObject particleObj = Instantiate(buildParticlePrefab, placedTowerObj.transform.position, buildParticlePrefab.transform.rotation);
-            BuildParticleController buildParticle = particleObj.GetComponent<BuildParticleController>();
-
-            buildParticle.Builder = build;
+            SpawnBuildParticlesOnObj(placedTowerObj);
 
             BuildTowerPopupMenu.instance.HidePopupMenu();
         }
@@ -60,19 +57,20 @@ public class TowerSocketManager : MonoBehaviour
 
     public void SellTower()
     {
-        Debug.Log("sell tower");
         ResourceManager.instance.UpdateResources(TowerBehavior.CurrentlySelectedTower.GetComponent<TowerBehavior>().GetTowerData().cost / 2);
         TowerStatsPopupMenu.instance.HidePopupMenu();
         TowerBehavior.CurrentlySelectedTower.GetComponent<TowerBehavior>().SocketTowerIsPlacedOn.RemoveTowerFromSocket();
+        SpawnSellParticlesOnObj(TowerBehavior.CurrentlySelectedTower);
     }
 
     public void UpgradeTower()
     {
-        Debug.Log("Upgrade tower!");
         TowerStatsPopupMenu.instance.HidePopupMenu();
-        TowerUpgrader towerUpgrader = TowerBehavior.CurrentlySelectedTower.GetComponentInParent<TowerUpgrader>();
-        Debug.Log(towerUpgrader);
-        towerUpgrader.SwitchCurrentTowerWithNextLevelTower();
+        GameObject selectedTowerObj = TowerBehavior.CurrentlySelectedTower;
+        TowerUpgrader towerUpgrader = selectedTowerObj.GetComponentInParent<TowerUpgrader>();
+        GameObject upgradedTowerObj = towerUpgrader.SwitchCurrentTowerWithNextLevelTower();
+        TowerBehavior.CurrentlySelectedTower = upgradedTowerObj;
+        SpawnBuildParticlesOnObj(upgradedTowerObj);
 
 
     }
@@ -81,5 +79,23 @@ public class TowerSocketManager : MonoBehaviour
         SelectedSocket = obj.GetComponent<Socket>();
         BuildTowerPopupMenu.instance.HidePopupMenu();
         BuildTowerPopupMenu.instance.DisplayPopupMenuAtViewportOfObj(obj);
+    }
+
+    private void SpawnBuildParticlesOnObj(GameObject obj)
+    {
+        ITowerBuilder build = obj.GetComponentInChildren<ITowerBuilder>();
+        GameObject particleObj = Instantiate(buildParticlePrefab, obj.transform.position, buildParticlePrefab.transform.rotation);
+        BuildParticleController buildParticle = particleObj.GetComponent<BuildParticleController>();
+        buildParticle.Builder = build;
+    }
+
+    private void SpawnSellParticlesOnObj(GameObject obj)
+    {
+        Instantiate(goldSplashParticlePrefab, obj.transform.position, goldSplashParticlePrefab.transform.rotation);
+    }
+
+    private void HandleBackgrounPlaneClicked()
+    {
+        Socket.SocketSelected?.EnableBoxCollider();
     }
 }

@@ -103,7 +103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6517268842972372269, guid: ec50b4d736a08d449b113dc366378817, type: 3}
       propertyPath: m_Name
-      value: Ballista lvl 3
+      value: Ballista Level 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec50b4d736a08d449b113dc366378817, type: 3}
@@ -170,7 +170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3052154169125582847, guid: 39537dea8bbd3d54db0a357c2bde8d56, type: 3}
       propertyPath: m_Name
-      value: Ballista lvl 2
+      value: Ballista Level 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39537dea8bbd3d54db0a357c2bde8d56, type: 3}
@@ -193,11 +193,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 536765605048601332, guid: 27f2b9d70a6e900409542d5f2dac6bd6, type: 3}
       propertyPath: m_Name
-      value: BallistaLvl1
-      objectReference: {fileID: 0}
-    - target: {fileID: 536765605048601332, guid: 27f2b9d70a6e900409542d5f2dac6bd6, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      value: Ballista Level 1
       objectReference: {fileID: 0}
     - target: {fileID: 880781200323612750, guid: 27f2b9d70a6e900409542d5f2dac6bd6, type: 3}
       propertyPath: m_RootOrder

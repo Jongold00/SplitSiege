@@ -59,7 +59,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8643440229172935824, guid: f6c7cd8f22981fc4c87476dae88e4b78, type: 3}
       propertyPath: m_Name
-      value: TrebuchetLvl2
+      value: Trebuchet Level 2
       objectReference: {fileID: 0}
     - target: {fileID: 8643440229172935824, guid: f6c7cd8f22981fc4c87476dae88e4b78, type: 3}
       propertyPath: m_Layer
@@ -134,7 +134,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3707064743250875415, guid: c529228097da98c4eaefa723dcaf6685, type: 3}
       propertyPath: m_Name
-      value: TrebuchetLvl3
+      value: Trebuchet Level 3
       objectReference: {fileID: 0}
     - target: {fileID: 3707064743250875415, guid: c529228097da98c4eaefa723dcaf6685, type: 3}
       propertyPath: m_Layer
@@ -253,7 +253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6516760186577287183, guid: 26816eb8b6f88fb4d84f9b803223028d, type: 3}
       propertyPath: m_Name
-      value: TrebuchetLvl1
+      value: Trebuchet Level 1
       objectReference: {fileID: 0}
     - target: {fileID: 6516760186577287183, guid: 26816eb8b6f88fb4d84f9b803223028d, type: 3}
       propertyPath: m_Layer

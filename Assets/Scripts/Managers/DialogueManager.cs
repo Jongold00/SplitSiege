@@ -28,6 +28,7 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueVertexAnimator = new DialogueVertexAnimator(textBox);
         textBox.font = fontToUse;
+        PlayNextDialogue();
     }
     public void PlayNextDialogue()
     {
