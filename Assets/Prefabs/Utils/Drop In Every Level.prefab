@@ -6432,7 +6432,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildParticlePrefab: {fileID: 3395844601489511439, guid: 1ecd1ea83e8c2e545823d8000052f796, type: 3}
-  testingLevel2Ballista: {fileID: 11400000, guid: b554d5d80cde5274bada51fa9b3e537a, type: 2}
+  goldSplashParticlePrefab: {fileID: 0}
+  smokeSplashParticlePrefab: {fileID: 0}
 --- !u!1 &8629945196339407878
 GameObject:
   m_ObjectHideFlags: 0
