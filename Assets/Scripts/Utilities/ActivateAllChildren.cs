@@ -2,21 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActivateAllChildren : MonoBehaviour
+public class ActivateAllChildren 
 {
-    public void Activate()
+    
+    public static void ChangeStateOfChildren(GameObject parent, bool state)
     {
-        for (int i = 0; i < transform.childCount; i++)
+        if(parent == null) return;
+        
+        for (int i = 0; i < parent.transform.childCount; i++)
         {
-            transform.GetChild(i).gameObject.SetActive(true);
-        }
-    }
-
-    public void DeActivate()
-    {
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            transform.GetChild(i).gameObject.SetActive(false);
+            parent.transform.GetChild(i).gameObject.SetActive(state);
         }
     }
 }
