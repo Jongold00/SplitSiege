@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7388456199426423129}
   - component: {fileID: 378609683077605671}
   m_Layer: 5
-  m_Name: WorkshopLvl1 1
+  m_Name: WorkshopLvl1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,6 +51,7 @@ MonoBehaviour:
   rotatableTransform: {fileID: 0}
   zOffsetForRotatableTransform: 0
   projectileInstantiatePoint: {fileID: 0}
+  spikeTrap: {fileID: 2203783419663660650, guid: 370ed05819826074e8313e0981eae231, type: 3}
 --- !u!114 &6973077046950863245
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -105,6 +105,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9116804449235524589, guid: aeccf6323494701429e966c9034d4ba6, type: 3}
+      propertyPath: spikeTrap
+      value: 
+      objectReference: {fileID: 7412981755709863261, guid: 8f8f1fec3118fc748b6a163593038721, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aeccf6323494701429e966c9034d4ba6, type: 3}
 --- !u!1 &6250060255668507476 stripped
@@ -127,10 +131,6 @@ PrefabInstance:
     - target: {fileID: 2496248895377255178, guid: f498e8482cd07a745ac16affcb3de7e5, type: 3}
       propertyPath: m_Name
       value: Workshop Level 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2496248895377255178, guid: f498e8482cd07a745ac16affcb3de7e5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3021815885458076080, guid: f498e8482cd07a745ac16affcb3de7e5, type: 3}
       propertyPath: m_RootOrder
@@ -176,6 +176,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4620992433531150248, guid: f498e8482cd07a745ac16affcb3de7e5, type: 3}
+      propertyPath: spikeTrap
+      value: 
+      objectReference: {fileID: 7412981755709863261, guid: 8f8f1fec3118fc748b6a163593038721, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f498e8482cd07a745ac16affcb3de7e5, type: 3}
 --- !u!1 &551122606820376453 stripped
@@ -195,6 +199,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6171423583688560037}
     m_Modifications:
+    - target: {fileID: 639584712995248204, guid: 612d7f112ec37e4469140dc3f2b35509, type: 3}
+      propertyPath: spikeTrap
+      value: 
+      objectReference: {fileID: 7412981755709863261, guid: 8f8f1fec3118fc748b6a163593038721, type: 3}
     - target: {fileID: 5418450481191818051, guid: 612d7f112ec37e4469140dc3f2b35509, type: 3}
       propertyPath: m_RootOrder
       value: 0
