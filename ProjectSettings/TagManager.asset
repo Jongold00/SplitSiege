@@ -7,6 +7,7 @@ TagManager:
   - PopupMenu
   - loading
   - Background
+  - Enemy
   layers:
   - Default
   - TransparentFX

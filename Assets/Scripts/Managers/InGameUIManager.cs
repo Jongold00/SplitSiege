@@ -201,8 +201,6 @@ public class InGameUIManager : MonoBehaviour
 
         if (!bottomVisible)
         {
-            Debug.Log("bottom not visible");
-            Debug.Log(distToMove);
             Vector2 newPos = new Vector2(rectTransform.anchoredPosition.x, (rectTransform.anchoredPosition.y + distToMove) * buildMenuBottomOfScreenOutOfBoundsCorrection);
             rectTransform.anchoredPosition = newPos;
             return;
@@ -211,7 +209,6 @@ public class InGameUIManager : MonoBehaviour
         bool topVisible = RendererExtensions.IsHalfFullyVisible(rectTransform, Camera.main, RectTransHalf.Top, out distToMove);
         if (!topVisible)
         {
-            Debug.Log("top not visible");
             Vector2 newPos = new Vector2(rectTransform.anchoredPosition.x, (rectTransform.anchoredPosition.y - distToMove) * buildMenuTopOfScreenOutOfBoundsCorrection);
             rectTransform.anchoredPosition = newPos;
             return;
