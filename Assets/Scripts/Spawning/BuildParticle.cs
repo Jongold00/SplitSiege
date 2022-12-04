@@ -5,7 +5,7 @@ using System.Linq;
 
 public class BuildParticle : BuildParticleController
 {
-    [SerializeField] ParticleSystem splash;
+    [SerializeField] ParticleSystem[] splash;
     private bool splashTriggered;
 
     protected override void Start()
@@ -33,11 +33,15 @@ public class BuildParticle : BuildParticleController
     }
     public override void StopAllParticles()
     {
-        splash.Play();
+        foreach (ParticleSystem s in splash)
+        {
+            s.Play();
+        }
+
         splashTriggered = true;
         foreach (ParticleSystem item in allParticles)
         {
-            if (item != splash)
+            if (!splash.Contains(item))
             {
                 item.Stop();
             }

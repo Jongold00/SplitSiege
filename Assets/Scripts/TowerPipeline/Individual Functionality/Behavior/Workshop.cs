@@ -29,6 +29,7 @@ public class Workshop : OffensiveTower
         Trap trap = placedObj.GetComponentInChildren<Trap>();
         trap.NavNodePlacedOn = navNodeToPlaceOn;
         trap.OnTrapCollision += HandleTrapCollision;
+        trap.TimeToBuildTrap = offensiveTowerData.GetFireRate();
         placedTraps.Add(trap);
     }
 
@@ -64,6 +65,7 @@ public class Workshop : OffensiveTower
     {
         UnitBehavior unitBehavior = obj.GetComponent<UnitBehavior>();
         unitBehavior.TakeDamage(offensiveTowerData.GetDamage());
+        unitBehavior.AttachStatusEffect(new Stun(2));
         trap.Explode();
     }
 }

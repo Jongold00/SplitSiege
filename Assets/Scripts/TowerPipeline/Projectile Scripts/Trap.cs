@@ -11,10 +11,27 @@ public class Trap : MonoBehaviour
     public NavNode NavNodePlacedOn { get => navNodePlacedOn; set => navNodePlacedOn = value; }
 
     [SerializeField] private GameObject explosionParticles;
+    [SerializeField] private GameObject buildingInProgressParticles;
+    [SerializeField] private GameObject buildingFinishedParticles;
+    MeshRenderer meshRenderer;
+
+    private float timeToBuildTrap;
+    public float TimeToBuildTrap { get => timeToBuildTrap; set => timeToBuildTrap = value; }
+
+    private void Awake()
+    {
+        meshRenderer = gameObject.GetComponent<MeshRenderer>();
+    }
+
+    private void Start()
+    {
+        meshRenderer.enabled = false;
+        Invoke("BuildingFinished", timeToBuildTrap);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (Array.Exists(tagsToCollideWith, x => x == other.tag))
+        if (Array.Exists(tagsToCollideWith, x => x == other.tag) && meshRenderer.enabled)
         {
             OnTrapCollision?.Invoke(other.gameObject, this);  
         }
@@ -23,7 +40,7 @@ public class Trap : MonoBehaviour
     public void Explode()
     {
         explosionParticles.SetActive(true);
-        MeshRenderer meshRenderer = gameObject.GetComponent<MeshRenderer>();
+
         meshRenderer.enabled = false;
         ParticleController particleController = explosionParticles.GetComponent<ParticleController>();
         StartCoroutine(DestroyParentAfterParticlesHaveFinished(particleController));
@@ -38,5 +55,16 @@ public class Trap : MonoBehaviour
         }
 
         yield return new WaitForSeconds(1);
+    }
+
+    private void BuildingFinished()
+    {
+        ParticleSystem[] particleSystems = buildingInProgressParticles.GetComponentsInChildren<ParticleSystem>();
+        foreach (ParticleSystem p in particleSystems)
+        {
+            p.Stop();
+        }
+        buildingFinishedParticles.SetActive(true);
+        meshRenderer.enabled = true;
     }
 }
