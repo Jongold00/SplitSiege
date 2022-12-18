@@ -17,6 +17,7 @@ public class Trap : MonoBehaviour
 
     private float timeToBuildTrap;
     public float TimeToBuildTrap { get => timeToBuildTrap; set => timeToBuildTrap = value; }
+    public Action OnBuildingFinished;
 
     private void Awake()
     {
@@ -66,5 +67,6 @@ public class Trap : MonoBehaviour
         }
         buildingFinishedParticles.SetActive(true);
         meshRenderer.enabled = true;
+        OnBuildingFinished?.Invoke();
     }
 }

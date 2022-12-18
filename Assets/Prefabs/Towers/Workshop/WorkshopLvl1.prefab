@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5418450481191818051}
   - component: {fileID: 639584712995248204}
   - component: {fileID: 6973077046950863245}
-  - component: {fileID: 7388456199426423129}
   - component: {fileID: 378609683077605671}
   m_Layer: 5
   m_Name: WorkshopLvl1
@@ -51,7 +50,7 @@ MonoBehaviour:
   rotatableTransform: {fileID: 0}
   zOffsetForRotatableTransform: 0
   projectileInstantiatePoint: {fileID: 0}
-  spikeTrap: {fileID: 2203783419663660650, guid: 370ed05819826074e8313e0981eae231, type: 3}
+  spikeTrap: {fileID: 7412981755709863261, guid: 8f8f1fec3118fc748b6a163593038721, type: 3}
 --- !u!114 &6973077046950863245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,25 +65,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildSpeed: 3.25
   startYBuildOffset: -3
---- !u!95 &7388456199426423129
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5906029144854543331}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f5d0673a11daba74b8f0305939ba125b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &378609683077605671
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -151,7 +131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a56e4ccafb1b18847a46be2d42cb9d6a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -89.98021
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a56e4ccafb1b18847a46be2d42cb9d6a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -161,11 +141,44 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8489786288696081719, guid: a56e4ccafb1b18847a46be2d42cb9d6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0.000002808897
+      objectReference: {fileID: 0}
+    - target: {fileID: -3884637338768515662, guid: a56e4ccafb1b18847a46be2d42cb9d6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90.00415
+      objectReference: {fileID: 0}
+    - target: {fileID: -3884637338768515662, guid: a56e4ccafb1b18847a46be2d42cb9d6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -59.48884
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a56e4ccafb1b18847a46be2d42cb9d6a, type: 3}
       propertyPath: m_Name
       value: WorkshopLvl1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3361755697319130628, guid: a56e4ccafb1b18847a46be2d42cb9d6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -89.98021
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361755697319130628, guid: a56e4ccafb1b18847a46be2d42cb9d6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -0.000007848296
+      objectReference: {fileID: 0}
+    - target: {fileID: 4457280706699851898, guid: a56e4ccafb1b18847a46be2d42cb9d6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0.000002678571
+      objectReference: {fileID: 0}
+    - target: {fileID: 4457280706699851898, guid: a56e4ccafb1b18847a46be2d42cb9d6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 29.890522
+      objectReference: {fileID: 0}
+    - target: {fileID: 4457280706699851898, guid: a56e4ccafb1b18847a46be2d42cb9d6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2223639932434330405, guid: a56e4ccafb1b18847a46be2d42cb9d6a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a56e4ccafb1b18847a46be2d42cb9d6a, type: 3}
 --- !u!4 &6100853667893469077 stripped
 Transform:

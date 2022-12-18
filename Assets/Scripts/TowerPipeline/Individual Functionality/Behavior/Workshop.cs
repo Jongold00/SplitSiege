@@ -9,6 +9,7 @@ public class Workshop : OffensiveTower
     [SerializeField] GameObject spikeTrap;
     private bool trapPlaced = false;
     private static List<Trap> placedTraps = new List<Trap>();
+    [SerializeField] Animator animator;
 
     public override void Update()
     {
@@ -29,8 +30,10 @@ public class Workshop : OffensiveTower
         Trap trap = placedObj.GetComponentInChildren<Trap>();
         trap.NavNodePlacedOn = navNodeToPlaceOn;
         trap.OnTrapCollision += HandleTrapCollision;
+        trap.OnBuildingFinished += HandleTrapBuildingFinished;
         trap.TimeToBuildTrap = offensiveTowerData.GetFireRate();
         placedTraps.Add(trap);
+        animator.SetBool("IsBuilding", true);
     }
 
     private GameObject PlaceObjectAtPosition(GameObject obj, Vector3 pos)
@@ -67,5 +70,21 @@ public class Workshop : OffensiveTower
         unitBehavior.TakeDamage(offensiveTowerData.GetDamage());
         unitBehavior.AttachStatusEffect(new Stun(2));
         trap.Explode();
+        trapPlaced = false;
+        CanFire = true;
+
+    }
+
+    private void HandleTrapBuildingFinished()
+    {
+        animator.SetBool("IsBuilding", false);
+    }
+
+    private void OnDisable()
+    {
+        foreach (Trap trap in placedTraps)
+        {
+            trap.OnBuildingFinished -= HandleTrapBuildingFinished;
+        }
     }
 }
