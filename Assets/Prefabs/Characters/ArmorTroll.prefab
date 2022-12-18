@@ -11815,7 +11815,7 @@ GameObject:
   - component: {fileID: 919132148855693614}
   m_Layer: 0
   m_Name: ArmorTroll
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11854,8 +11854,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.1728296, y: 3.6967015, z: 1.5456387}
-  m_Center: {x: -0.13761094, y: 1.746814, z: -0.27281782}
+  m_Size: {x: 2.0220585, y: 3.696701, z: 1.2890836}
+  m_Center: {x: -0.1292791, y: 1.7468139, z: -0.24715304}
 --- !u!95 &919132148855693612
 Animator:
   serializedVersion: 3

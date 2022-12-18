@@ -1002,7 +1002,7 @@ GameObject:
   - component: {fileID: -2600901649734666744}
   m_Layer: 0
   m_Name: basicTroll
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1072,8 +1072,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.4129841, y: 3, z: 2.450043}
-  m_Center: {x: 0.0077109337, y: 1.5, z: 0.10347116}
+  m_Size: {x: 1.2660336, y: 3, z: 1.389901}
+  m_Center: {x: -0.0657643, y: 1.5, z: -0.0802176}
 --- !u!114 &-2600901649734666744
 MonoBehaviour:
   m_ObjectHideFlags: 0

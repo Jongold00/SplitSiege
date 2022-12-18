@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Trebuchet : OffensiveTower
 {
-
-
-
     protected override IEnumerator SpawnProjectile()
     {
         yield return new WaitForSeconds(offensiveTowerData.projectileSpawnOffset * offensiveTowerData.GetFireRate());

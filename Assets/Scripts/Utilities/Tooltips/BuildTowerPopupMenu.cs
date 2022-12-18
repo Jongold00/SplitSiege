@@ -110,12 +110,10 @@ public class BuildTowerPopupMenu : PopupUI
         ResetPopupMenuToStartingLayout();
         buildMenuContainer.transform.position = obj.transform.position;
 
-
         // Ensures size of canvas is scaled based on distance from camera so it always appears to be same size to the user
         Canvas canvas = GetComponent<Canvas>();
         float dist = Vector3.Distance(canvas.transform.position, Camera.main.transform.position);
         canvas.transform.localScale = startingLocalScale * dist / (rectTransform.rect.height / 20);
-
         OnPopupDisplayed?.Invoke(popupMenuObj);
     }
 

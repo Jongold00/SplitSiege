@@ -12894,7 +12894,7 @@ GameObject:
   - component: {fileID: 6690361901828869618}
   m_Layer: 0
   m_Name: DruidTroll
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12929,8 +12929,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.1728296, y: 3.6967015, z: 1.5456387}
-  m_Center: {x: 2.44, y: 1.746814, z: -0.27281782}
+  m_Size: {x: 1.5230051, y: 3.696701, z: 1.5572425}
+  m_Center: {x: 2.451604, y: 1.7468139, z: -0.1625802}
 --- !u!95 &-407908823754150580
 Animator:
   serializedVersion: 3

@@ -316,6 +316,7 @@ MonoBehaviour:
   rotatableTransform: {fileID: 0}
   zOffsetForRotatableTransform: 0
   projectileInstantiatePoint: {fileID: 0}
+  spikeTrap: {fileID: 2203783419663660650, guid: 370ed05819826074e8313e0981eae231, type: 3}
 --- !u!1 &5932520087358463751
 GameObject:
   m_ObjectHideFlags: 0

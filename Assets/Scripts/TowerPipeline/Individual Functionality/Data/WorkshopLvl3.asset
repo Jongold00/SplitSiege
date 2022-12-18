@@ -20,7 +20,7 @@ MonoBehaviour:
   prefab: {fileID: 0}
   damage: 5
   damageMultiplier: 1
-  fireRate: 4.5
+  fireRate: 3.5
   fireRateMultiplier: 1
   projectilePrefab: {fileID: 0}
   speedOfProjectile: 10
